@@ -4,14 +4,10 @@
 
 (function () {
   const BASE = (function () {
-    // Pages live at site/index.html, site/apps/migaja.html, site/writing/post.html, etc.
-    // Resolve relative to /site/.
-    const path = location.pathname;
-    const idx = path.lastIndexOf('/site/');
-    if (idx === -1) return './';
-    const rest = path.slice(idx + 6); // after "/site/"
-    const depth = rest.split('/').length - 1; // number of subfolders
-    return depth === 0 ? './' : '../'.repeat(depth);
+    // location.pathname always starts with "/". Depth = number of subfolders
+    // between the site root and the current page (regardless of host).
+    const depth = location.pathname.split('/').length - 2;
+    return depth <= 0 ? './' : '../'.repeat(depth);
   })();
 
   const APPS = [
