@@ -1,11 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Georgii Shilovskii</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>shilovskii.dev — Georgii Shilovskii</title>
+<meta name="description" content="Software engineer focused on AI infrastructure and privacy-first apps for Apple platforms.">
+<link rel="canonical" href="https://shilovskii.dev/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="shilovskii.dev — Georgii Shilovskii">
+<meta property="og:description" content="Software engineer focused on AI infrastructure and privacy-first apps for Apple platforms.">
+<meta property="og:url" content="https://shilovskii.dev/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Georgii Shilovskii</h1>
-  <p>Site under construction.</p>
+<div id="site-nav"></div>
+
+<!-- ─── Hero ─── -->
+<section style="padding: 96px 0 96px;">
+  <div class="container-narrow" style="text-align: left;">
+    <h1 class="hero-title" style="font-size: 56px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 24px; text-wrap: balance;">
+      Privacy-first apps and<br>infrastructure for the<br>on-device AI era.
+    </h1>
+    <p style="font-size: 19px; line-height: 1.55; color: var(--fg-2); max-width: 580px; text-wrap: pretty;">
+      I'm Georgii Shilovskii — a software engineer with 13+ years of experience across AI infrastructure and distributed systems, now focused on building privacy-first native apps for macOS. Independent work centers on local-first tools that run entirely on the user's device.
+    </p>
+    <div style="display: flex; gap: 12px; margin-top: 32px;">
+      <a href="#apps" class="btn btn-primary">See the apps</a>
+      <a href="about.html" class="btn btn-ghost">About me <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Apps ─── -->
+<section id="apps" style="padding: 0 0 72px; scroll-margin-top: 80px;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="tag-mono" style="margin-bottom: 12px;">01 · Apps</div>
+        <h2 class="section-title">In the works.</h2>
+      </div>
+      <a href="apps.html" class="section-meta">All apps →</a>
+    </div>
+    <div id="apps-grid" class="apps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;"></div>
+  </div>
+</section>
+
+<!-- ─── Writing ─── -->
+<section style="padding: 24px 0 72px;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="tag-mono" style="margin-bottom: 12px;">02 · Writing</div>
+        <h2 class="section-title">Notes from the workbench.</h2>
+      </div>
+      <a href="writing.html" class="section-meta">All posts →</a>
+    </div>
+    <div id="posts-list"></div>
+  </div>
+</section>
+
+<!-- ─── CTA strip removed per user request ─── -->
+
+<div id="site-footer"></div>
+
+<script src="shared.js"></script>
+<script>
+  SiteChrome.render({ active: 'home' });
+
+  // Apps grid
+  const appsGrid = document.getElementById('apps-grid');
+  appsGrid.innerHTML = SiteChrome.APPS.map(app => `
+    <a href="${SiteChrome.appHref(app.id)}" class="app-card">
+      <div class="app-card-row">
+        <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: ${app.color}; font-size: 22px;">${app.glyph}</div>
+        <div class="app-card-meta">
+          <div class="app-card-name">${app.name}</div>
+          <div class="app-card-tag">${app.tag}</div>
+        </div>
+        <span style="color: var(--fg-3); font-size: 18px;">→</span>
+      </div>
+      <p class="app-card-summary">${app.summary}</p>
+    </a>
+  `).join('');
+
+  // Posts (latest 4)
+  const postsList = document.getElementById('posts-list');
+  postsList.innerHTML = SiteChrome.POSTS.slice(0, 4).map(p => `
+    <a href="${SiteChrome.postHref(p.id)}" class="post-row">
+      <span class="date">${p.dateLabel}</span>
+      <div>
+        <div class="title">${p.title}</div>
+        <div class="kicker">${p.kicker} · ${p.read} read</div>
+      </div>
+      <span style="color: var(--fg-3); font-size: 16px;">→</span>
+    </a>
+  `).join('');
+</script>
 </body>
 </html>

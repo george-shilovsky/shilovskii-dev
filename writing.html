@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing — shilovskii.dev</title>
+<meta name="description" content="Notes from a workbench: engineering deep-dives, process notes, and the occasional design rant. Mostly about running language models on Apple Silicon.">
+<link rel="canonical" href="https://shilovskii.dev/writing.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Writing — shilovskii.dev">
+<meta property="og:description" content="Engineering deep-dives and process notes — mostly about running language models on Apple Silicon.">
+<meta property="og:url" content="https://shilovskii.dev/writing.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 64px 0 32px;">
+  <div class="container-narrow">
+    <div class="tag-mono" style="margin-bottom: 16px;">2 essays · since 2026</div>
+    <h1 style="font-size: 48px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Writing</h1>
+    <p style="font-size: 18px; color: var(--fg-2); line-height: 1.55; max-width: 580px; text-wrap: pretty;">
+      Notes from a workbench: engineering deep-dives, process notes, and the occasional design rant. Mostly about running language models on Apple Silicon.
+    </p>
+  </div>
+</section>
+
+<section style="padding: 24px 0 48px;">
+  <div class="container">
+    <div id="posts-list"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+<script>
+  SiteChrome.render({ active: 'writing' });
+  document.getElementById('posts-list').innerHTML = SiteChrome.POSTS.map(p => `
+    <a href="${SiteChrome.postHref(p.id)}" class="post-row">
+      <span class="date">${p.dateLabel}</span>
+      <div>
+        <div class="title">${p.title}</div>
+        <div class="kicker" style="margin-top: 4px;">${p.summary}</div>
+        <div class="kicker" style="margin-top: 6px;">${p.kicker} · ${p.read} read</div>
+      </div>
+      <span style="color: var(--fg-3); font-size: 16px;">→</span>
+    </a>
+  `).join('');
+</script>
+</body>
+</html>

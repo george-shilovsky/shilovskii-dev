@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — shilovskii.dev</title>
+<meta name="description" content="Send a note about consulting, app support, or anything else.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<!-- ─── Header ─── -->
+<section style="padding: 64px 0 32px;">
+  <div class="container" style="max-width: 920px;">
+    <div class="tag-mono" style="margin-bottom: 16px;">Contact</div>
+    <h1 style="font-size: 48px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 18px; text-wrap: balance; max-width: 720px;">
+      Drop a line.
+    </h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); max-width: 620px; text-wrap: pretty;">
+      Consulting inquiries, bug reports for the apps, corrections on something I wrote, or just a hello — all welcome. I read every message and reply within a couple of days.
+    </p>
+  </div>
+</section>
+
+<!-- ─── Form + side rail ─── -->
+<section style="padding: 16px 0 96px;">
+  <div class="container" style="max-width: 920px;">
+    <div class="contact-layout">
+
+      <!-- Form -->
+      <div id="form-wrap">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate style="display: flex; flex-direction: column; gap: 24px;">
+
+          <!-- Web3Forms config -->
+          <input type="hidden" name="access_key" value="ef6e1a77-aba1-4aff-9d43-0bf04aad5e2f">
+          <input type="hidden" name="from_name" value="shilovskii.dev contact form">
+          <input type="hidden" name="subject" id="f-subject" value="[Consulting] new message from shilovskii.dev">
+          <!-- Honeypot: real users leave this empty -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" class="row-2">
+            <div class="field">
+              <label class="field-label" for="f-name">
+                <span>Name <span class="req">*</span></span>
+              </label>
+              <input class="input" type="text" id="f-name" name="name" required autocomplete="name" placeholder="Your name">
+              <div class="field-error">Please enter your name.</div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="f-email">
+                <span>Email <span class="req">*</span></span>
+              </label>
+              <input class="input" type="email" id="f-email" name="email" required autocomplete="email" placeholder="you@domain.com">
+              <div class="field-error">Please enter a valid email.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label" style="margin-bottom: 4px;">
+              <span>Topic</span>
+              <span class="hint">Helps me route the message</span>
+            </span>
+            <div class="topic-group" role="radiogroup" aria-label="Topic">
+              <input type="radio" id="t-consulting" name="topic" value="consulting" checked>
+              <label for="t-consulting">Consulting</label>
+
+              <input type="radio" id="t-support" name="topic" value="support">
+              <label for="t-support">App support</label>
+
+              <input type="radio" id="t-writing" name="topic" value="writing">
+              <label for="t-writing">Writing</label>
+
+              <input type="radio" id="t-other" name="topic" value="other">
+              <label for="t-other">Other</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="f-message">
+              <span>Message <span class="req">*</span></span>
+              <span class="hint" id="char-count">0 / 2000</span>
+            </label>
+            <textarea class="input" id="f-message" name="message" required maxlength="2000" placeholder="A sentence or two about what you're working on, or what's on your mind."></textarea>
+            <div class="field-error">Please add a short message.</div>
+          </div>
+
+          <div class="submit-row">
+            <span class="meta" id="form-status">Plain email · no tracking · no list</span>
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+              <span id="submit-label">Send message</span>
+              <span aria-hidden="true" id="submit-arrow">→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Side rail -->
+      <aside class="contact-rail">
+        <div>
+          <h3>App support</h3>
+          <div class="item">
+            <a href="mailto:support@shilovskii.dev">support@shilovskii.dev</a>
+            <div class="desc">Bugs, crash logs, license issues. For everything else, use the form.</div>
+          </div>
+        </div>
+        <div>
+          <h3>Response time</h3>
+          <div class="item">
+            <span style="color: var(--fg);">~2 days</span>
+            <div class="desc">Usually faster. Slower around shipping crunches.</div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+<script>
+  SiteChrome.render({ active: 'contact' });
+
+  const form = document.getElementById('contact-form');
+  const nameEl = document.getElementById('f-name');
+  const emailEl = document.getElementById('f-email');
+  const msgEl = document.getElementById('f-message');
+  const subjectEl = document.getElementById('f-subject');
+  const counter = document.getElementById('char-count');
+  const btn = document.getElementById('submit-btn');
+  const btnLabel = document.getElementById('submit-label');
+  const btnArrow = document.getElementById('submit-arrow');
+  const status = document.getElementById('form-status');
+
+  const TOPIC_LABELS = {
+    consulting: 'Consulting',
+    support: 'App support',
+    writing: 'Writing',
+    other: 'Other',
+  };
+
+  // Pre-select topic from ?topic= query param (e.g. /support → ?topic=support)
+  (function preselectTopicFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const t = params.get('topic');
+    if (t && TOPIC_LABELS[t]) {
+      const radio = document.getElementById('t-' + t);
+      if (radio) radio.checked = true;
+    }
+  })();
+
+  // Keep subject in sync with selected topic
+  function syncSubject() {
+    const t = (form.elements['topic'].value || 'other');
+    subjectEl.value = `[${TOPIC_LABELS[t]}] new message from shilovskii.dev`;
+  }
+  form.querySelectorAll('input[name="topic"]').forEach(r => r.addEventListener('change', syncSubject));
+  syncSubject();
+
+  function updateCount() {
+    counter.textContent = `${msgEl.value.length} / 2000`;
+  }
+  msgEl.addEventListener('input', updateCount);
+
+  // Live-clear validation
+  [nameEl, emailEl, msgEl].forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('invalid'));
+  });
+
+  function validEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+  }
+
+  function setStatus(text, isError) {
+    status.textContent = text;
+    status.style.color = isError ? '#c8392b' : '';
+  }
+
+  async function submitForm() {
+    btn.disabled = true;
+    btnLabel.textContent = 'Sending…';
+    btnArrow.style.opacity = '0.4';
+    setStatus('Sending your message…', false);
+
+    const data = new FormData(form);
+    // Send as JSON — web3forms accepts both, JSON keeps response parsing simple.
+    const payload = Object.fromEntries(data.entries());
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json().catch(() => ({}));
+
+      if (res.ok && json.success) {
+        showSuccess();
+      } else {
+        const msg = (json && json.message) ? json.message : 'Something went wrong on our side. Please try again or email directly.';
+        setStatus(msg, true);
+        btn.disabled = false;
+        btnLabel.textContent = 'Try again';
+        btnArrow.style.opacity = '';
+      }
+    } catch (err) {
+      setStatus('Network issue — check your connection or email directly.', true);
+      btn.disabled = false;
+      btnLabel.textContent = 'Try again';
+      btnArrow.style.opacity = '';
+    }
+  }
+
+  function showSuccess() {
+    const topic = (form.elements['topic'].value || 'other');
+    const topicLabel = TOPIC_LABELS[topic];
+    const wrap = document.getElementById('form-wrap');
+    wrap.innerHTML = `
+      <div class="contact-success">
+        <div class="check" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h2>Message sent.</h2>
+          <p>Thanks — your <strong>${topicLabel.toLowerCase()}</strong> note landed in my inbox. I read everything and reply within a couple of days, usually faster.</p>
+          <a class="btn-link" href="${SiteChrome.BASE}index.html">Back to the homepage →</a>
+        </div>
+      </div>
+    `;
+    const top = wrap.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = true;
+    if (!nameEl.value.trim()) { nameEl.classList.add('invalid'); ok = false; }
+    if (!validEmail(emailEl.value)) { emailEl.classList.add('invalid'); ok = false; }
+    if (msgEl.value.trim().length < 4) { msgEl.classList.add('invalid'); ok = false; }
+    if (!ok) {
+      const first = form.querySelector('.invalid');
+      if (first) first.focus();
+      return;
+    }
+    submitForm();
+  });
+</script>
+</body>
+</html>

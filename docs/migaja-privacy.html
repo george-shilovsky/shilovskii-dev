@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migaja — Privacy policy</title>
+<meta name="description" content="Privacy policy for the Migaja macOS app. Migaja does not collect, transmit, or share any of your data — everything stays on your Mac.">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 28px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .privacy-table th,
+  .privacy-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--fg-2);
+  }
+  .privacy-table thead th {
+    font-weight: 600;
+    color: var(--fg);
+    border-bottom: 1px solid var(--fg-3);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .privacy-table td code {
+    font-size: 0.85em;
+  }
+  .toc-list {
+    columns: 2;
+    column-gap: 32px;
+    margin-bottom: 20px;
+  }
+  .toc-list li {
+    break-inside: avoid;
+  }
+  @media (max-width: 640px) {
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 32px 0 0;">
+  <div class="container-prose">
+    <div class="crumb">
+      <a href="../index.html">shilovskii.dev</a>
+      <span class="sep">/</span>
+      <a href="../apps.html">Apps</a>
+      <span class="sep">/</span>
+      <a href="../apps/migaja.html">Migaja</a>
+      <span class="sep">/</span>
+      <span class="here">Privacy</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 0 24px;">
+  <div class="container-prose">
+    <div class="tag-mono" style="margin-bottom: 16px;">Migaja · effective May 17, 2026 · last updated May 17, 2026</div>
+    <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+      This Privacy Policy explains how the Migaja application ("Migaja", "we", "us", "our") handles information when you use it on your Mac. We are <strong>Georgii Shilovskii</strong>, an individual developer, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.
+    </p>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-top: 16px;">
+      If you do not agree with this Privacy Policy, please do not install or use Migaja.
+    </p>
+  </div>
+</section>
+
+<section class="prose" style="padding: 24px 0;">
+  <div class="container-prose">
+
+    <h2>Summary</h2>
+    <p><strong>Migaja does not collect, transmit, or share any of your data.</strong> Everything you copy, search, or configure stays on your Mac. There is no account, no telemetry, no cloud sync, no advertising, and no third-party analytics. The semantic-search neural model is bundled with the app and runs entirely on-device. Apple processes your subscription payment through the App Store under Apple's own terms.</p>
+    <p>If you ever want to delete everything, use <em>Settings → History → Reset all clips</em> inside the app, or remove the folder at <code>~/Library/Application Support/Migaja/</code> after quitting.</p>
+
+    <h2>Table of contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1" style="color: var(--accent);">What information we handle, and where it lives</a></li>
+      <li><a href="#s2" style="color: var(--accent);">What information we collect</a></li>
+      <li><a href="#s3" style="color: var(--accent);">How we process your information</a></li>
+      <li><a href="#s4" style="color: var(--accent);">When and with whom we share information</a></li>
+      <li><a href="#s5" style="color: var(--accent);">Cookies and tracking technologies</a></li>
+      <li><a href="#s6" style="color: var(--accent);">International data transfers</a></li>
+      <li><a href="#s7" style="color: var(--accent);">How long we keep your information</a></li>
+      <li><a href="#s8" style="color: var(--accent);">Information from minors</a></li>
+      <li><a href="#s9" style="color: var(--accent);">Your privacy rights</a></li>
+      <li><a href="#s10" style="color: var(--accent);">On-device artificial intelligence</a></li>
+      <li><a href="#s11" style="color: var(--accent);">Sensitive data we deliberately avoid</a></li>
+      <li><a href="#s12" style="color: var(--accent);">Permissions Migaja may ask for</a></li>
+      <li><a href="#s13" style="color: var(--accent);">Third parties</a></li>
+      <li><a href="#s14" style="color: var(--accent);">Do-Not-Track signals</a></li>
+      <li><a href="#s15" style="color: var(--accent);">Updates to this Privacy Policy</a></li>
+      <li><a href="#s16" style="color: var(--accent);">How to contact us</a></li>
+    </ol>
+
+    <h2 id="s1" style="scroll-margin-top: 80px;">1. What information we handle, and where it lives</h2>
+    <p>When you use Migaja, the app handles the following information <strong>locally on your Mac only</strong>:</p>
+    <table class="privacy-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Where it lives</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The text of items you copy to the clipboard (excluding password-manager and concealed-pasteboard items)</td>
+          <td><code>~/Library/Application Support/Migaja/clips.db</code> — a local SQLite file inside your user account's sandbox</td>
+          <td>So you can search and recall them later.</td>
+        </tr>
+        <tr>
+          <td>The bundle ID and display name of the app from which each item was copied</td>
+          <td>Same SQLite file</td>
+          <td>To show the source-app icon next to each clip.</td>
+        </tr>
+        <tr>
+          <td>A 768-dimension numeric vector representing the meaning of each text item (an "embedding")</td>
+          <td>Same SQLite file</td>
+          <td>To power semantic search.</td>
+        </tr>
+        <tr>
+          <td>Your settings (retention, hotkeys, exclusion list, theme, etc.)</td>
+          <td>macOS <code>UserDefaults</code> for the app</td>
+          <td>To remember your preferences.</td>
+        </tr>
+        <tr>
+          <td>Your free-trial start timestamp</td>
+          <td>macOS Keychain (entry <code>dev.shilovskii.migaja</code>, <strong>not</strong> iCloud-synchronised)</td>
+          <td>To enforce the 7-day trial.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>None of this data is uploaded, transmitted to a server we control, or shared with any third party. We do not see it, and we cannot recover it for you if you lose it.</p>
+
+    <h2 id="s2" style="scroll-margin-top: 80px;">2. What information we collect</h2>
+    <p><strong>None.</strong> We do not collect personal data, usage data, diagnostic data, advertising identifiers, or analytics events. Migaja does not include any third-party SDK for tracking, attribution, crash reporting, or analytics.</p>
+
+    <h2 id="s3" style="scroll-margin-top: 80px;">3. How we process your information</h2>
+    <p>We do not process any of your information, because we do not receive any of it. All processing — capturing clips, computing embeddings, running search — happens on your Mac, against the local SQLite database described in Section 1.</p>
+
+    <h2 id="s4" style="scroll-margin-top: 80px;">4. When and with whom we share information</h2>
+    <p>We do not share any of your information, because we do not collect any.</p>
+    <p>The only party involved in your use of Migaja besides you and us is <strong>Apple Inc.</strong>, which processes your subscription payment through the App Store under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>. Migaja receives only the resulting entitlement signal ("you have an active subscription") — no payment-card numbers, billing addresses, or Apple-account identifiers.</p>
+
+    <h2 id="s5" style="scroll-margin-top: 80px;">5. Cookies and tracking technologies</h2>
+    <p>Migaja is a native macOS application. It does not use cookies, web beacons, pixels, or any other web-tracking technology, and it does not host or load any web content from us or from third parties for tracking purposes.</p>
+
+    <h2 id="s6" style="scroll-margin-top: 80px;">6. International data transfers</h2>
+    <p>Migaja has no servers. Your data does not leave your Mac, so no international transfer of personal data occurs as part of using the app.</p>
+    <p>The only network activity initiated by Migaja is the StoreKit traffic handled by macOS and the App Store for subscriptions. That traffic flows directly between your Mac and Apple's infrastructure under Apple's own terms.</p>
+
+    <h2 id="s7" style="scroll-margin-top: 80px;">7. How long we keep your information</h2>
+    <p>Because all data is stored locally, retention is controlled by you, from inside the app:</p>
+    <ul>
+      <li>Each clip is kept on your Mac until it is older than your configured <strong>Retention period</strong> (Settings → History → Retention period; default <strong>90 days</strong>, options 30 / 90 / 365 days / Unlimited).</li>
+      <li>When the configured <strong>Maximum clips</strong> cap is exceeded (Settings → History → Maximum clips; default <strong>10,000</strong>, options 1k / 10k / 100k / Unlimited), the oldest unpinned clips are soft-deleted.</li>
+      <li><strong>Soft-deleted clips</strong> disappear from search results immediately and are physically purged from the database within <strong>24 hours</strong>.</li>
+      <li><strong>Pinned clips</strong> are exempt from both the retention period and the maximum-clips cap.</li>
+      <li><em>Settings → History → Reset all clips</em> permanently deletes every clip and reclaims disk space (<code>PRAGMA vacuum</code>).</li>
+    </ul>
+    <p>Uninstalling the application also removes its data. To be completely sure nothing remains, additionally delete <code>~/Library/Application Support/Migaja/</code>.</p>
+
+    <h2 id="s8" style="scroll-margin-top: 80px;">8. Information from minors</h2>
+    <p>Migaja is not directed at children. The app is rated <strong>4+</strong> in the App Store only because it contains no age-restricted content; it is not intended for children's use.</p>
+    <p>We do not knowingly collect or process information from anyone — adult or minor — because, as described above, we do not collect any information at all. If you believe a child has come to use Migaja and you would like guidance on how to delete the local clipboard history from their Mac, contact us at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a> and we will help.</p>
+
+    <h2 id="s9" style="scroll-margin-top: 80px;">9. Your privacy rights</h2>
+    <p>Depending on where you live (e.g. under the EU/UK GDPR, California's CCPA/CPRA, Canada's PIPEDA, South Africa's POPIA, or Australia's and New Zealand's Privacy Acts), applicable privacy law may grant you rights to access, correct, delete, port, or restrict processing of your personal information, and to withdraw consent.</p>
+    <p>Because <strong>all of your data stays on your Mac</strong> and we never receive it, those rights are exercised entirely by you, on your own device:</p>
+    <ul>
+      <li><strong>Right of access.</strong> Open <em>Settings → History → Reveal database in Finder</em> to inspect the SQLite database that holds your clips. You can open it with any standard SQLite client.</li>
+      <li><strong>Right to rectification.</strong> Edit or replace any clip by re-copying its replacement, and delete the original from the popup.</li>
+      <li><strong>Right to erasure.</strong> Soft-delete individual clips from the popup (purged within 24 hours), or use <em>Settings → History → Reset all clips</em> to delete everything immediately.</li>
+      <li><strong>Right to data portability.</strong> The database is a standard SQLite file — copy it anywhere.</li>
+      <li><strong>Right to withdraw consent.</strong> Delete the app. Optionally also delete <code>~/Library/Application Support/Migaja/</code> and the Keychain entry <code>dev.shilovskii.migaja</code>.</li>
+      <li><strong>Right to object / restrict processing.</strong> Quit Migaja from the menu-bar icon to stop all clipboard capture immediately. Reopen when you want it active again.</li>
+    </ul>
+    <p>If your jurisdiction's law grants you a formal data-subject-access right against us and you wish to invoke it in writing, email <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>. We will respond within the timeframe required by the applicable law. Note that we will only be able to confirm that we do not hold any data about you, since we do not collect any.</p>
+    <p>We have not appointed a Data Protection Officer, as the scope of our processing (none) does not require one under the GDPR.</p>
+
+    <h2 id="s10" style="scroll-margin-top: 80px;">10. On-device artificial intelligence</h2>
+    <p>Migaja's "semantic search" feature is powered by a neural model called <strong>multilingual-e5-base</strong> (Q8 quantised, ~289 MB, MIT-licensed). The model is <strong>bundled inside the app at the time of download</strong>. It is not fetched from the internet at runtime, and no part of it communicates with any server.</p>
+    <p>All inference runs on your Mac using the open-source <code>llama.cpp</code> library, accelerated by Apple's Metal framework. The text of your clips is converted into numeric vectors on-device. The model auto-unloads from memory about 30 seconds after the last search to free RAM.</p>
+    <p><strong>Nothing is sent to OpenAI, Anthropic, Google, Apple Intelligence, or any other AI service.</strong> Semantic search works fully offline.</p>
+
+    <h2 id="s11" style="scroll-margin-top: 80px;">11. Sensitive data we deliberately avoid</h2>
+    <p>Some applications mark their pasteboard contents as transient or concealed — password managers in particular do this. Migaja honours those signals and <strong>does not store</strong> any pasteboard entry marked with the standard transient (<code>org.nspasteboard.TransientType</code>), concealed (<code>org.nspasteboard.ConcealedType</code>), or remote-clipboard (<code>com.apple.is-remote-clipboard</code>) flags.</p>
+    <p>In addition, Migaja ships with a default app-exclusion list — <strong>1Password</strong>, <strong>Bitwarden</strong>, <strong>Keychain Access</strong> — and lets you add more from <em>Settings → Exclusions</em>. Clipboard items copied from excluded apps are not stored at all.</p>
+    <p>If a sensitive item still makes it into the history, you can soft-delete it (it disappears immediately and is purged within 24 hours), or hard-reset the entire database from <em>Settings → History → Reset all clips</em>.</p>
+
+    <h2 id="s12" style="scroll-margin-top: 80px;">12. Permissions Migaja may ask for</h2>
+    <ul>
+      <li><strong>Accessibility</strong> (System Settings → Privacy &amp; Security → Accessibility). This is <strong>optional</strong>. It is used solely to synthesise a ⌘V keystroke when you select a clip with auto-paste enabled, so the selected text appears in the app you were just working in. Migaja does not read other apps' UI, screen contents, or windows. You can revoke this permission at any time in System Settings; the rest of Migaja keeps working.</li>
+    </ul>
+    <p>Migaja does not request Full Disk Access, Automation, Screen Recording, Contacts, Calendar, Photos, Microphone, Camera, Location, or any other permission.</p>
+
+    <h2 id="s13" style="scroll-margin-top: 80px;">13. Third parties</h2>
+    <ul>
+      <li><strong>Apple Inc.</strong> processes your subscription payment through the App Store under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>.</li>
+      <li>The app embeds open-source components — <strong>GRDB.swift</strong> (MIT), <strong>llama.cpp</strong> (MIT), <strong>ggml</strong> (MIT), and Apple's <strong>Accelerate</strong> and <strong>Metal</strong> frameworks. These components run locally as part of the application; they do not communicate with the internet.</li>
+    </ul>
+    <p>No other third party receives any data from Migaja.</p>
+
+    <h2 id="s14" style="scroll-margin-top: 80px;">14. Do-Not-Track signals</h2>
+    <p>Most web browsers and some mobile operating systems include a Do-Not-Track ("DNT") feature you can activate to signal a preference not to be tracked online. Because Migaja is a native macOS application that performs no online tracking of any kind, DNT signals are not applicable. There is nothing for us to track, with or without a DNT signal.</p>
+
+    <h2 id="s15" style="scroll-margin-top: 80px;">15. Updates to this Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time — for example, if the law changes or if we add a feature that affects how data is handled. When we do, we will change the <strong>Last updated</strong> date at the top of this page and, where required by law, notify you the next time you open the app or through the App Store. We encourage you to review this Privacy Policy periodically.</p>
+
+    <h2 id="s16" style="scroll-margin-top: 80px;">16. How to contact us</h2>
+    <p>Questions about this Privacy Policy, or about how Migaja handles data on your Mac:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a></li>
+    </ul>
+    <p><strong>Postal address:</strong><br>
+    Georgii Shilovskii<br>
+    [redacted]<br>
+    [redacted]<br>
+    [redacted]<br>
+    México</p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../shared.js"></script>
+<script>SiteChrome.render({ active: 'apps' });</script>
+</body>
+</html>

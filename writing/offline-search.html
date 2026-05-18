@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Migaja searches your clipboard offline — shilovskii.dev</title>
+<meta name="description" content="Two retrieval stages, one query box, zero network. A walk through the pipeline that turns a vague memory into the right clip in under 300 ms.">
+<link rel="canonical" href="https://shilovskii.dev/writing/offline-search.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Migaja searches your clipboard offline">
+<meta property="og:description" content="Two retrieval stages, one query box, zero network. A walk through the pipeline that turns a vague memory into the right clip in under 300 ms.">
+<meta property="og:url" content="https://shilovskii.dev/writing/offline-search.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<article>
+  <section style="padding: 32px 0 0;">
+    <div class="container-prose">
+      <div class="crumb">
+        <a href="../index.html">shilovskii.dev</a>
+        <span class="sep">/</span>
+        <a href="../writing.html">Writing</a>
+        <span class="sep">/</span>
+        <span class="here">How Migaja searches your clipboard offline</span>
+      </div>
+    </div>
+  </section>
+
+  <header style="padding: 48px 0 32px;">
+    <div class="container-prose">
+      <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--fg-3);">
+        <span class="mono">May 14, 2026</span>
+        <span style="color: var(--fg-4);">·</span>
+        <span>Engineering</span>
+        <span style="color: var(--fg-4);">·</span>
+        <span>8 min read</span>
+      </div>
+      <h1 style="font-size: 44px; line-height: 1.1; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; margin-bottom: 20px;">
+        How Migaja searches your clipboard offline
+      </h1>
+      <p style="font-size: 19px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+        Two retrieval stages, one query box, zero network. A walk through the pipeline that turns "the postgres connection string from last week" into the right clip in under 300 ms.
+      </p>
+    </div>
+  </section>
+
+  <section class="prose" style="padding: 0 0 32px;">
+    <div class="container-prose">
+      <p>Migaja is a macOS clipboard manager. When you press <strong>⌘⇧V</strong>, you can type any phrase — "the postgres connection string from last week", or "that dark-red hex I picked" — and find the clip without remembering the exact words. The search runs entirely on your Mac. There is no server.</p>
+
+      <p>The pipeline has two stages, behind the same query box.</p>
+
+      <h2>Phase 1 — full-text search in well under 5 ms</h2>
+
+      <p>Every clip is captured from <code>NSPasteboard</code> (1.0-second polling) and persisted in SQLite via GRDB. Alongside the main <code>clips</code> table, Migaja maintains an FTS5 virtual table mirrored by triggers, so inserts, updates, and deletes stay in lockstep with the index without any manual maintenance.</p>
+
+      <p>The tokenizer is <code>unicode61 remove_diacritics 2</code>. That single config decision is what lets you find a clip you copied as <code>café</code> by typing <code>cafe</code>, or hit <code>Größe</code> by typing <code>grosse</code> — useful in a multilingual workflow.</p>
+
+      <p>When you start typing, Migaja issues an FTS5 <code>MATCH</code> query and keeps the result <em>order</em> but discards the raw BM25 scores. Only the relative rank is used for the next step.</p>
+
+      <h2>Phase 2 — semantic search in 50–300 ms</h2>
+
+      <p>The embedding model is <code>multilingual-e5-base-q8_0.gguf</code> — 768 dimensions, Q8_0 quantisation, ~300 MB on disk, ~100 languages, 512-token context window. It ships inside the <code>.app</code>. There is no first-run download.</p>
+
+      <p>Inference runs on llama.cpp, statically linked into the app, with Metal as the backend. Pooling is <code>mean</code>, and the resulting vector is L2-normalised before it ever touches the database.</p>
+
+      <p><code>e5</code> is task-prefixed, so Migaja prepends the prefixes itself: <code>"query: "</code> for what you type, <code>"passage: "</code> for clip text. (A common foot-gun when wiring <code>e5</code> is double-prefixing from both the caller and the engine; Migaja asserts against it.)</p>
+
+      <p>Vectors are stored on each row as a <code>BLOB</code> — little-endian IEEE-754 <code>float32</code>, length <code>embedding_dim * 4</code> bytes. Because every vector is L2-normalised, <strong>cosine similarity collapses to a dot product</strong>. Migaja uses Apple's Accelerate framework — <code>vDSP_dotpr</code> against the raw blob bytes — so there's no per-row allocation and no per-query <code>sqrt</code>.</p>
+
+      <h2>Hybrid ranking</h2>
+
+      <p>The final score for a clip is:</p>
+
+      <pre>final = (1 − semWeight) * textScore + semWeight * cosine</pre>
+
+      <p><code>semWeight</code> defaults to <code>0.6</code> — a deliberate tilt toward semantic relevance, on the theory that if you remembered the exact words you'd just press ⌘V. Pinned clips always sort above the rest, via a stable predicate that runs before the score comparison.</p>
+
+      <p>FTS results render immediately. Semantic results merge in with a short animation when phase 2 finishes. The popup never blocks on the embedding pass, which keeps the experience snappy even on a cold launch.</p>
+
+      <h2>Lifecycle</h2>
+
+      <p>The embedding model only stays resident while you're actually searching. After 30 seconds of inactivity it is unloaded and roughly 350 MB of RAM is returned to the system. The next query reloads it transparently.</p>
+
+      <h2>Why static llama.cpp</h2>
+
+      <p>The Mac App Store sandbox forbids <code>posix_spawn</code> of arbitrary binaries, so Migaja can't shell out to a separate inference process. Instead, the llama.cpp and ggml libraries (<code>libllama.a</code>, <code>libggml.a</code>, the Metal/BLAS/CPU backends) are linked directly into the app. The C API is bridged into Swift via a single bridging header.</p>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><circle cx="12" cy="8" r="0.5" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <div class="callout-title">The net result.</div>
+          <div class="callout-body">768-dimensional multilingual semantic search, on your laptop, with no network round-trip and no per-query RAM cost when you're idle.</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <p style="font-size: 14px; color: var(--fg-3);">
+        <em>Send a note to <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.</em>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0 0;">
+    <div class="container-prose">
+      <div class="tag-mono" style="margin-bottom: 16px;">Keep reading</div>
+      <div id="more-posts"></div>
+    </div>
+  </section>
+</article>
+
+<div id="site-footer"></div>
+<script src="../shared.js"></script>
+<script>
+  SiteChrome.render({ active: 'writing' });
+  document.getElementById('more-posts').innerHTML = SiteChrome.POSTS
+    .filter(p => p.id !== 'offline-search').slice(0, 3)
+    .map(p => `
+      <a href="${SiteChrome.postHref(p.id)}" class="post-row">
+        <span class="date">${p.dateLabel}</span>
+        <div>
+          <div class="title">${p.title}</div>
+          <div class="kicker">${p.kicker} · ${p.read} read</div>
+        </div>
+        <span style="color: var(--fg-3); font-size: 16px;">→</span>
+      </a>
+    `).join('');
+</script>
+</body>
+</html>
