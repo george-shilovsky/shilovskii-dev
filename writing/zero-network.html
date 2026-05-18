@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero network: how Migaja achieves privacy by construction — shilovskii.dev</title>
+<meta name="description" content="Most “private” apps achieve privacy with a policy. Migaja achieves it with the binary — the app cannot phone home because macOS will not let it open a socket.">
+<link rel="canonical" href="https://shilovskii.dev/writing/zero-network.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zero network: how Migaja achieves privacy by construction">
+<meta property="og:description" content="Most “private” apps achieve privacy with a policy. Migaja achieves it with the binary — macOS will not let it open a socket.">
+<meta property="og:url" content="https://shilovskii.dev/writing/zero-network.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<article>
+  <section style="padding: 32px 0 0;">
+    <div class="container-prose">
+      <div class="crumb">
+        <a href="../index.html">shilovskii.dev</a>
+        <span class="sep">/</span>
+        <a href="../writing.html">Writing</a>
+        <span class="sep">/</span>
+        <span class="here">Zero network: how Migaja achieves privacy by construction</span>
+      </div>
+    </div>
+  </section>
+
+  <header style="padding: 48px 0 32px;">
+    <div class="container-prose">
+      <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--fg-3);">
+        <span class="mono">May 13, 2026</span>
+        <span style="color: var(--fg-4);">·</span>
+        <span>Engineering</span>
+        <span style="color: var(--fg-4);">·</span>
+        <span>7 min read</span>
+      </div>
+      <h1 style="font-size: 44px; line-height: 1.1; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; margin-bottom: 20px;">
+        Zero network: how Migaja achieves privacy by construction
+      </h1>
+      <p style="font-size: 19px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+        Most "private" apps achieve privacy with a policy. Migaja achieves it with the binary — the app cannot phone home because macOS will not let it open a socket.
+      </p>
+    </div>
+  </section>
+
+  <section class="prose" style="padding: 0 0 32px;">
+    <div class="container-prose">
+      <p>Most "private" apps achieve privacy with a <em>policy</em>. Migaja achieves it with the <em>binary</em>. The app cannot phone home because macOS will not let it open a socket.</p>
+
+      <h2>The entitlements file</h2>
+
+      <p>The entitlements that ship inside the <code>.app</code> bundle do not contain <code>com.apple.security.network.client</code> or <code>com.apple.security.network.server</code>. App Sandbox is on. Hardened runtime is on. The kernel enforces this: any <code>connect(2)</code> call from the app process is denied by the sandbox.</p>
+
+      <p>That is the load-bearing claim. Everything below is consistent with it, but the entitlements alone are what make this provable. You can inspect them yourself with <code>codesign -d --entitlements - /Applications/Migaja.app</code> after you install the app.</p>
+
+      <h2>The model is bundled, not downloaded</h2>
+
+      <p>The 300 MB embedding model ships inside the <code>.app</code>. There is no downloader, no fallback CDN, no first-run network step. The model loader uses <code>Bundle.main</code> to find the file by resource name — exactly the same code path Apple uses to load any other bundled asset. If you yank your Wi-Fi after install, semantic search continues to work.</p>
+
+      <h2>No third-party SDKs</h2>
+
+      <p>There is no Sentry, no Crashlytics, no Firebase, no Amplitude, no Segment, no Sparkle, no auto-updater, no analytics. The <code>PrivacyInfo.xcprivacy</code> shipped in the bundle declares:</p>
+
+      <pre>NSPrivacyTracking = false
+NSPrivacyCollectedDataTypes = []</pre>
+
+      <p>This matches the App Privacy Nutrition Label on the App Store listing: <strong>Data Not Collected</strong>.</p>
+
+      <h2>Filtering secrets out of the pasteboard</h2>
+
+      <p>Three pasteboard hints are dropped before a clip is ever written to disk:</p>
+
+      <ul>
+        <li><code>org.nspasteboard.TransientType</code> — used by tools that copy intermediate values they don't want recorded.</li>
+        <li><code>org.nspasteboard.ConcealedType</code> — used by password managers for short-lived secrets.</li>
+        <li><code>com.apple.is-remote-clipboard</code> — handoff content from another device.</li>
+      </ul>
+
+      <p>On top of that, Migaja ships with a default app-exclusion list: <strong>1Password</strong>, <strong>Bitwarden</strong>, and <strong>Keychain Access</strong>. Anything you copy <em>from</em> those apps is ignored at the source — it never enters the database, never gets embedded, never gets indexed. You can edit the list in Settings → Exclusions.</p>
+
+      <h2>Soft delete with a 24-hour escape hatch</h2>
+
+      <p>When you delete a clip, it is first marked with a deletion timestamp and hidden from the UI. A background sweep hard-deletes it 24 hours later. If you change your mind in that window, you can restore it. After the window, the row is gone from SQLite for good.</p>
+
+      <h2>Where your data lives</h2>
+
+      <ul>
+        <li>Clips and embeddings: a SQLite database inside Migaja's sandboxed Application Support container.</li>
+        <li>Trial timestamp: the macOS Keychain, so you can't reset the trial by reinstalling.</li>
+        <li>Preferences: <code>UserDefaults</code>.</li>
+      </ul>
+
+      <p>Nothing leaves the disk.</p>
+
+      <h2>The one network call: StoreKit 2</h2>
+
+      <p>The only outbound traffic ever initiated on Migaja's behalf is StoreKit 2 — when you start a subscription, restore one, or your Mac periodically refreshes the receipt. That traffic is mediated entirely by macOS and the App Store. Migaja itself does not open the socket; it asks <code>StoreKit</code> to talk to Apple, and the kernel allows that because it's Apple's framework, not the app's. There are no other endpoints.</p>
+
+      <h2>Accessibility permission, used narrowly</h2>
+
+      <p>Migaja asks for the Accessibility permission during onboarding and polls <code>AXIsProcessTrusted()</code> every second until you grant it. The permission is used <strong>only</strong> to synthesise a ⌘V keystroke when you pick a clip with auto-paste enabled. It is not used to read other apps' UI, scrape passwords, or observe what you type. The Auto-paste toggle in Settings → Behaviour is a hard kill-switch for the entire permission flow — turn it off and Migaja never calls into the Accessibility APIs at all.</p>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><circle cx="12" cy="8" r="0.5" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <div class="callout-title">Privacy by construction.</div>
+          <div class="callout-body">Not a promise on a marketing page, but a build that physically cannot do the things it promises not to do.</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <p style="font-size: 14px; color: var(--fg-3);">
+        <em>Send a note to <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.</em>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0 0;">
+    <div class="container-prose">
+      <div class="tag-mono" style="margin-bottom: 16px;">Keep reading</div>
+      <div id="more-posts"></div>
+    </div>
+  </section>
+</article>
+
+<div id="site-footer"></div>
+<script src="../shared.js"></script>
+<script>
+  SiteChrome.render({ active: 'writing' });
+  document.getElementById('more-posts').innerHTML = SiteChrome.POSTS
+    .filter(p => p.id !== 'zero-network').slice(0, 3)
+    .map(p => `
+      <a href="${SiteChrome.postHref(p.id)}" class="post-row">
+        <span class="date">${p.dateLabel}</span>
+        <div>
+          <div class="title">${p.title}</div>
+          <div class="kicker">${p.kicker} · ${p.read} read</div>
+        </div>
+        <span style="color: var(--fg-3); font-size: 16px;">→</span>
+      </a>
+    `).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migaja — Terms of Service</title>
+<meta name="description" content="Terms of Service for the Migaja macOS app — license, subscription, and the limits of what we promise.">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .terms-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 28px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .terms-table th,
+  .terms-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--fg-2);
+  }
+  .terms-table thead th {
+    font-weight: 600;
+    color: var(--fg);
+    border-bottom: 1px solid var(--fg-3);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .terms-table td code {
+    font-size: 0.85em;
+  }
+  .toc-list {
+    columns: 2;
+    column-gap: 32px;
+    margin-bottom: 20px;
+  }
+  .toc-list li {
+    break-inside: avoid;
+  }
+  @media (max-width: 640px) {
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 32px 0 0;">
+  <div class="container-prose">
+    <div class="crumb">
+      <a href="../index.html">shilovskii.dev</a>
+      <span class="sep">/</span>
+      <a href="../apps.html">Apps</a>
+      <span class="sep">/</span>
+      <a href="../apps/migaja.html">Migaja</a>
+      <span class="sep">/</span>
+      <span class="here">Terms</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 0 24px;">
+  <div class="container-prose">
+    <div class="tag-mono" style="margin-bottom: 16px;">Migaja · effective May 17, 2026 · last updated May 17, 2026</div>
+    <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Terms of Service</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+      These Terms of Service form a binding agreement between you and us about your use of the Migaja application and any related materials. We are <strong>Georgii Shilovskii</strong>, an individual developer, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.
+    </p>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-top: 16px;">
+      By installing or using the App, you confirm that you have read, understood, and agreed to these Terms. <strong>If you do not agree, do not install or use Migaja.</strong>
+    </p>
+  </div>
+</section>
+
+<section class="prose" style="padding: 24px 0;">
+  <div class="container-prose">
+
+    <h2>Summary</h2>
+    <p><strong>Migaja is a macOS clipboard manager distributed exclusively through the Mac App Store.</strong> It runs locally on your Mac — no accounts, no servers, no telemetry. A 7-day free trial unlocks everything; after that, full-text search and the rest of the app stay free forever, while semantic-only matches require a Pro subscription ($2.99/month or $19.99/year, billed by Apple). All your data lives on your Mac; we never receive it and cannot recover it.</p>
+    <p>We may update these Terms from time to time. The "Last updated" date above will reflect the current version. Continued use after a change takes effect constitutes acceptance of the revised Terms.</p>
+
+    <h2>Table of contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1" style="color: var(--accent);">Our Services</a></li>
+      <li><a href="#s2" style="color: var(--accent);">Intellectual property rights</a></li>
+      <li><a href="#s3" style="color: var(--accent);">User representations</a></li>
+      <li><a href="#s4" style="color: var(--accent);">Prohibited activities</a></li>
+      <li><a href="#s5" style="color: var(--accent);">User-generated contributions</a></li>
+      <li><a href="#s6" style="color: var(--accent);">Mac App Store licence</a></li>
+      <li><a href="#s7" style="color: var(--accent);">Subscription, trial, and pricing</a></li>
+      <li><a href="#s8" style="color: var(--accent);">Services management</a></li>
+      <li><a href="#s9" style="color: var(--accent);">Term and termination</a></li>
+      <li><a href="#s10" style="color: var(--accent);">Modifications and interruptions</a></li>
+      <li><a href="#s11" style="color: var(--accent);">Governing law</a></li>
+      <li><a href="#s12" style="color: var(--accent);">Dispute resolution</a></li>
+      <li><a href="#s13" style="color: var(--accent);">Corrections</a></li>
+      <li><a href="#s14" style="color: var(--accent);">Disclaimer</a></li>
+      <li><a href="#s15" style="color: var(--accent);">Limitations of liability</a></li>
+      <li><a href="#s16" style="color: var(--accent);">Indemnification</a></li>
+      <li><a href="#s17" style="color: var(--accent);">Your data</a></li>
+      <li><a href="#s18" style="color: var(--accent);">Electronic communications</a></li>
+      <li><a href="#s19" style="color: var(--accent);">Miscellaneous</a></li>
+      <li><a href="#s20" style="color: var(--accent);">Contact us</a></li>
+    </ol>
+
+    <h2 id="s1" style="scroll-margin-top: 80px;">1. Our Services</h2>
+    <p>Migaja is a clipboard manager application for macOS. It automatically captures items you copy to the system pasteboard, stores them locally on your Mac in a sandboxed SQLite database, and lets you search and recall them later using either keyword (full-text) search or on-device semantic search powered by a bundled multilingual neural model. The App requires <strong>macOS 26 (Tahoe) or later on Apple Silicon</strong> and is distributed exclusively through the Mac App Store.</p>
+    <p>The Services are not intended for distribution to or use by any person in any jurisdiction where such distribution or use would be contrary to law. If you choose to access the Services from such a jurisdiction, you do so on your own initiative and are solely responsible for compliance with applicable local laws.</p>
+
+    <h2 id="s2" style="scroll-margin-top: 80px;">2. Intellectual property rights</h2>
+    <h3>Our intellectual property</h3>
+    <p>We own — or hold the necessary licences for — the source code, design, branding, marks, documentation, and other materials that make up Migaja and the Services (collectively, the "Content" and "Marks"). The Content and Marks are protected by copyright, trademark, and related laws.</p>
+    <p>Subject to your compliance with these Terms, we grant you a <strong>personal, non-exclusive, non-transferable, revocable licence</strong> to install and use the App in accordance with Section 6 below and the Mac App Store Usage Rules.</p>
+    <p>You may not copy, redistribute, sublicense, rent, lease, resell, publicly display, decompile, reverse-engineer, or commercially exploit the App or any part of the Services, except as expressly permitted by these Terms, the Mac App Store EULA, or applicable law.</p>
+
+    <h3>Open-source components</h3>
+    <p>The App embeds several open-source components, which retain their own copyright and licence terms:</p>
+    <ul>
+      <li><strong>GRDB.swift</strong> — MIT</li>
+      <li><strong>llama.cpp</strong> — MIT</li>
+      <li><strong>ggml</strong> — MIT</li>
+      <li>The <strong>multilingual-e5-base</strong> model — MIT</li>
+      <li>Apple's <strong>Accelerate</strong> and <strong>Metal</strong> system frameworks — under Apple's own terms.</li>
+    </ul>
+    <p>A complete acknowledgments list is available in <em>Settings → About → Acknowledgments</em> inside the App.</p>
+
+    <h3>Your submissions</h3>
+    <p>If you send us questions, feedback, suggestions, or bug reports about the Services ("Submissions"), you agree that we may use them without obligation, attribution, or compensation, for the purpose of operating and improving Migaja.</p>
+
+    <h2 id="s3" style="scroll-margin-top: 80px;">3. User representations</h2>
+    <p>By using the Services you represent and warrant that:</p>
+    <ol>
+      <li>you have the legal capacity to agree to these Terms;</li>
+      <li>you are at least <strong>13 years old</strong>, or your parent or legal guardian has consented to your use of the App, in compliance with the Mac App Store Usage Rules and applicable law;</li>
+      <li>you will not access the Services through automated or non-human means (bots, scripts, scrapers);</li>
+      <li>you will not use the Services for any illegal or unauthorised purpose;</li>
+      <li>your use of the Services will not violate any applicable law or regulation.</li>
+    </ol>
+
+    <h2 id="s4" style="scroll-margin-top: 80px;">4. Prohibited activities</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>reverse-engineer, decompile, disassemble, or attempt to derive the source code of the App, except to the extent expressly permitted by applicable law or by the Mac App Store EULA;</li>
+      <li>circumvent, disable, or interfere with any technical mechanism that gates Pro features, enforces the trial period, or otherwise protects the Services;</li>
+      <li>modify, adapt, or create derivative works from the App other than as permitted by the Mac App Store Usage Rules;</li>
+      <li>use the App to violate any applicable law, regulation, or the rights of any third party;</li>
+      <li>use the App in connection with the development or distribution of any product that, in our reasonable judgement, is a substitute for the App and trades on Migaja's brand, design, or proprietary technology;</li>
+      <li>make the App available over a network or in any environment that allows simultaneous use by multiple users beyond the Mac App Store Usage Rules;</li>
+      <li>attempt to interfere with, disrupt, or place an undue burden on the Mac App Store or Apple's StoreKit infrastructure through the App.</li>
+    </ul>
+    <p>The neural model bundled with Migaja is licensed under its own open-source licence (MIT). Use of the model is additionally subject to that licence.</p>
+
+    <h2 id="s5" style="scroll-margin-top: 80px;">5. User-generated contributions</h2>
+    <p><strong>Not applicable.</strong> Migaja does not allow users to post, upload, submit, publish, or broadcast content to any service operated by us, and it has no online community, forums, comments, or shared storage. The clipboard items captured by Migaja are stored exclusively on your own Mac and are never transmitted to us or shared with any other party (see Section 17).</p>
+
+    <h2 id="s6" style="scroll-margin-top: 80px;">6. Mac App Store licence</h2>
+    <p>Migaja is distributed exclusively through the <strong>Mac App Store</strong> (Apple Inc. — the "App Distributor"). The following terms apply to your installation and use of the App:</p>
+    <ol>
+      <li>The licence granted to you is <strong>limited to a non-transferable licence</strong> to install and use the App on devices that run <strong>macOS 26 (Tahoe) or later on Apple Silicon</strong>, and only in accordance with the Usage Rules set forth in the Mac App Store Terms of Service.</li>
+      <li><strong>We — not Apple — are responsible</strong> for providing any maintenance and support for the App as specified in these Terms or as otherwise required by applicable law. Apple has no obligation to furnish any maintenance or support services with respect to the App.</li>
+      <li>In the event the App fails to conform to any applicable warranty, you may notify Apple, and Apple may refund the purchase price (where applicable) in accordance with its policies. To the maximum extent permitted by applicable law, Apple has no other warranty obligation whatsoever with respect to the App.</li>
+      <li>You represent and warrant that <strong>(i)</strong> you are not located in a country that is subject to a U.S. government embargo, or that has been designated by the U.S. government as a "terrorist supporting" country, and <strong>(ii)</strong> you are not listed on any U.S. government list of prohibited or restricted parties.</li>
+      <li>You must comply with applicable third-party terms of agreement when using the App.</li>
+      <li>You acknowledge that <strong>Apple and Apple's subsidiaries are third-party beneficiaries</strong> of these Terms, and that upon your acceptance of these Terms, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary thereof.</li>
+    </ol>
+
+    <h2 id="s7" style="scroll-margin-top: 80px;">7. Subscription, trial, and pricing</h2>
+    <h3>Free 7-day trial</h3>
+    <ul>
+      <li>Migaja includes a free 7-day trial that begins the first time you launch the App. <strong>No credit card is required to start the trial.</strong></li>
+      <li>The trial is anchored to your Apple ID's original purchase date for the App, signed by Apple. <strong>Reinstalling Migaja does not reset the trial.</strong></li>
+      <li>During the trial, all features (including semantic search) are fully available.</li>
+    </ul>
+
+    <h3>After the trial — what stays free, what requires Pro</h3>
+    <ul>
+      <li><strong>Free forever, no subscription required:</strong> every clip you copy is still captured; the entire history remains searchable by full-text (keyword) search; pinning, soft-delete, retention and exclusion controls, themes, and hotkeys all stay unrestricted.</li>
+      <li><strong>Pro (subscription required):</strong> semantic-search results that are <em>only</em> matched semantically (i.e., not also matched by full-text search) are gated. Opening such a result prompts an upgrade.</li>
+    </ul>
+
+    <h3>Plans and pricing</h3>
+    <table class="terms-table">
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Price</th>
+          <th>Period</th>
+          <th>Product ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Monthly</strong></td>
+          <td>$2.99</td>
+          <td>1 month</td>
+          <td><code>dev.shilovskii.migaja.pro_monthly</code></td>
+        </tr>
+        <tr>
+          <td><strong>Yearly</strong></td>
+          <td>$19.99 (Save 44%)</td>
+          <td>1 year</td>
+          <td><code>dev.shilovskii.migaja.pro_yearly</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Prices listed are in USD. Prices in non-USD storefronts are set by Apple according to its pricing-tier system and may differ.</p>
+
+    <h3>Auto-renewal and cancellation</h3>
+    <ul>
+      <li><strong>Subscriptions automatically renew</strong> at the same price for the same period unless cancelled at least <strong>24 hours before the end of the current period</strong>.</li>
+      <li>You can manage or cancel your subscription in <strong>System Settings → [Your Name] → Media &amp; Purchases → Subscriptions</strong>, or at <a href="https://apps.apple.com/account/subscriptions" style="color: var(--accent);">apps.apple.com/account/subscriptions</a>. Cancellation takes effect at the end of the current billing period.</li>
+      <li><strong>Deleting the App does not cancel the subscription.</strong> Use the link above to cancel.</li>
+      <li>Subscriptions are eligible for <strong>Family Sharing</strong>.</li>
+      <li>We may change subscription prices going forward. Any change applies only to renewals starting after we have given you notice through the Mac App Store, as required by Apple's policies.</li>
+    </ul>
+
+    <h3>Refunds</h3>
+    <p>Payment is processed by Apple and is subject to <strong>Apple's refund policy</strong>. We are not able to issue refunds directly. Refund requests should be submitted at <a href="https://reportaproblem.apple.com" style="color: var(--accent);">reportaproblem.apple.com</a>.</p>
+
+    <h3>No accounts</h3>
+    <p>Migaja deliberately has no user accounts and no sign-in. Your Apple ID handles billing and entitlement; we never receive or store any identifying information about you.</p>
+
+    <h2 id="s8" style="scroll-margin-top: 80px;">8. Services management</h2>
+    <p>We reserve the right, but not the obligation, to:</p>
+    <ol>
+      <li>monitor the Services for violations of these Terms or applicable law;</li>
+      <li>take appropriate legal action against any user who, in our reasonable judgement, violates the law or these Terms, including reporting such user to law-enforcement authorities;</li>
+      <li>manage the Services in a manner designed to protect our rights and property and to facilitate proper operation of the App;</li>
+      <li>refuse, restrict, or remove access to Pro features for any user found to be circumventing the technical mechanisms that gate them.</li>
+    </ol>
+
+    <h2 id="s9" style="scroll-margin-top: 80px;">9. Term and termination</h2>
+    <p>These Terms remain in full force and effect while you use the Services.</p>
+    <p>You may stop using Migaja, uninstall the App, and cancel any active subscription at any time. Cancellation is performed via the App Store as described in Section 7. Uninstalling the App does not, by itself, cancel a subscription.</p>
+    <p>We may terminate or suspend your access to Pro features, and (through the standard Apple App Store mechanisms) deny renewal of your Apple ID-bound subscription, if you materially breach these Terms or if we are required to do so by law. Sections 2, 4, 14, 15, 16, 17, 19, and any other provision that by its nature should survive termination, will survive termination.</p>
+
+    <h2 id="s10" style="scroll-margin-top: 80px;">10. Modifications and interruptions</h2>
+    <p>We may change, suspend, discontinue, or otherwise modify the Services or any part of them at any time, at our sole discretion. We will use commercially reasonable efforts to provide notice of material changes that affect paying subscribers and, where required by law or Apple's policies, will offer the remedies required by those rules.</p>
+    <p>We do not guarantee that the Services will always be available or uninterrupted. We may experience hardware or software issues, perform maintenance, or be required to make changes to comply with Apple's or third parties' requirements. To the maximum extent permitted by law, we will not be liable for any loss, damage, or inconvenience caused by your inability to access or use the Services during any downtime.</p>
+    <p>Updates to the App are distributed through the Mac App Store. Some updates may affect compatibility with older versions of macOS; the current minimum requirement is macOS 26 (Tahoe) on Apple Silicon.</p>
+
+    <h2 id="s11" style="scroll-margin-top: 80px;">11. Governing law</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the <strong>United Mexican States (Estados Unidos Mexicanos)</strong>, without regard to its conflict-of-laws principles. Subject to Section 12, you and we irrevocably agree that the <strong>competent courts of Mérida, Yucatán, México</strong> shall have exclusive jurisdiction to resolve any dispute arising in connection with these Terms.</p>
+    <p>Nothing in this section deprives you of the protection of any mandatory consumer-protection rules of the jurisdiction in which you habitually reside.</p>
+
+    <h2 id="s12" style="scroll-margin-top: 80px;">12. Dispute resolution</h2>
+    <h3>Informal negotiations</h3>
+    <p>To expedite resolution and control the cost of any dispute, controversy, or claim relating to these Terms ("Dispute"), you and we agree to first attempt to resolve the Dispute informally for at least <strong>30 days</strong> before initiating any formal proceedings. Informal negotiations begin upon written notice from one party to the other, sent to the address in Section 20 (for us) or to the email address you provide (for you).</p>
+
+    <h3>Court resolution</h3>
+    <p>If a Dispute is not resolved through informal negotiations, it shall be brought in the courts identified in Section 11 (Governing law), subject to any mandatory consumer-protection rules in your jurisdiction that allow you to bring proceedings in your local courts.</p>
+
+    <h3>Restrictions</h3>
+    <p>To the fullest extent permitted by applicable law, any proceeding shall be limited to the Dispute between you and us individually; no Dispute shall be brought as a class action, collective action, or representative action on behalf of the general public or any other persons.</p>
+
+    <h3>Exceptions</h3>
+    <p>Nothing in this section prevents either party from seeking <strong>injunctive or other equitable relief</strong> in a court of competent jurisdiction to protect intellectual-property rights or prevent ongoing harm.</p>
+
+    <h2 id="s13" style="scroll-margin-top: 80px;">13. Corrections</h2>
+    <p>The Services may occasionally contain typographical errors, inaccuracies, or omissions, including in descriptions, pricing, or availability. We reserve the right to correct any such errors and to change or update information on the Services at any time, without prior notice.</p>
+
+    <h2 id="s14" style="scroll-margin-top: 80px;">14. Disclaimer</h2>
+    <p>THE APP AND THE SERVICES ARE PROVIDED ON AN <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS. YOUR USE OF THE SERVICES IS AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+    <p>In particular, we make no warranty that semantic search will return any specific result, that any clip will be retained for any specific period, that the App will be uninterrupted, secure, or error-free, or that any defects will be corrected.</p>
+    <p>We make no warranty regarding the accuracy, reliability, or completeness of any information surfaced by the App, and we are not liable for any decisions you make based on such information.</p>
+    <p>Some jurisdictions do not allow the exclusion of certain implied warranties; in those jurisdictions, the exclusions in this section apply only to the extent permitted by applicable law.</p>
+
+    <h2 id="s15" style="scroll-margin-top: 80px;">15. Limitations of liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL WE OR OUR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES — INCLUDING LOST PROFITS, LOST REVENUE, LOSS OF DATA, OR LOSS OF BUSINESS — ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+    <p>NOTWITHSTANDING ANYTHING TO THE CONTRARY IN THESE TERMS, <strong>OUR TOTAL CUMULATIVE LIABILITY</strong> FOR ANY CLAIM ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR YOUR USE OF THE APP SHALL NOT EXCEED <strong>THE AMOUNT YOU PAID US (THROUGH APPLE) FOR THE APP IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM</strong>.</p>
+    <p>Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages; in those jurisdictions, the limitations in this section apply only to the extent permitted by applicable law, and you may have additional rights.</p>
+
+    <h2 id="s16" style="scroll-margin-top: 80px;">16. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold us harmless from and against any loss, damage, liability, claim, or demand — including reasonable lawyers' fees — made by any third party arising out of: <strong>(1)</strong> your use of the Services in violation of these Terms, <strong>(2)</strong> your breach of any representation or warranty in these Terms, or <strong>(3)</strong> your violation of any applicable law or any third-party right in connection with your use of the Services.</p>
+    <p>We reserve the right, at your expense, to assume the exclusive defence and control of any matter for which you are required to indemnify us, and you agree to cooperate with our defence of such claims.</p>
+
+    <h2 id="s17" style="scroll-margin-top: 80px;">17. Your data</h2>
+    <p><strong>All data generated or stored by Migaja — clipboard contents, search history, settings, and embeddings — remains exclusively on your local Mac, in a sandboxed SQLite database at <code>~/Library/Application Support/Migaja/clips.db</code> and in macOS <code>UserDefaults</code> and Keychain.</strong></p>
+    <p><strong>We do not maintain, transmit, or back up any of your data on our servers.</strong> We do not have access to it. We cannot recover it for you if it is lost.</p>
+    <p>You are solely responsible for backing up your local data (for example, by including your user <code>Library</code> folder in your Time Machine backups). The 24-hour soft-delete grace period inside the App is a convenience to undo accidental deletions; it is not a recovery guarantee.</p>
+    <p>You waive any claim against us for any loss, corruption, or unavailability of data stored locally on your Mac. See the <a href="migaja-privacy.html" style="color: var(--accent);">Privacy Policy</a> for full detail on how Migaja handles data.</p>
+
+    <h2 id="s18" style="scroll-margin-top: 80px;">18. Electronic communications</h2>
+    <p>By using the Services, sending us email, or completing any form within the App or on our support pages, you consent to receive <strong>electronic communications</strong> from us. You agree that all notices, agreements, disclosures, and other communications we provide to you electronically — via email or through the Mac App Store — satisfy any legal requirement that such communication be in writing, to the maximum extent permitted by applicable law.</p>
+    <p>You hereby consent to the use of electronic signatures, records, and notices for any agreement or transaction between you and us in connection with the Services.</p>
+
+    <h2 id="s19" style="scroll-margin-top: 80px;">19. Miscellaneous</h2>
+    <p>These Terms, together with the Privacy Policy and any other policies posted by us in connection with the Services, constitute the entire agreement and understanding between you and us regarding the Services.</p>
+    <p>Our failure to exercise or enforce any right or provision of these Terms shall not operate as a waiver of that right or provision. If any provision is held to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be severed from these Terms and the remaining provisions shall remain in full force and effect.</p>
+    <p>We may assign our rights and obligations under these Terms to any successor in connection with a merger, acquisition, or sale of substantially all of our assets, on notice to you. You may not assign your rights or obligations under these Terms without our prior written consent.</p>
+    <p>Nothing in these Terms creates any partnership, joint venture, employment, agency, or franchise relationship between you and us. You agree that these Terms will not be construed against us by virtue of having drafted them.</p>
+
+    <h2 id="s20" style="scroll-margin-top: 80px;">20. Contact us</h2>
+    <p>For questions about these Terms, complaints about the Services, or any other inquiry:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a></li>
+    </ul>
+    <p><strong>Postal address:</strong><br>
+    Georgii Shilovskii<br>
+    [redacted]<br>
+    [redacted]<br>
+    [redacted]<br>
+    México</p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../shared.js"></script>
+<script>SiteChrome.render({ active: 'apps' });</script>
+</body>
+</html>
