@@ -9,8 +9,8 @@
   document.title = `${app.name} — shilovskii.dev`;
   const otherApps = SiteChrome.APPS.filter(a => a.id !== id);
 
-  const privacyHref = detail.privacyDoc || `../docs/${id}-privacy.html`;
-  const termsHref = detail.termsDoc || `../docs/${id}-terms.html`;
+  const privacyHref = detail.privacyDoc || `${id}/${id}-privacy.html`;
+  const termsHref = detail.termsDoc || `${id}/${id}-terms.html`;
 
   // ─── tiny helpers ───
   const esc = (s) => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
@@ -353,7 +353,7 @@
             <p style="font-size: 14px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-bottom: 16px;">A short, plain-English agreement covering personal use, the trial, subscriptions, and the warranty disclaimer.</p>
             <span style="font-size: 13px; color: var(--accent); font-weight: 500;">Read the terms of use →</span>
           </a>
-          <a id="support" href="${SiteChrome.BASE}support.html" class="app-card" style="scroll-margin-top: 80px;">
+          <a id="support" href="${SiteChrome.BASE}support/" class="app-card" style="scroll-margin-top: 80px;">
             <div class="tag-mono" style="margin-bottom: 12px;">Support</div>
             <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 8px;">A real human reads every email.</div>
             <p style="font-size: 14px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-bottom: 16px;">Bug reports, feature ideas, refund requests — send a note via the form. Replies usually within a couple of days.</p>
