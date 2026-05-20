@@ -18,7 +18,7 @@ window.APP_DETAILS = {
         { src: "migaja-settings-general.png", caption: "General — startup, appearance, density and behaviour. Two themes, two result densities, dock and menu-bar toggles." },
         { src: "migaja-settings-search.png", caption: "Search — two sliders are all the knobs. Match precision tightens or loosens results; the Exact↔Smart slider sets the FTS/semantic mix." },
         { src: "migaja-settings-history.png", caption: "History — retention by days and by clip count. Database lives in Application Support; vacuum and reset are one click each." },
-        { src: "migaja-settings-hotkey.png", caption: "Hotkey — two global shortcuts and two in-app ones. Conflicts are flagged in real time as you record." },
+        { src: "migaja-settings-hotkey.png", caption: "Hotkey — four customisable global shortcuts. Conflicts are flagged in real time as you record." },
       ],
     },
 
@@ -78,10 +78,10 @@ window.APP_DETAILS = {
       {
         kicker: "Act",
         items: [
-          "Enter pastes into the app you came from (or copies, if you prefer the inverse).",
-          "⌘+Enter is always the opposite of Enter — copy or paste, whichever you didn't pick.",
-          "Global ⌘⌥⇧V strips formatting and pastes the last copy as plain text.",
-          "Double-click any row to paste it directly. Auto-dismiss closes the popup after the action.",
+          "One-tap copy — Enter (or double-click) writes the selected clip to the system clipboard, closes the popup, and gives focus back to the app you came from. Press ⌘V to paste.",
+          "Global ⌘⌥⇧V strips formatting from the most recent copy and pastes it as plain text.",
+          "Auto-dismiss closes the popup after a selection; turn it off in Settings if you want to make several actions in a row.",
+          "No Accessibility permission required. Migaja never simulates keystrokes or controls other apps — pasting is your own ⌘V.",
         ],
       },
       {
@@ -99,7 +99,7 @@ window.APP_DETAILS = {
           "Zero outbound network. The app has no networking code outside StoreKit.",
           "On-device inference. The model loads on demand and auto-unloads 30 s after the last search.",
           "No account, ever. Nothing to sign up for, nothing to forget, nothing to leak.",
-          "Accessibility permission is optional — only needed for auto-paste. Disable it and Migaja never asks.",
+          "No Accessibility permission, ever. Migaja can't read other apps' content or simulate keystrokes — by design, not by policy.",
         ],
       },
     ],
@@ -144,9 +144,8 @@ window.APP_DETAILS = {
       { scope: "Global", combo: "⌘D", action: "Pin / unpin", note: "Works against the highlighted row in the popup." },
       { scope: "Global", combo: "⌘⇧,", action: "Open Settings", note: "Opens the Settings window directly." },
       { scope: "Popup", combo: "↑ ↓ / Tab", action: "Move selection", note: "Wraps at boundaries." },
-      { scope: "Popup", combo: "Enter", action: "Paste selected clip", note: "If Paste-on-Enter is off, Enter copies instead." },
-      { scope: "Popup", combo: "⌘+Enter", action: "Inverse of Enter", note: "Copy if Enter pastes — and vice versa." },
-      { scope: "Popup", combo: "double-click", action: "Paste row", note: "Bypasses the keyboard entirely." },
+      { scope: "Popup", combo: "Enter", action: "Select clip → clipboard", note: "Writes the clip to the system clipboard and closes the popup. Press ⌘V in your target app." },
+      { scope: "Popup", combo: "double-click", action: "Same as Enter", note: "Writes the selected row to the clipboard." },
       { scope: "Popup", combo: "⌘+Delete", action: "Soft-delete", note: "24-hour grace period before hard delete." },
       { scope: "Popup", combo: "Esc", action: "Close popup", note: "Or click outside the popup." },
     ],
@@ -165,10 +164,9 @@ window.APP_DETAILS = {
         id: "getting-started",
         title: "Getting started",
         body: `
-          <p>On first launch, Migaja walks through four onboarding screens: a privacy preamble, a short feature tour, an optional Accessibility prompt, and a call to action that tells you to press <code>⌘⇧V</code>.</p>
-          <p>The Accessibility permission is the only one Migaja ever asks for — and it's optional. It's used solely to synthesise a <code>⌘V</code> keystroke when you select a clip with auto-paste enabled, so the snippet lands in the app you came from. Skip it and Migaja still works; you'll just need to press <code>⌘V</code> yourself.</p>
+          <p>On first launch, Migaja walks through three onboarding screens: a privacy preamble, a short feature tour, and a "Try it" call to action that tells you to press <code>⌘⇧V</code>. There are no permission prompts — Migaja never asks for Accessibility, Full Disk Access, or anything else.</p>
           <h4>The first search</h4>
-          <p>Hit <code>⌘⇧V</code>. Type two or three words about the thing you copied — not the exact text, just what you remember. The top result is usually it. <code>↵</code> pastes it back; <code>⌘↵</code> copies without pasting.</p>
+          <p>Hit <code>⌘⇧V</code>. Type two or three words about the thing you copied — not the exact text, just what you remember. The top result is usually it. Press <code>↵</code> to copy it to the clipboard; the popup closes and focus returns to the app you came from, where you press <code>⌘V</code> to paste.</p>
         `,
       },
       {
@@ -212,8 +210,6 @@ window.APP_DETAILS = {
           <p>Check <em>Settings → Hotkey</em> — Migaja flags conflicts (with system shortcuts, or with another Migaja hotkey) in real time. If the row shows green and still doesn't fire, restart the app.</p>
           <h4>Semantic search feels slow</h4>
           <p>The first semantic search after a cold start takes 50–300 ms because the model has to load into memory. Subsequent searches are immediate, until the model auto-unloads 30 s after the last query.</p>
-          <h4>Auto-paste doesn't work</h4>
-          <p>That feature needs Accessibility permission (<em>System Settings → Privacy &amp; Security → Accessibility</em>). Without it, selecting a clip only fills the clipboard — you'll need to ⌘V yourself.</p>
         `,
       },
     ],
@@ -224,7 +220,7 @@ window.APP_DETAILS = {
       { q: "Does it work offline?", a: "Yes — every feature, including semantic search, works fully offline. Internet is only needed to start or manage a subscription through the App Store." },
       { q: "What is \"semantic search\"?", a: "It finds clips by meaning rather than exact words. Type \"the meeting time Anna sent\" and Migaja can surface a copy containing \"Thursday 15:00 PT\" — even if the words \"meeting\" and \"Anna\" never appeared in the original text." },
       { q: "Does it slow my Mac down?", a: "The neural model loads only when you open Migaja and unloads 30 seconds after the last search. Full-text search itself is sub-5-ms. CPU and memory impact when idle are negligible." },
-      { q: "Why does Migaja need Accessibility permission?", a: "Only so it can paste a clip into the app you came from. It does not read other apps' contents, windows, or UI. The permission is optional — skip it and Migaja still works; you'll just press ⌘V yourself." },
+      { q: "Does Migaja need Accessibility permission?", a: "No. Migaja never asks for Accessibility, and it cannot read other apps' content or simulate keystrokes. When you select a clip, Migaja writes it to the system clipboard and gives focus back to the app you came from — you press ⌘V yourself." },
       { q: "How is Migaja different from Paste, Pastebot, Raycast or Maccy?", a: "Two things: semantic search powered by a bundled multilingual neural model (not just keyword matching), and a categorical commitment to no-cloud, no-account, no-telemetry — verified by zero networking code in the app." },
       { q: "What languages does semantic search support?", a: "The bundled model (multilingual-e5-base) was trained on 100+ languages including English, Spanish, Russian, Chinese, Japanese, Korean, Arabic, Hindi, German, French, Portuguese and Italian." },
       { q: "Can I cancel anytime?", a: "Yes — through System Settings → Apple ID → Subscriptions, or at apps.apple.com/account/subscriptions. Cancellation takes effect at the end of the current billing period." },

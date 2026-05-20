@@ -100,9 +100,11 @@ NSPrivacyCollectedDataTypes = []</pre>
 
       <p>The only outbound traffic ever initiated on Migaja's behalf is StoreKit 2 — when you start a subscription, restore one, or your Mac periodically refreshes the receipt. That traffic is mediated entirely by macOS and the App Store. Migaja itself does not open the socket; it asks <code>StoreKit</code> to talk to Apple, and the kernel allows that because it's Apple's framework, not the app's. There are no other endpoints.</p>
 
-      <h2>Accessibility permission, used narrowly</h2>
+      <h2>Zero TCC permissions, by design</h2>
 
-      <p>Migaja asks for the Accessibility permission during onboarding and polls <code>AXIsProcessTrusted()</code> every second until you grant it. The permission is used <strong>only</strong> to synthesise a ⌘V keystroke when you pick a clip with auto-paste enabled. It is not used to read other apps' UI, scrape passwords, or observe what you type. The Auto-paste toggle in Settings → Behaviour is a hard kill-switch for the entire permission flow — turn it off and Migaja never calls into the Accessibility APIs at all.</p>
+      <p>Migaja never asks for Accessibility, Full Disk Access, Screen Recording, Automation, or any other macOS permission. When you pick a clip, it writes the text to the system clipboard (<code>NSPasteboard</code>, a public sharing mechanism) and gives focus back to the app you came from — you press ⌘V yourself. This is one extra keystroke vs. an auto-pasting clipboard manager, and in exchange the app physically cannot read other apps' UI, scrape passwords, or simulate input. The binary doesn't contain the code paths that would let it.</p>
+
+      <p>This is what "privacy by construction" actually means: not a promise on a marketing page, but a build that physically cannot do the things it promises not to do.</p>
 
       <div class="callout">
         <div class="callout-icon">
