@@ -201,10 +201,7 @@
     <p>If a sensitive item still makes it into the history, you can soft-delete it (it disappears immediately and is purged within 24 hours), or hard-reset the entire database from <em>Settings → History → Reset all clips</em>.</p>
 
     <h2 id="s12" style="scroll-margin-top: 80px;">12. Permissions Migaja may ask for</h2>
-    <ul>
-      <li><strong>Accessibility</strong> (System Settings → Privacy &amp; Security → Accessibility). This is <strong>optional</strong>. It is used solely to synthesise a ⌘V keystroke when you select a clip with auto-paste enabled, so the selected text appears in the app you were just working in. Migaja does not read other apps' UI, screen contents, or windows. You can revoke this permission at any time in System Settings; the rest of Migaja keeps working.</li>
-    </ul>
-    <p>Migaja does not request Full Disk Access, Automation, Screen Recording, Contacts, Calendar, Photos, Microphone, Camera, Location, or any other permission.</p>
+    <p><strong>None.</strong> Migaja does not request Accessibility, Full Disk Access, Automation, Screen Recording, Contacts, Calendar, Photos, Microphone, Camera, Location, or any other macOS permission. When you select a clip, Migaja writes the text to the system clipboard via the public <code>NSPasteboard</code> API (no permission required) and gives focus back to the app you came from — you press ⌘V yourself. Migaja never simulates keystrokes and cannot read content from other apps.</p>
 
     <h2 id="s13" style="scroll-margin-top: 80px;">13. Third parties</h2>
     <ul>
