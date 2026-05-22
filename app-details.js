@@ -152,7 +152,7 @@ window.APP_DETAILS = {
           <p>Migaja's <em>Search</em> tab in Settings has two sliders that change how results are ranked.</p>
           <ul>
             <li><strong>Search mode</strong> goes from <em>Exact only</em> (0.0) to <em>Smart only</em> (1.0), with a default of <code>0.6</code>. Lower if you mostly remember the exact words; raise it if you remember the topic.</li>
-            <li><strong>Match precision</strong> ranges from <code>0.60</code> to <code>0.95</code>, default <code>0.80</code>. Lower if semantic results feel too narrow; raise if they feel too loose.</li>
+            <li><strong>Match precision</strong> ranges from <code>0.60</code> to <code>0.95</code>, default <code>0.82</code>. Lower if semantic results feel too narrow; raise if they feel too loose.</li>
           </ul>
           <p>Each result row carries a small badge — <code>FTS</code>, <code>SEM</code> or <code>FTS+SEM</code> — so you can tell why a clip is on screen and tune the sliders accordingly.</p>
         `,
