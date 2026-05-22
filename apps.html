@@ -39,7 +39,9 @@
   document.getElementById('apps-grid').innerHTML = SiteChrome.APPS.map(app => `
     <a href="${SiteChrome.appHref(app.id)}" class="app-card">
       <div class="app-card-row">
-        <div class="app-icon" style="width: 56px; height: 56px; border-radius: 14px; background: ${app.color}; font-size: 26px;">${app.glyph}</div>
+        ${app.icon
+          ? `<img src="${SiteChrome.BASE}${app.icon}" alt="${app.name} icon" style="width: 56px; height: 56px; border-radius: 14px; display: block; object-fit: cover;">`
+          : `<div class="app-icon" style="width: 56px; height: 56px; border-radius: 14px; background: ${app.color}; font-size: 26px;">${app.glyph}</div>`}
         <div class="app-card-meta">
           <div class="app-card-name" style="font-size: 18px;">${app.name}</div>
           <div class="app-card-tag" style="margin-top: 4px;">${app.tag}</div>
