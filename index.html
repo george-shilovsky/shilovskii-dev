@@ -40,7 +40,7 @@
     <div class="section-head">
       <div>
         <div class="tag-mono" style="margin-bottom: 12px;">01 · Apps</div>
-        <h2 class="section-title">In the works.</h2>
+        <h2 class="section-title">Shipping.</h2>
       </div>
       <a href="apps.html" class="section-meta">All apps →</a>
     </div>
@@ -75,7 +75,9 @@
   appsGrid.innerHTML = SiteChrome.APPS.map(app => `
     <a href="${SiteChrome.appHref(app.id)}" class="app-card">
       <div class="app-card-row">
-        <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: ${app.color}; font-size: 22px;">${app.glyph}</div>
+        ${app.icon
+          ? `<img src="${SiteChrome.BASE}${app.icon}" alt="${app.name} icon" style="width: 48px; height: 48px; border-radius: 12px; display: block; object-fit: cover;">`
+          : `<div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: ${app.color}; font-size: 22px;">${app.glyph}</div>`}
         <div class="app-card-meta">
           <div class="app-card-name">${app.name}</div>
           <div class="app-card-tag">${app.tag}</div>

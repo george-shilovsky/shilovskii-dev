@@ -2,8 +2,9 @@
 // Source of truth for Migaja: PRODUCT_DOC.md (commit 6bdabdf, supersedes earlier drafts).
 window.APP_DETAILS = {
   migaja: {
-    version: "1.0",
-    versionDate: "May 6, 2026",
+    version: "1.0.0",
+    versionDate: "May 21, 2026",
+    appStore: "https://apps.apple.com/us/app/migaja-clipboard-manager/id6770649369",
     heroImage: "migaja-search-programming.png",
 
     // ── Screenshot gallery (search + settings) ──
@@ -27,7 +28,6 @@ window.APP_DETAILS = {
     tagline: "The clipboard that thinks.\nWithout leaving your Mac.",
     subhead: "Migaja remembers everything you copy and finds it by meaning — not just by keyword — in 100+ languages. Fully on-device. No cloud. No account.",
     price: "Free · 7-day Pro trial",
-    priceDetail: "Pro $2.99/mo or $19.99/yr — save 44%",
     blurb: "A privacy-first clipboard manager for macOS. Press ⌘⇧V from any app and Migaja shows everything you've copied recently. Type a few words — even loosely — and it surfaces the right snippet by meaning, in 100+ languages. The whole model runs on your Mac.",
     pitch: "Hit ⌘⇧V, type what you vaguely remember, and the thing you copied three weeks ago is the first result — without a single byte ever leaving your Mac.",
 
@@ -112,32 +112,6 @@ window.APP_DETAILS = {
       { step: "02", title: "Encoded on your Mac", body: "The bundled multilingual e5-base model turns each clip into a 768-dim vector. Inference runs on Metal. The model unloads after 30 s of idle." },
       { step: "03", title: "Find it by meaning", body: "Press ⌘⇧V. FTS hits show in under 5 ms; semantic matches stream in over 50–300 ms and merge into the same list. Enter pastes back into the app you came from." },
     ],
-
-    // ── Pricing block ──
-    pricing: {
-      trial: "7 days free on first launch. No card. No account. Anchored to your Apple ID — reinstalling won't reset it.",
-      free: {
-        title: "Free, forever",
-        items: [
-          "Every clip is still captured",
-          "Full-text search across the entire history",
-          "Pinning, deletion, retention controls",
-          "Exclusions, themes, hotkeys — all unrestricted",
-        ],
-      },
-      pro: {
-        title: "Pro",
-        monthly: "$2.99",
-        yearly: "$19.99",
-        save: "Save 44%",
-        items: [
-          "Semantic search results across the full history",
-          "Hybrid FTS + semantic ranking",
-          "100+ languages, on-device",
-          "Family Sharing supported",
-        ],
-      },
-    },
 
     // ── Keyboard shortcuts (from PRODUCT_DOC §4) ──
     shortcuts: [

@@ -82,7 +82,7 @@
 
     <h2>Summary</h2>
     <p><strong>Migaja does not collect, transmit, or share any of your data.</strong> Everything you copy, search, or configure stays on your Mac. There is no account, no telemetry, no cloud sync, no advertising, and no third-party analytics. The semantic-search neural model is bundled with the app and runs entirely on-device. Apple processes your subscription payment through the App Store under Apple's own terms.</p>
-    <p>If you ever want to delete everything, use <em>Settings → History → Reset all clips</em> inside the app, or remove the folder at <code>~/Library/Application Support/Migaja/</code> after quitting.</p>
+    <p>If you ever want to delete everything, use <em>Settings → History → Reset all clips</em> inside the app.</p>
 
     <h2>Table of contents</h2>
     <ol class="toc-list">
@@ -117,7 +117,7 @@
       <tbody>
         <tr>
           <td>The text of items you copy to the clipboard (excluding password-manager and concealed-pasteboard items)</td>
-          <td><code>~/Library/Application Support/Migaja/clips.db</code> — a local SQLite file inside your user account's sandbox</td>
+          <td>A local SQLite database inside the app's sandbox container on your Mac (open it via <em>Settings → History → Reveal database in Finder</em>)</td>
           <td>So you can search and recall them later.</td>
         </tr>
         <tr>
@@ -126,7 +126,7 @@
           <td>To show the source-app icon next to each clip.</td>
         </tr>
         <tr>
-          <td>A 768-dimension numeric vector representing the meaning of each text item (an "embedding")</td>
+          <td>A numeric vector representing the meaning of each text item (an "embedding")</td>
           <td>Same SQLite file</td>
           <td>To power semantic search.</td>
         </tr>
@@ -137,7 +137,7 @@
         </tr>
         <tr>
           <td>Your free-trial start timestamp</td>
-          <td>macOS Keychain (entry <code>dev.shilovskii.migaja</code>, <strong>not</strong> iCloud-synchronised)</td>
+          <td>macOS Keychain (<strong>not</strong> iCloud-synchronised)</td>
           <td>To enforce the 7-day trial.</td>
         </tr>
       </tbody>
@@ -170,7 +170,7 @@
       <li><strong>Pinned clips</strong> are exempt from both the retention period and the maximum-clips cap.</li>
       <li><em>Settings → History → Reset all clips</em> permanently deletes every clip and reclaims disk space (<code>PRAGMA vacuum</code>).</li>
     </ul>
-    <p>Uninstalling the application also removes its data. To be completely sure nothing remains, additionally delete <code>~/Library/Application Support/Migaja/</code>.</p>
+    <p>To erase everything while keeping the app installed, use <em>Settings → History → Reset all clips</em>. Uninstalling the application removes the app from your Mac; run <em>Reset all clips</em> first to be sure no clipboard history remains.</p>
 
     <h2 id="s8" style="scroll-margin-top: 80px;">8. Information from minors</h2>
     <p>Migaja is not directed at children. The app is rated <strong>4+</strong> in the App Store only because it contains no age-restricted content; it is not intended for children's use.</p>
@@ -184,7 +184,7 @@
       <li><strong>Right to rectification.</strong> Edit or replace any clip by re-copying its replacement, and delete the original from the popup.</li>
       <li><strong>Right to erasure.</strong> Soft-delete individual clips from the popup (purged within 24 hours), or use <em>Settings → History → Reset all clips</em> to delete everything immediately.</li>
       <li><strong>Right to data portability.</strong> The database is a standard SQLite file — copy it anywhere.</li>
-      <li><strong>Right to withdraw consent.</strong> Delete the app. Optionally also delete <code>~/Library/Application Support/Migaja/</code> and the Keychain entry <code>dev.shilovskii.migaja</code>.</li>
+      <li><strong>Right to withdraw consent.</strong> Use <em>Settings → History → Reset all clips</em> to erase your data, then delete the app.</li>
       <li><strong>Right to object / restrict processing.</strong> Quit Migaja from the menu-bar icon to stop all clipboard capture immediately. Reopen when you want it active again.</li>
     </ul>
     <p>If your jurisdiction's law grants you a formal data-subject-access right against us and you wish to invoke it in writing, email <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>. We will respond within the timeframe required by the applicable law. Note that we will only be able to confirm that we do not hold any data about you, since we do not collect any.</p>

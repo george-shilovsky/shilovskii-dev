@@ -8,32 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../styles.css">
 <style>
-  .terms-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0 28px;
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  .terms-table th,
-  .terms-table td {
-    text-align: left;
-    vertical-align: top;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--line);
-    color: var(--fg-2);
-  }
-  .terms-table thead th {
-    font-weight: 600;
-    color: var(--fg);
-    border-bottom: 1px solid var(--fg-3);
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .terms-table td code {
-    font-size: 0.85em;
-  }
   .toc-list {
     columns: 2;
     column-gap: 32px;
@@ -81,7 +55,7 @@
   <div class="container-prose">
 
     <h2>Summary</h2>
-    <p><strong>Migaja is a macOS clipboard manager distributed exclusively through the Mac App Store.</strong> It runs locally on your Mac — no accounts, no servers, no telemetry. A 7-day free trial unlocks everything; after that, full-text search and the rest of the app stay free forever, while semantic-only matches require a Pro subscription ($2.99/month or $19.99/year, billed by Apple). All your data lives on your Mac; we never receive it and cannot recover it.</p>
+    <p><strong>Migaja is a macOS clipboard manager distributed exclusively through the Mac App Store.</strong> It runs locally on your Mac — no accounts, no servers, no telemetry. A 7-day free trial unlocks everything; after that, full-text search and the rest of the app stay free forever, while semantic-only matches require a Pro subscription (pricing shown in the Mac App Store, billed by Apple). All your data lives on your Mac; we never receive it and cannot recover it.</p>
     <p>We may update these Terms from time to time. The "Last updated" date above will reflect the current version. Continued use after a change takes effect constitutes acceptance of the revised Terms.</p>
 
     <h2>Table of contents</h2>
@@ -184,31 +158,7 @@
     </ul>
 
     <h3>Plans and pricing</h3>
-    <table class="terms-table">
-      <thead>
-        <tr>
-          <th>Plan</th>
-          <th>Price</th>
-          <th>Period</th>
-          <th>Product ID</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Monthly</strong></td>
-          <td>$2.99</td>
-          <td>1 month</td>
-          <td><code>dev.shilovskii.migaja.pro_monthly</code></td>
-        </tr>
-        <tr>
-          <td><strong>Yearly</strong></td>
-          <td>$19.99 (Save 44%)</td>
-          <td>1 year</td>
-          <td><code>dev.shilovskii.migaja.pro_yearly</code></td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Prices listed are in USD. Prices in non-USD storefronts are set by Apple according to its pricing-tier system and may differ.</p>
+    <p>Pro is offered as two auto-renewing subscriptions — a <strong>monthly</strong> plan and a <strong>yearly</strong> plan. Current prices are shown in the Mac App Store at the point of purchase; they are set by Apple according to its pricing-tier system and may vary by storefront/region and change over time.</p>
 
     <h3>Auto-renewal and cancellation</h3>
     <ul>
@@ -280,7 +230,7 @@
     <p>We reserve the right, at your expense, to assume the exclusive defence and control of any matter for which you are required to indemnify us, and you agree to cooperate with our defence of such claims.</p>
 
     <h2 id="s17" style="scroll-margin-top: 80px;">17. Your data</h2>
-    <p><strong>All data generated or stored by Migaja — clipboard contents, search history, settings, and embeddings — remains exclusively on your local Mac, in a sandboxed SQLite database at <code>~/Library/Application Support/Migaja/clips.db</code> and in macOS <code>UserDefaults</code> and Keychain.</strong></p>
+    <p><strong>All data generated or stored by Migaja — clipboard contents, search history, settings, and embeddings — remains exclusively on your local Mac, in a sandboxed SQLite database inside the app's container and in macOS <code>UserDefaults</code> and Keychain.</strong></p>
     <p><strong>We do not maintain, transmit, or back up any of your data on our servers.</strong> We do not have access to it. We cannot recover it for you if it is lost.</p>
     <p>You are solely responsible for backing up your local data (for example, by including your user <code>Library</code> folder in your Time Machine backups). The 24-hour soft-delete grace period inside the App is a convenience to undo accidental deletions; it is not a recovery guarantee.</p>
     <p>You waive any claim against us for any loss, corruption, or unavailability of data stored locally on your Mac. See the <a href="migaja-privacy.html" style="color: var(--accent);">Privacy Policy</a> for full detail on how Migaja handles data.</p>

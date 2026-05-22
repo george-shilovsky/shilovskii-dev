@@ -37,7 +37,9 @@
       <div class="container-wide app-hero" style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center;">
         <div>
           <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 28px;">
-            <div class="app-icon" style="width: 64px; height: 64px; border-radius: 16px; background: ${app.color}; font-size: 28px;">${app.glyph}</div>
+            ${app.icon
+              ? `<img src="${SiteChrome.BASE}${app.icon}" alt="${app.name} icon" style="width: 64px; height: 64px; border-radius: 16px; display: block; object-fit: cover;">`
+              : `<div class="app-icon" style="width: 64px; height: 64px; border-radius: 16px; background: ${app.color}; font-size: 28px;">${app.glyph}</div>`}
             <div>
               <div style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em;">${app.name}</div>
               <div style="font-size: 12px; color: var(--fg-3); margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, monospace;">${app.tag} · v${detail.version} · ${detail.versionDate}</div>
@@ -46,10 +48,12 @@
           <h1 class="hero-title" style="font-size: 52px; line-height: 1.04; letter-spacing: -0.035em; font-weight: 600; margin-bottom: 22px; text-wrap: balance;">${tagline}</h1>
           <p style="font-size: 18px; color: var(--fg-2); line-height: 1.55; text-wrap: pretty; max-width: 520px;">${esc(detail.subhead || detail.blurb)}</p>
           <div style="display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
-            <button class="btn btn-primary">${appStoreIcon()} Download on the Mac App Store</button>
+            ${detail.appStore
+              ? `<a href="${detail.appStore}" class="btn btn-primary" target="_blank" rel="noopener">${appStoreIcon()} Download on the Mac App Store</a>`
+              : `<button class="btn btn-primary" disabled>${appStoreIcon()} Download on the Mac App Store</button>`}
             <a href="#how" class="btn btn-ghost">See how it works <span aria-hidden="true">↓</span></a>
           </div>
-          <div style="margin-top: 18px; font-size: 12px; color: var(--fg-3); font-family: 'JetBrains Mono', ui-monospace, monospace;">${esc(detail.price)} · ${esc(detail.priceDetail || '')}</div>
+          <div style="margin-top: 18px; font-size: 12px; color: var(--fg-3); font-family: 'JetBrains Mono', ui-monospace, monospace;">${esc(detail.price)}${detail.priceDetail ? ` · ${esc(detail.priceDetail)}` : ''}</div>
         </div>
         <div>
           ${detail.heroImage
@@ -175,56 +179,6 @@
               </ul>
             </div>
           `).join('')}
-        </div>
-      </div>
-    </section>
-    ` : ''}
-
-    <!-- Pricing -->
-    ${detail.pricing ? `
-    <section id="pricing" style="padding: 64px 0; scroll-margin-top: 80px;">
-      <div class="container-wide">
-        <div class="section-head">
-          <div>
-            <div class="tag-mono" style="margin-bottom: 12px;">Pricing</div>
-            <h2 class="section-title" style="font-size: 30px;">Free forever as a clipboard.<br>Pro adds the brains.</h2>
-          </div>
-        </div>
-        <p style="font-size: 14px; color: var(--fg-2); margin-bottom: 24px; font-family: 'JetBrains Mono', ui-monospace, monospace;">${esc(detail.pricing.trial)}</p>
-        <div class="pricing-grid" style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 16px;">
-          <div style="padding: 28px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; flex-direction: column; gap: 16px;">
-            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
-              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.2px;">${esc(detail.pricing.free.title)}</div>
-              <div style="font-size: 14px; color: var(--fg-3); font-family: 'JetBrains Mono', ui-monospace, monospace;">$0</div>
-            </div>
-            <ul style="display: flex; flex-direction: column; gap: 10px;">
-              ${detail.pricing.free.items.map(it => `
-                <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--fg-2); line-height: 1.55;">
-                  ${checkIcon('var(--fg-3)')}
-                  <span>${esc(it)}</span>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
-          <div style="padding: 28px; border-radius: 14px; border: 1px solid var(--accent); background: var(--card); position: relative; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 0 var(--line), 0 12px 32px -16px rgba(200,104,43,0.25);">
-            <div style="position: absolute; top: -10px; left: 28px; background: var(--accent); color: white; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 999px; font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0.06em; text-transform: uppercase;">${esc(detail.pricing.pro.save)}</div>
-            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
-              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.2px;">${esc(detail.pricing.pro.title)}</div>
-              <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; color: var(--fg-3);">
-                <span style="color: var(--fg);">${esc(detail.pricing.pro.yearly)}</span><span style="color: var(--fg-3);">/yr</span>
-                <span style="color: var(--fg-4); margin: 0 4px;">·</span>
-                <span style="color: var(--fg);">${esc(detail.pricing.pro.monthly)}</span><span style="color: var(--fg-3);">/mo</span>
-              </div>
-            </div>
-            <ul style="display: flex; flex-direction: column; gap: 10px;">
-              ${detail.pricing.pro.items.map(it => `
-                <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--fg-2); line-height: 1.55;">
-                  ${checkIcon('var(--accent)')}
-                  <span>${esc(it)}</span>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -375,7 +329,9 @@
           ${otherApps.map(a => `
             <a href="${SiteChrome.appHref(a.id)}" class="app-card" style="padding: 18px;">
               <div class="app-card-row">
-                <div class="app-icon" style="width: 36px; height: 36px; border-radius: 9px; background: ${a.color}; font-size: 16px;">${a.glyph}</div>
+                ${a.icon
+                  ? `<img src="${SiteChrome.BASE}${a.icon}" alt="${a.name} icon" style="width: 36px; height: 36px; border-radius: 9px; display: block; object-fit: cover;">`
+                  : `<div class="app-icon" style="width: 36px; height: 36px; border-radius: 9px; background: ${a.color}; font-size: 16px;">${a.glyph}</div>`}
                 <div class="app-card-meta">
                   <div class="app-card-name" style="font-size: 14px;">${a.name}</div>
                   <div class="app-card-tag">${a.tag}</div>
@@ -401,10 +357,6 @@
         ).join('<span class="kbd-plus">+</span>')
       }</span>`
     ).join('<span class="kbd-or">or</span>');
-  }
-
-  function checkIcon(color) {
-    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 4px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>`;
   }
 
   function appStoreIcon() {

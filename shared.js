@@ -11,7 +11,7 @@
   })();
 
   const APPS = [
-    { id: 'migaja', name: 'Migaja', tag: 'macOS', summary: 'Clipboard search that actually understands what you copied.', color: '#30D158', glyph: 'M' },
+    { id: 'migaja', name: 'Migaja — Clipboard Manager', tag: 'macOS', summary: 'Clipboard search that actually understands what you copied.', color: '#30D158', glyph: 'M', icon: 'apps/migaja-icon.png' },
   ];
 
   const POSTS = [
