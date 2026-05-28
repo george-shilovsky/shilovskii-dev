@@ -140,6 +140,7 @@ html.dark .site-nav {
   transition: transform .08s, opacity .12s;
 }
 .btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: .4; cursor: not-allowed; pointer-events: none; }
 .btn-primary { background: var(--fg); color: var(--bg); }
 .btn-primary:hover { opacity: .9; }
 .btn-ghost { border: 1px solid var(--line); color: var(--fg-2); }

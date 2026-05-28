@@ -204,4 +204,178 @@ window.APP_DETAILS = {
       { q: "Why Apple Silicon only?", a: "The neural model needs Metal-accelerated inference to be fast. On Intel Macs, semantic search would take seconds instead of milliseconds — we'd rather not ship a degraded experience." },
     ],
   },
+
+  "json-pilot": {
+    version: "1.0.0",
+    // versionDate omitted until App Store launch.
+    // appStore omitted until live — the Download button renders disabled.
+    appStoreLabel: "Download on the App Store",
+    price: "Free · Pro $1.99/mo or $6.99 once",
+    privacyDoc: "json-pilot/privacy.html",
+    termsDoc: "json-pilot/terms.html",
+
+    tagline: "JSON, made readable.\nAI, kept private.",
+    subhead: "A native iPhone app for viewing, editing, and exploring JSON — with an on-device AI assistant that explains your data without sending a byte to the cloud.",
+    blurb: "JSON Pilot opens any JSON — from Files, the share sheet, AirDrop, your clipboard, or an HTTP request you fire from inside the app — and gives you three ways to read it: a syntax-highlighted Tree, a tap-to-edit Fields drilldown, and a Text view with line numbers. Edit at any level, prettify or minify, validate with a precise line:col error, and Save the edits back to the original file.",
+    pitch: "Open any payload, read it three ways, ask an on-device AI what it means — and not a single byte leaves your iPhone.",
+
+    // ── Hero stats ──
+    stats: [
+      { value: "100%", label: "on-device AI" },
+      { value: "0", label: "trackers · telemetry" },
+      { value: "3", label: "views per document" },
+      { value: "7", label: "Pro power tools" },
+    ],
+
+    // ── Top feature highlights (3 cards) ──
+    features: [
+      { title: "Native and fast.", body: "Built for iOS 26 with SwiftUI and Liquid Glass. Tree, Fields and Text views, per-file Recents, dark mode and Dynamic Type. A UITextView-backed editor keeps multi-megabyte payloads smooth." },
+      { title: "An AI assistant that stays on your iPhone.", body: "Ask \"What is this?\", \"Find issues\" or \"Extract all emails\" — Apple Foundation Models answers locally. Your JSON, your prompts and the model's replies never leave the device. No server, no API key, no cloud fallback." },
+      { title: "Free where it matters.", body: "View, validate, prettify, minify, search, edit, Save back to the original file, Share and export — all free, forever, with no account. Pro adds power tools, never the basics." },
+    ],
+
+    // ── How it works ──
+    flowTitle: "Open. Read. Ask.",
+    flow: [
+      { step: "01", title: "Open from anywhere", body: "Paste from the clipboard, open from Files, AirDrop or the share sheet, or fire an HTTP request and open the response — every JSON lands in the same workspace." },
+      { step: "02", title: "Read it three ways", body: "A syntax-highlighted Tree for structure, a tap-to-edit Fields drilldown, and a Text view with line numbers. Edit values, keys and types; validation shows a precise line:col on any error." },
+      { step: "03", title: "Ask, compare, convert", body: "Ask the on-device AI to explain or find issues, diff two payloads by meaning, run JSONPath with tree highlights, repair broken JSON, or convert to YAML / CSV / XML." },
+    ],
+
+    // ── Full feature catalogue (from PRODUCT_DOC §3) ──
+    catalogue: [
+      {
+        kicker: "Open & capture",
+        items: [
+          "Paste from clipboard — reads the pasteboard only on your tap, opens the snippet as Pasted.json.",
+          "Open File… — document picker for JSON / text; decodes UTF-8 then Latin-1 so non-UTF-8 inputs still open.",
+          "“Open in JSON Pilot” from Files, Mail, Safari, AirDrop and the share sheet, routed through one loader.",
+          "Continue last — the most recent document is a one-tap card; the rest live in a Recents list.",
+        ],
+      },
+      {
+        kicker: "Workspace",
+        items: [
+          "Tree view — collapsible hierarchy with syntax-highlighted keys, values and punctuation; tap a leaf to copy.",
+          "Fields view — drill-down list; tap any leaf to edit its value, key or type, or delete it.",
+          "Text view — pretty-printed or minified source with a line-number gutter, backed by UITextView for speed.",
+          "Large-file mode above 50 KB — containers default collapsed and rendering is capped to stay smooth.",
+        ],
+      },
+      {
+        kicker: "Edit & repair",
+        items: [
+          "Edit Field sheet (free) — inline edit of any value, key or type, with live validation, plus add and delete.",
+          "Edit as Text (free) — a raw monospaced editor with a live Valid / line:col error banner.",
+          "Auto-fix (Pro) — repairs trailing commas, comments, unquoted keys, single and smart quotes, then re-parses.",
+        ],
+      },
+      {
+        kicker: "Validate & search",
+        items: [
+          "Validity pill — green “Valid” on success, red “Invalid” otherwise, top-right in the nav bar.",
+          "Error banner with the parser's reason and line:col; the failing line is highlighted red in Text view.",
+          "On-demand search bar in the workspace; a separate search filters the Recents list.",
+        ],
+      },
+      {
+        kicker: "Power tools (Pro)",
+        items: [
+          "JSON Diff — compares by meaning, so reformatting is never a change. Summary buckets + GitHub-style unified view.",
+          "JSONPath queries — $, .key, ['key'], [index], [*], .. and negative indices; matches highlight on the Tree.",
+          "Format conversion — export the document as YAML, CSV or XML.",
+          "HTTP requests — GET / POST / PUT / PATCH / DELETE with custom headers; the response opens in the workspace.",
+          "Themes — accent color and three syntax palettes.",
+        ],
+      },
+      {
+        kicker: "AI assistant (Pro)",
+        items: [
+          "Bottom-sheet chat attached to the open document, with three one-tap starters: Explain, Find issues, Extract emails.",
+          "Streaming replies and per-document conversation memory while the document is open.",
+          "Powered by Apple Foundation Models — runs entirely on-device; capability-gated, never OS-gated.",
+          "When Apple Intelligence is unavailable, the chat says exactly why; the rest of the app is unaffected.",
+        ],
+      },
+      {
+        kicker: "Save, export, privacy",
+        items: [
+          "Save (free) — overwrites the original file via NSFileCoordinator; works with iCloud Drive and file providers.",
+          "Save to Files…, Share as .json, Copy / Copy minified — all free, always available.",
+          "Recents — SwiftData, local-only, CloudKit explicitly off, up to 60 entries.",
+          "No analytics, no telemetry, no crash reporters, no third-party SDKs, no account.",
+        ],
+      },
+    ],
+
+    // ── System requirements (from PRODUCT_DOC §1) ──
+    requirements: [
+      "iPhone running iOS 26.4 or later (iPhone only at v1)",
+      "AI features require an Apple-Intelligence-capable iPhone — 15 Pro / 15 Pro Max and the full 16 / 17 family",
+      "On other iPhones the AI assistant is disabled; every other feature, including the other Pro tools, still works",
+      "No network connection required for any feature except in-app purchase and the user-fired HTTP request tool",
+    ],
+
+    permissionsNote: "None. JSON Pilot requests no iOS permissions — not Camera, Photos, Contacts, Microphone, Location, or any other. The only system surfaces it touches are the file picker, the system pasteboard (on your tap), and the share sheet.",
+    privacyTeaser: "JSON Pilot collects no data and ships no analytics, telemetry or crash reporters. The only network traffic is StoreKit and HTTP requests you fire yourself.",
+
+    // ── Long-form documentation ──
+    guide: [
+      {
+        id: "getting-started",
+        title: "Getting started",
+        body: `
+          <p>Open JSON Pilot and bring in a document any way that suits you: tap <strong>Paste from Clipboard</strong> on the Entry screen, tap <strong>Open File…</strong>, or use <em>Open in JSON Pilot</em> from Files, Mail, Safari, AirDrop or the share sheet. Files are decoded as UTF-8 first and Latin-1 as a fallback, so awkward encodings still open instead of erroring.</p>
+          <h4>The three views</h4>
+          <p>Every document opens into one workspace with three tabs: <strong>Tree</strong> for structure, <strong>Fields</strong> for tap-to-edit drilldown, and <strong>Text</strong> for raw source with line numbers. Edits sync across all three, and the validity pill in the nav bar tells you instantly whether the document parses.</p>
+        `,
+      },
+      {
+        id: "editing",
+        title: "Editing and repair",
+        body: `
+          <p>In <strong>Fields</strong>, tap any leaf to open the Edit Field sheet — change the value, the key, or the type (string ↔ number ↔ bool ↔ null), or delete it. Add a sibling with the inline “Add” row. Prefer raw text? <strong>Edit as Text</strong> drops you into a monospaced editor with a live <em>Valid</em> / <code>line:col</code> error banner; Apply commits the text back through the parser.</p>
+          <p>When input is invalid, <strong>Auto-fix</strong> (Pro) runs a deterministic relaxed-to-strict repair pass — trailing commas, <code>//</code> and <code>/* */</code> comments, unquoted keys, single-quoted strings, and smart quotes — then re-parses. If the fix is only partial, the result opens in the editor with the residual error highlighted.</p>
+        `,
+      },
+      {
+        id: "ai-assistant",
+        title: "The on-device AI assistant",
+        body: `
+          <p>Open the AI chat on any document and pick a starter — <strong>Explain this JSON</strong>, <strong>Find issues</strong>, or <strong>Extract emails</strong> — or ask your own question. Replies stream as the model thinks, and the conversation persists while the document is open.</p>
+          <p>The assistant is powered by <strong>Apple Foundation Models</strong> and runs <strong>entirely on your iPhone</strong>. Your JSON, your prompts and the model's answers never leave the device — there are no AI servers, no API keys and no cloud fallback. It is gated by capability, not OS version: if Apple Intelligence isn't available, the chat tells you exactly why (device not eligible, Apple Intelligence turned off, or the model still preparing) and the rest of the app keeps working. Longer documents are truncated to a 6,000-character context budget, with a note so the model knows it's seeing a slice.</p>
+        `,
+      },
+      {
+        id: "power-tools",
+        title: "Power tools",
+        body: `
+          <p><strong>JSON Diff</strong> compares two documents <em>by meaning</em> — reformatting or key reordering never shows as a change — and offers a Summary view (Changed / Added / Removed) and a GitHub-style Unified view. <strong>JSONPath</strong> supports <code>$</code>, <code>.key</code>, <code>['key']</code>, <code>[index]</code>, <code>[*]</code>, recursive descent <code>..</code> and negative indices, with matches highlighted right on the Tree.</p>
+          <p><strong>Format conversion</strong> exports the current document as YAML, CSV or XML. The built-in <strong>HTTP request tool</strong> sends GET / POST / PUT / PATCH / DELETE with custom headers and a body for non-GET methods, over <code>http(s)</code> only, with a 30-second timeout — and opens the response straight into the workspace.</p>
+        `,
+      },
+      {
+        id: "privacy",
+        title: "Privacy and storage",
+        body: `
+          <p>JSON Pilot opens network connections in exactly two situations, both initiated by you: <strong>StoreKit</strong> for purchases and entitlement refresh, and the <strong>HTTP request tool</strong> when you tap Send. Nothing else opens a socket — no analytics, no telemetry, no crash reporters, no third-party SDKs.</p>
+          <p>Recents are stored locally with SwiftData (<strong>CloudKit is explicitly off</strong>), capped at 60 entries. Your settings live in <code>UserDefaults</code>. To clear everything, use <em>Settings → Data &amp; Privacy → Clear Recents</em>, or delete the app. The original files you opened are untouched unless you explicitly tap <strong>Save</strong>.</p>
+        `,
+      },
+    ],
+
+    // ── FAQ (from PRODUCT_DOC §11) ──
+    faq: [
+      { q: "Is any of my JSON ever sent to a server?", a: "No. The only network traffic JSON Pilot initiates is (1) Apple's StoreKit for purchases and (2) HTTP requests you explicitly fire from the built-in request tool. JSON documents, edits, AI prompts and AI replies stay on your iPhone." },
+      { q: "How does the AI work without a server?", a: "JSON Pilot's AI assistant uses Apple Foundation Models — the on-device LLM that ships as part of Apple Intelligence on supported iPhones. Inference runs locally, exactly like Apple's own Writing Tools." },
+      { q: "Which iPhones can run the AI?", a: "The AI features need Apple-Intelligence-capable hardware: iPhone 15 Pro / 15 Pro Max and all iPhone 16 / 17 models. On older iPhones the AI assistant is automatically disabled and the rest of the app — including every other Pro feature — works normally." },
+      { q: "Do I lose access if I cancel the monthly subscription?", a: "Pro features stop working when the current billing period ends. You can re-subscribe any time, or buy the lifetime unlock to keep Pro forever." },
+      { q: "Why no free trial?", a: "The whole viewer and editor is already free, with no time limit and no functionality cuts. The Pro tier is for the AI assistant and power tools — try those by buying the monthly subscription and cancelling if it isn't for you." },
+      { q: "Does JSON Pilot need any permissions?", a: "No. JSON Pilot does not request Camera, Photos, Contacts, Microphone, Location, or any other iOS permission. The only system surfaces it touches are the standard file picker, the system pasteboard (when you tap Paste or Copy), and the share sheet." },
+      { q: "Does it sync across my devices?", a: "No. v1 is local-only by design — CloudKit is explicitly disabled. A Mac companion app is on the roadmap." },
+      { q: "What's the maximum file size?", a: "There is no hard cap. Documents above 50 KB enter “large-file mode”: tree containers default collapsed, fields rendering is capped per node, and the text view skips syntax colour to stay smooth. Multi-megabyte payloads still open." },
+      { q: "Does the HTTP request tool support authentication?", a: "You can add any custom headers (including Authorization), use any method (GET, POST, PUT, PATCH, DELETE), and include a request body for non-GET methods. The 30-second timeout is fixed at v1. http:// and https:// schemes are supported." },
+      { q: "Why iOS 26.4 minimum?", a: "Apple Intelligence APIs (the AI backbone) and the Liquid Glass design system both live in iOS 26. Targeting older iOS would either gut the AI or force a degraded UI." },
+    ],
+  },
 };

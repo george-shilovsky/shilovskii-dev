@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JSON Pilot — Privacy policy</title>
+<meta name="description" content="Privacy policy for the JSON Pilot iOS app. JSON Pilot does not collect, transmit, or share any of your data — everything stays on your iPhone.">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 28px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .privacy-table th,
+  .privacy-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--fg-2);
+  }
+  .privacy-table thead th {
+    font-weight: 600;
+    color: var(--fg);
+    border-bottom: 1px solid var(--fg-3);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .privacy-table td code {
+    font-size: 0.85em;
+  }
+  .toc-list {
+    columns: 2;
+    column-gap: 32px;
+    margin-bottom: 20px;
+  }
+  .toc-list li {
+    break-inside: avoid;
+  }
+  @media (max-width: 640px) {
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 32px 0 0;">
+  <div class="container-prose">
+    <div class="crumb">
+      <a href="../../index.html">shilovskii.dev</a>
+      <span class="sep">/</span>
+      <a href="../../apps.html">Apps</a>
+      <span class="sep">/</span>
+      <a href="../json-pilot.html">JSON Pilot</a>
+      <span class="sep">/</span>
+      <span class="here">Privacy</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 0 24px;">
+  <div class="container-prose">
+    <div class="tag-mono" style="margin-bottom: 16px;">JSON Pilot · effective May 28, 2026 · last updated May 28, 2026</div>
+    <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+      This Privacy Policy explains how the JSON Pilot application ("JSON Pilot", "we", "us", "our") handles information when you use it on your iPhone. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.
+    </p>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-top: 16px;">
+      If you do not agree with this Privacy Policy, please do not install or use JSON Pilot.
+    </p>
+  </div>
+</section>
+
+<section class="prose" style="padding: 24px 0;">
+  <div class="container-prose">
+
+    <h2>Summary</h2>
+    <p><strong>JSON Pilot does not collect, transmit, or share any of your data.</strong> Every JSON document you open, paste, edit, search, diff, or query stays on your iPhone. There is no account, no cloud sync, no telemetry, no advertising, and no third-party analytics. The AI assistant runs entirely on-device using Apple Intelligence. Apple processes your in-app purchase or subscription through the App Store under Apple's own terms.</p>
+    <p>If you ever want to delete everything, delete the app. Inside the app, <em>Settings → Data &amp; Privacy → Clear Recents</em> removes the saved history immediately.</p>
+
+    <h2>Table of contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1" style="color: var(--accent);">What data is handled, and where</a></li>
+      <li><a href="#s2" style="color: var(--accent);">Data we collect about you</a></li>
+      <li><a href="#s3" style="color: var(--accent);">Network behaviour</a></li>
+      <li><a href="#s4" style="color: var(--accent);">On-device artificial intelligence</a></li>
+      <li><a href="#s5" style="color: var(--accent);">Permissions JSON Pilot may ask for</a></li>
+      <li><a href="#s6" style="color: var(--accent);">Retention and deletion</a></li>
+      <li><a href="#s7" style="color: var(--accent);">Children and age rating</a></li>
+      <li><a href="#s8" style="color: var(--accent);">Third parties</a></li>
+      <li><a href="#s9" style="color: var(--accent);">Your privacy rights</a></li>
+      <li><a href="#s10" style="color: var(--accent);">Cookies and tracking technologies</a></li>
+      <li><a href="#s11" style="color: var(--accent);">Changes to this Privacy Policy</a></li>
+      <li><a href="#s12" style="color: var(--accent);">Contact us</a></li>
+    </ol>
+
+    <h2 id="s1" style="scroll-margin-top: 80px;">1. What data is handled, and where</h2>
+    <p>When you use JSON Pilot, the app handles the following information <strong>locally on your iPhone only</strong>:</p>
+    <table class="privacy-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Where it lives</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The JSON documents you open or paste, including any edits you make</td>
+          <td>A local SwiftData store inside the app sandbox (<code>~/Library/Application Support/</code>), plus the original files you opened (in Files / iCloud Drive / wherever they live)</td>
+          <td>So you can reopen them from the Recents list, and so Save can write your edits back to the original file.</td>
+        </tr>
+        <tr>
+          <td>A security-scoped bookmark to the original file for each opened document</td>
+          <td>Same SwiftData store</td>
+          <td>So <strong>Save</strong> can resolve and overwrite the file you originally opened.</td>
+        </tr>
+        <tr>
+          <td>Your settings (appearance mode, accent color, syntax palette, etc.)</td>
+          <td>iOS <code>UserDefaults</code> for the app</td>
+          <td>To remember your preferences across launches.</td>
+        </tr>
+        <tr>
+          <td>Your Pro entitlement state</td>
+          <td>iOS <code>UserDefaults</code> (cached) and the App Store (authoritative)</td>
+          <td>So Pro features unlock instantly at launch. The cache is rewritten from the App Store entitlement on every launch and after every transaction.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>None of this data is uploaded, transmitted to a server we control, or shared with any third party. We do not see it, and we cannot recover it for you if you lose it.</p>
+
+    <h2 id="s2" style="scroll-margin-top: 80px;">2. Data we collect about you</h2>
+    <p><strong>None.</strong> We do not collect personal data, usage data, diagnostic data, advertising identifiers, or analytics events. We do not run any third-party SDK for tracking, attribution, crash reporting, or analytics. The app contains no analytics, telemetry, or crash-reporting code.</p>
+
+    <h2 id="s3" style="scroll-margin-top: 80px;">3. Network behaviour</h2>
+    <p>JSON Pilot opens network connections in <strong>exactly two situations</strong>, both initiated by you:</p>
+    <ol>
+      <li><strong>In-app purchase and restore.</strong> Apple's StoreKit framework communicates with the App Store when you start a subscription, manage one, restore a purchase, or when the app refreshes your Pro entitlement on foreground. That traffic is handled entirely by iOS and the App Store, under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>. JSON Pilot receives only the resulting entitlement signal ("you have Pro") — never payment-card numbers, billing addresses, or account identifiers.</li>
+      <li><strong>The built-in HTTP request tool.</strong> When you tap <strong>Send Request…</strong> on the Entry screen and confirm, the app sends one HTTP request to the URL <strong>you</strong> entered, with the headers and body <strong>you</strong> supplied, using <code>URLSession.shared</code>. The response opens in the workspace. JSON Pilot does not modify, log, or transmit that request anywhere else.</li>
+    </ol>
+    <p>The app does <strong>not</strong> make outbound connections on its own. It does not phone home, check for updates over the network, or report errors to a server.</p>
+
+    <h2 id="s4" style="scroll-margin-top: 80px;">4. On-device artificial intelligence</h2>
+    <p>JSON Pilot's AI assistant is powered by <strong>Apple Foundation Models</strong> — the on-device large language model that ships as part of Apple Intelligence on supported iPhones. The model is part of iOS; we do not download, embed, or update an AI model ourselves.</p>
+    <p>All inference runs on your iPhone. Your JSON, your questions, and the model's answers are processed locally by iOS. <strong>Nothing is sent to OpenAI, Anthropic, Google, Apple-hosted AI services, or any third party.</strong> JSON Pilot has no AI servers, no API keys, and no fallback to a cloud model.</p>
+    <p>The Foundation Models framework, when used by third-party apps like JSON Pilot, runs <strong>strictly on-device</strong>. Apple's <strong>Private Cloud Compute</strong> is reserved for Apple's own first-party Apple Intelligence features and is not invoked by our AI assistant. Because the assistant relies on Apple Intelligence as delivered in iOS, Apple's privacy practices for Apple Intelligence — described at <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">apple.com/legal/privacy</a> — apply to that processing layer. JSON Pilot itself receives nothing back beyond the generated text response, which is rendered in the chat sheet and not persisted anywhere outside transient app memory.</p>
+    <p>If your iPhone does not support Apple Intelligence, the AI assistant is automatically disabled and the chat surface tells you why. The rest of the app continues to work normally.</p>
+
+    <h2 id="s5" style="scroll-margin-top: 80px;">5. Permissions JSON Pilot may ask for</h2>
+    <p><strong>None.</strong> JSON Pilot does not request Camera, Photos, Microphone, Contacts, Calendar, Reminders, Location, Health, Bluetooth, Local Network, Speech Recognition, Motion, or any other iOS permission. The only system surfaces it touches are:</p>
+    <ul>
+      <li>The <strong>document picker</strong> (when you tap "Open File…"), which grants access to the one file you choose.</li>
+      <li>The <strong>system pasteboard</strong> (when you tap "Paste from Clipboard" or "Copy") — never silently in the background. iOS may briefly show its standard "JSON Pilot pasted from …" banner, which is the OS confirming the user-initiated read.</li>
+      <li>The <strong>share sheet</strong> (when you tap "Share").</li>
+    </ul>
+
+    <h2 id="s6" style="scroll-margin-top: 80px;">6. Retention and deletion</h2>
+    <ul>
+      <li>Documents you open are kept in the <strong>Recents</strong> list, up to <strong>60 entries</strong>. When the cap is hit, the oldest entry is dropped automatically.</li>
+      <li><em>Settings → Data &amp; Privacy → Clear Recents</em> permanently deletes every entry in the Recents list.</li>
+      <li>Uninstalling the application also clears all local data.</li>
+      <li>The original files you opened are unaffected by anything in the app — they live where you put them (Files, iCloud Drive, Mail, etc.) and only change if you explicitly tap <strong>Save</strong>.</li>
+    </ul>
+
+    <h2 id="s7" style="scroll-margin-top: 80px;">7. Children and age rating</h2>
+    <p>JSON Pilot is rated <strong>17+</strong> in the App Store. This rating reflects Apple's guidance for apps that include user-prompted AI text generation: although our AI assistant runs entirely on-device and answers from the JSON document you have opened, generative-AI output is not deterministic and cannot be guaranteed appropriate for younger users in every situation.</p>
+    <p>JSON Pilot is not directed at users under the age of 17 and does not knowingly process information from children. Parents and guardians who allow younger users to use JSON Pilot are responsible for supervising their use of the AI assistant.</p>
+
+    <h2 id="s8" style="scroll-margin-top: 80px;">8. Third parties</h2>
+    <ul>
+      <li><strong>Apple Inc.</strong> processes your in-app purchase or subscription through the App Store under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>.</li>
+      <li>The on-device AI uses <strong>Apple Foundation Models</strong>, part of iOS. Apple's privacy terms for Apple Intelligence apply to that processing.</li>
+    </ul>
+    <p>No other third party receives any data from JSON Pilot. The app does not bundle any third-party SDKs.</p>
+
+    <h2 id="s9" style="scroll-margin-top: 80px;">9. Your privacy rights</h2>
+    <p>Because all of your data stays on your iPhone and we never receive any of it, the rights typically granted under the GDPR, CCPA, and similar privacy laws — to access, correct, delete, or restrict processing of your data — are exercised entirely by you, on your own device:</p>
+    <ul>
+      <li><strong>Access.</strong> Every document is visible in the Recents tab; the original files live in Files / iCloud Drive.</li>
+      <li><strong>Correction.</strong> Every document is fully editable in the app.</li>
+      <li><strong>Deletion.</strong> Swipe-delete a single Recent, or <em>Settings → Data &amp; Privacy → Clear Recents</em>, or delete the app entirely.</li>
+      <li><strong>Portability.</strong> <strong>Save to Files…</strong> exports any document as a standard <code>.json</code> file.</li>
+      <li><strong>Withdrawal of consent.</strong> Delete the app.</li>
+    </ul>
+    <p>If you nonetheless have questions about your rights, contact us at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>. Note that we will only be able to confirm that we do not hold any data about you, since we do not collect any.</p>
+
+    <h2 id="s10" style="scroll-margin-top: 80px;">10. Cookies and tracking technologies</h2>
+    <p>JSON Pilot is a native iOS application. It does not use cookies, web beacons, pixels, or any other web-tracking technology, and it does not perform any online tracking. Do-Not-Track signals are therefore not applicable — there is nothing for us to track.</p>
+
+    <h2 id="s11" style="scroll-margin-top: 80px;">11. Changes to this Privacy Policy</h2>
+    <p>If we materially change this Privacy Policy, we will update the <strong>Last updated</strong> date above and, where required by law, notify you the next time you open the app or update through the App Store. We encourage you to review this Privacy Policy periodically.</p>
+
+    <h2 id="s12" style="scroll-margin-top: 80px;">12. Contact us</h2>
+    <p>Questions about this Privacy Policy, or about how JSON Pilot handles data on your iPhone, please contact us:</p>
+    <p><strong>Developer:</strong> Georgii Shilovskii, Mexico</p>
+    <p><strong>Email:</strong> <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a></p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../../shared.js"></script>
+<script>SiteChrome.render({ active: 'apps' });</script>
+</body>
+</html>
