@@ -42,15 +42,15 @@
               : `<div class="app-icon" style="width: 64px; height: 64px; border-radius: 16px; background: ${app.color}; font-size: 28px;">${app.glyph}</div>`}
             <div>
               <div style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em;">${app.name}</div>
-              <div style="font-size: 12px; color: var(--fg-3); margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, monospace;">${app.tag} · v${detail.version} · ${detail.versionDate}</div>
+              <div style="font-size: 12px; color: var(--fg-3); margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, monospace;">${app.tag} · v${detail.version}${detail.versionDate ? ` · ${detail.versionDate}` : ''}</div>
             </div>
           </div>
           <h1 class="hero-title" style="font-size: 52px; line-height: 1.04; letter-spacing: -0.035em; font-weight: 600; margin-bottom: 22px; text-wrap: balance;">${tagline}</h1>
           <p style="font-size: 18px; color: var(--fg-2); line-height: 1.55; text-wrap: pretty; max-width: 520px;">${esc(detail.subhead || detail.blurb)}</p>
           <div style="display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
             ${detail.appStore
-              ? `<a href="${detail.appStore}" class="btn btn-primary" target="_blank" rel="noopener">${appStoreIcon()} Download on the Mac App Store</a>`
-              : `<button class="btn btn-primary" disabled>${appStoreIcon()} Download on the Mac App Store</button>`}
+              ? `<a href="${detail.appStore}" class="btn btn-primary" target="_blank" rel="noopener">${appStoreIcon()} ${esc(detail.appStoreLabel || 'Download on the Mac App Store')}</a>`
+              : `<button class="btn btn-primary" disabled>${appStoreIcon()} ${esc(detail.appStoreLabel || 'Download on the Mac App Store')}</button>`}
             <a href="#how" class="btn btn-ghost">See how it works <span aria-hidden="true">↓</span></a>
           </div>
           <div style="margin-top: 18px; font-size: 12px; color: var(--fg-3); font-family: 'JetBrains Mono', ui-monospace, monospace;">${esc(detail.price)}${detail.priceDetail ? ` · ${esc(detail.priceDetail)}` : ''}</div>
@@ -110,7 +110,7 @@
         <div class="section-head">
           <div>
             <div class="tag-mono" style="margin-bottom: 12px;">How it works</div>
-            <h2 class="section-title" style="font-size: 30px;">Three moves, end to end.</h2>
+            <h2 class="section-title" style="font-size: 30px;">${esc(detail.flowTitle || 'Three moves, end to end.')}</h2>
           </div>
         </div>
         <div class="flow-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--card); overflow: hidden;">
@@ -268,7 +268,7 @@
             </ul>
             <div style="margin-top: 28px; padding: 16px 18px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--line);">
               <div class="tag-mono" style="border: none; padding: 0; margin-bottom: 6px;">Permissions</div>
-              <p style="font-size: 13px; color: var(--fg-2); line-height: 1.55; margin: 0;">None. Migaja never requests Accessibility, Full Disk Access, Automation, Screen Recording, or any other macOS permission — pasting is your own ⌘V.</p>
+              <p style="font-size: 13px; color: var(--fg-2); line-height: 1.55; margin: 0;">${esc(detail.permissionsNote || 'None. Migaja never requests Accessibility, Full Disk Access, Automation, Screen Recording, or any other macOS permission — pasting is your own ⌘V.')}</p>
             </div>
           </div>
           <div id="faq" style="scroll-margin-top: 80px;">
@@ -298,7 +298,7 @@
           <a id="privacy" href="${privacyHref}" class="app-card" style="scroll-margin-top: 80px;">
             <div class="tag-mono" style="margin-bottom: 12px;">Privacy</div>
             <div style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 8px;">Your data stays on your device.</div>
-            <p style="font-size: 14px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-bottom: 16px;">${app.name} has no network entitlements and collects no telemetry. The full policy covers what's stored, where, and for how long.</p>
+            <p style="font-size: 14px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-bottom: 16px;">${esc(detail.privacyTeaser || `${app.name} has no network entitlements and collects no telemetry.`)} The full policy covers what's stored, where, and for how long.</p>
             <span style="font-size: 13px; color: var(--accent); font-weight: 500;">Read the privacy policy →</span>
           </a>
           <a id="terms" href="${termsHref}" class="app-card" style="scroll-margin-top: 80px;">
