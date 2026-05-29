@@ -8,6 +8,8 @@ window.APP_DETAILS = {
     heroImage: "migaja-search-programming.png",
 
     // ── Screenshot gallery (search + settings) ──
+    screenshotsHeading: "The popup. The settings. That's it.",
+    screenshotLabels: { search: "⌘⇧V · Search popup", settings: "⌘⇧, · Settings" },
     screenshots: {
       search: [
         { src: "migaja-search-programming.png", caption: "Semantic search finds clips by meaning across 100+ languages — Portuguese, Japanese, Korean and Chinese results, all from one English query." },
@@ -210,9 +212,11 @@ window.APP_DETAILS = {
     // versionDate omitted until App Store launch.
     // appStore omitted until live — the Download button renders disabled.
     appStoreLabel: "Download on the App Store",
-    price: "Free · Pro $1.99/mo or $6.99 once",
+    price: "Free · Pro unlock in-app",
     privacyDoc: "json-pilot/privacy.html",
     termsDoc: "json-pilot/terms.html",
+    heroImage: "json-pilot-1-explore.png",
+    heroPortrait: true,
 
     tagline: "JSON, made readable.\nAI, kept private.",
     subhead: "A native iPhone app for viewing, editing, and exploring JSON — with an on-device AI assistant that explains your data without sending a byte to the cloud.",
@@ -241,6 +245,22 @@ window.APP_DETAILS = {
       { step: "02", title: "Read it three ways", body: "A syntax-highlighted Tree for structure, a tap-to-edit Fields drilldown, and a Text view with line numbers. Edit values, keys and types; validation shows a precise line:col on any error." },
       { step: "03", title: "Ask, compare, convert", body: "Ask the on-device AI to explain or find issues, diff two payloads by meaning, run JSONPath with tree highlights, repair broken JSON, or convert to YAML / CSV / XML." },
     ],
+
+    // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
+    screenshotsHeading: "Eight screens, one workspace.",
+    screenshotCols: 4,
+    screenshots: {
+      tour: [
+        { src: "json-pilot-1-explore.png", caption: "The Tree view — a syntax-highlighted, collapsible hierarchy. Tap a leaf to copy its value; the validity pill shows parse status at a glance." },
+        { src: "json-pilot-2-ai.png", caption: "Ask the on-device AI to explain a payload, find issues, or extract emails. Powered by Apple Foundation Models — nothing leaves your iPhone." },
+        { src: "json-pilot-3-edit.png", caption: "Fields view — tap any leaf to edit its value, key or type, or delete it, with live validation as you go." },
+        { src: "json-pilot-4-search.png", caption: "On-demand search jumps straight to matching fields without leaving the document." },
+        { src: "json-pilot-5-query.png", caption: "JSONPath queries with matches highlighted right on the Tree — $, .key, [*], recursive descent and more." },
+        { src: "json-pilot-6-diff.png", caption: "JSON Diff compares two payloads by meaning — reformatting is never a change. Summary and GitHub-style unified views." },
+        { src: "json-pilot-7-convert.png", caption: "Convert the current document to YAML, CSV or XML in one tap." },
+        { src: "json-pilot-8-request.png", caption: "Fire an HTTP request — GET / POST / PUT / PATCH / DELETE with custom headers — and open the JSON response in the same workspace." },
+      ],
+    },
 
     // ── Full feature catalogue (from PRODUCT_DOC §3) ──
     catalogue: [
