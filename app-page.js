@@ -53,11 +53,11 @@
               : `<button class="btn btn-primary" disabled>${appStoreIcon()} ${esc(detail.appStoreLabel || 'Download on the Mac App Store')}</button>`}
             <a href="#how" class="btn btn-ghost">See how it works <span aria-hidden="true">↓</span></a>
           </div>
-          <div style="margin-top: 18px; font-size: 12px; color: var(--fg-3); font-family: 'JetBrains Mono', ui-monospace, monospace;">${esc(detail.price)}${detail.priceDetail ? ` · ${esc(detail.priceDetail)}` : ''}</div>
+          ${detail.price ? `<div style="margin-top: 18px; font-size: 12px; color: var(--fg-3); font-family: 'JetBrains Mono', ui-monospace, monospace;">${esc(detail.price)}${detail.priceDetail ? ` · ${esc(detail.priceDetail)}` : ''}</div>` : ''}
         </div>
         <div>
           ${detail.heroImage
-            ? `<img src="${detail.heroImage}" alt="${app.name} screenshot" style="width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 1px 0 var(--line), 0 24px 48px -16px rgba(0,0,0,0.18), 0 8px 16px -8px rgba(0,0,0,0.10);">`
+            ? `<img src="${detail.heroImage}" alt="${app.name} screenshot" style="${detail.heroPortrait ? 'width: auto; max-width: 100%; max-height: 660px; margin: 0 auto;' : 'width: 100%;'} height: auto; display: block; border-radius: 14px; box-shadow: 0 1px 0 var(--line), 0 24px 48px -16px rgba(0,0,0,0.18), 0 8px 16px -8px rgba(0,0,0,0.10);">`
             : `<div class="img-ph" style="aspect-ratio: 4/3; background-color: ${app.color}15;">screenshot · ${app.name}.app</div>`
           }
         </div>
@@ -127,32 +127,38 @@
     ` : ''}
 
     <!-- Screenshot gallery -->
-    ${detail.screenshots ? `
+    ${detail.screenshots ? (() => {
+      const groups = Object.keys(detail.screenshots);
+      const total = groups.reduce((n, g) => n + detail.screenshots[g].length, 0);
+      const cols = detail.screenshotCols || 2;
+      const labels = detail.screenshotLabels || {};
+      return `
     <section id="screenshots" style="padding: 64px 0 24px; scroll-margin-top: 80px;">
       <div class="container-wide">
         <div class="section-head">
           <div>
-            <div class="tag-mono" style="margin-bottom: 12px;">A look inside</div>
-            <h2 class="section-title" style="font-size: 30px;">The popup. The settings. That's it.</h2>
+            <div class="tag-mono" style="margin-bottom: 12px;">${esc(detail.screenshotsKicker || 'A look inside')}</div>
+            <h2 class="section-title" style="font-size: 30px;">${esc(detail.screenshotsHeading || 'A look inside.')}</h2>
           </div>
-          <div class="section-meta">${(detail.screenshots.search || []).length + (detail.screenshots.settings || []).length} screens</div>
+          <div class="section-meta">${total} screens</div>
         </div>
-        ${['search', 'settings'].map(group => detail.screenshots[group] ? `
-          <div style="margin-top: ${group === 'search' ? '0' : '40px'};">
-            <div class="tag-mono" style="margin-bottom: 16px; color: var(--accent);">${group === 'search' ? '⌘⇧V · Search popup' : '⌘⇧, · Settings'}</div>
-            <div class="shots-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        ${groups.map((group, gi) => `
+          <div style="margin-top: ${gi === 0 ? '0' : '40px'};">
+            ${labels[group] ? `<div class="tag-mono" style="margin-bottom: 16px; color: var(--accent);">${esc(labels[group])}</div>` : ''}
+            <div class="shots-grid" style="display: grid; grid-template-columns: repeat(${cols}, 1fr); gap: 20px;">
               ${detail.screenshots[group].map(s => `
                 <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                  <img src="${esc(s.src)}" alt="${esc(s.caption)}" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                  <img src="${esc(s.src)}" alt="${esc(s.caption)}" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 12px;">
                   <figcaption style="font-size: 13px; color: var(--fg-3); line-height: 1.55; text-wrap: pretty; padding: 0 4px;">${esc(s.caption)}</figcaption>
                 </figure>
               `).join('')}
             </div>
           </div>
-        ` : '').join('')}
+        `).join('')}
       </div>
     </section>
-    ` : ''}
+    `;
+    })() : ''}
 
     <!-- Full feature catalogue -->
     ${detail.catalogue ? `
