@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verigate — Privacy policy</title>
+<meta name="description" content="Privacy policy for the Verigate iOS app. Verigate does not collect, transmit, or share any data — scans, guest records and lists stay on your iPhone.">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 28px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .privacy-table th,
+  .privacy-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--fg-2);
+  }
+  .privacy-table thead th {
+    font-weight: 600;
+    color: var(--fg);
+    border-bottom: 1px solid var(--fg-3);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .privacy-table td code {
+    font-size: 0.85em;
+  }
+  .toc-list {
+    columns: 2;
+    column-gap: 32px;
+    margin-bottom: 20px;
+  }
+  .toc-list li {
+    break-inside: avoid;
+  }
+  @media (max-width: 640px) {
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 32px 0 0;">
+  <div class="container-prose">
+    <div class="crumb">
+      <a href="../../index.html">shilovskii.dev</a>
+      <span class="sep">/</span>
+      <a href="../../apps.html">Apps</a>
+      <span class="sep">/</span>
+      <a href="../verigate.html">Verigate</a>
+      <span class="sep">/</span>
+      <span class="here">Privacy</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 0 24px;">
+  <div class="container-prose">
+    <div class="tag-mono" style="margin-bottom: 16px;">Verigate · effective June 9, 2026 · last updated June 9, 2026</div>
+    <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+      This Privacy Policy explains how the Verigate application ("Verigate", "we", "us", "our") handles information when you use it on your iPhone. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.
+    </p>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-top: 16px;">
+      If you do not agree with this Privacy Policy, please do not install or use Verigate.
+    </p>
+  </div>
+</section>
+
+<section class="prose" style="padding: 24px 0;">
+  <div class="container-prose">
+
+    <h2>Summary</h2>
+    <p><strong>Verigate does not collect, transmit, or share any data.</strong> Everything it produces — scan results, the hashed records of people you have scanned, your lists, your settings — stays on your iPhone. There is no account, no cloud sync, no backend, no telemetry, no advertising, and no third-party analytics. When you scan a license, Verigate reads only the barcode; <strong>it never captures a photo and never stores the raw license number</strong> — only an irreversible one-way fingerprint (a SHA-256 hash) used to recognise repeat or flagged guests. Apple processes your purchase through the App Store under Apple's own terms.</p>
+    <p>This policy covers two roles: how <em>we</em> handle <em>your</em> data (we receive none), and your own responsibility for the data you collect about <em>your guests</em> when you use Verigate in a business — see <a href="#s7" style="color: var(--accent);">section 7</a>.</p>
+
+    <h2>Table of contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1" style="color: var(--accent);">What Verigate stores, and where</a></li>
+      <li><a href="#s2" style="color: var(--accent);">Data we collect about you</a></li>
+      <li><a href="#s3" style="color: var(--accent);">Network behaviour</a></li>
+      <li><a href="#s4" style="color: var(--accent);">How identity recognition works</a></li>
+      <li><a href="#s5" style="color: var(--accent);">Permissions</a></li>
+      <li><a href="#s6" style="color: var(--accent);">Retention and deletion</a></li>
+      <li><a href="#s7" style="color: var(--accent);">Your guests' data — the operator's responsibility</a></li>
+      <li><a href="#s8" style="color: var(--accent);">Children</a></li>
+      <li><a href="#s9" style="color: var(--accent);">Third parties</a></li>
+      <li><a href="#s10" style="color: var(--accent);">Your privacy rights</a></li>
+      <li><a href="#s11" style="color: var(--accent);">Cookies and tracking technologies</a></li>
+      <li><a href="#s12" style="color: var(--accent);">Changes to this Privacy Policy</a></li>
+      <li><a href="#s13" style="color: var(--accent);">Contact us</a></li>
+    </ol>
+
+    <h2 id="s1" style="scroll-margin-top: 80px;">1. What Verigate stores, and where</h2>
+    <p>All of the following lives <strong>locally on your iPhone only</strong>:</p>
+    <table class="privacy-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Where it lives</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Scan events — time, outcome, age-at-scan, jurisdiction, the active profile</td>
+          <td>A local SwiftData store inside the app sandbox</td>
+          <td>The History log and Insights.</td>
+        </tr>
+        <tr>
+          <td>Person records — a SHA-256 <strong>hash</strong> of the license number; first/last name; date of birth; expiry; jurisdiction; your VIP/banned flag, nickname, and note</td>
+          <td>Same store</td>
+          <td>To recognise repeat, VIP, and banned guests by document — never by a photo.</td>
+        </tr>
+        <tr>
+          <td>Profiles — staff/door name, type, optional PIN</td>
+          <td>Same store</td>
+          <td>Per-door / per-staff logging and stats.</td>
+        </tr>
+        <tr>
+          <td>Settings (age threshold, auto-return, log retention, etc.) and a cached Premium flag</td>
+          <td>iOS <code>UserDefaults</code></td>
+          <td>To remember preferences and unlock Premium instantly at launch.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>We never store a photo or image of any ID, and we never store the raw license number. None of this data is uploaded, transmitted to a server we control, or shared with any third party. We cannot see it and cannot recover it for you.</p>
+
+    <h2 id="s2" style="scroll-margin-top: 80px;">2. Data we collect about you</h2>
+    <p><strong>None.</strong> We do not collect personal data, usage data, diagnostics, advertising identifiers, or analytics events. Verigate contains no third-party SDKs and no analytics, telemetry, or crash-reporting code.</p>
+
+    <h2 id="s3" style="scroll-margin-top: 80px;">3. Network behaviour</h2>
+    <p>Verigate opens a network connection in <strong>exactly one situation</strong>: Apple's <strong>StoreKit</strong> framework communicates with the App Store when you start, restore, or refresh a purchase. That traffic is handled by iOS and governed by <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>; we receive only the resulting entitlement signal ("you have Premium"), never payment details.</p>
+    <p>Verigate makes <strong>no other outbound connection</strong> — it does not phone home, sync, or report anything. The website/support/privacy/terms links in Settings open in your browser only when you tap them. The list-transfer feature produces a file you move between your own devices yourself; it never touches a server.</p>
+
+    <h2 id="s4" style="scroll-margin-top: 80px;">4. How identity recognition works (and why it's private)</h2>
+    <p>To recognise a returning, VIP, or banned guest, Verigate computes a <strong>SHA-256 hash</strong> of the license number and stores only that hash. A hash is one-way: it cannot be reversed to recover the license number. It is derived from the <strong>document number, not from a face or fingerprint</strong>, so it is <strong>not biometric data</strong>. This lets the app say "this is the same person you banned" without ever keeping anything a data breach could leak.</p>
+
+    <h2 id="s5" style="scroll-margin-top: 80px;">5. Permissions</h2>
+    <p>Verigate requests <strong>only the Camera</strong>, and uses it solely to read the barcode on the back of a license. <strong>No photo is captured.</strong> It does not request Photos, Location, Microphone, Contacts, Local Network, or any other permission.</p>
+
+    <h2 id="s6" style="scroll-margin-top: 80px;">6. Retention and deletion</h2>
+    <ul>
+      <li>You control retention: <em>Settings → Privacy → Auto-delete logs</em> (Never / 30 days / 90 days).</li>
+      <li><em>Clear scan history</em> deletes scan events and unflagged people (keeps your Ban/VIP lists and profiles). <em>Clear all data</em> deletes everything.</li>
+      <li>Uninstalling the app removes all local data.</li>
+    </ul>
+
+    <h2 id="s7" style="scroll-margin-top: 80px;">7. Your guests' data — the operator's responsibility</h2>
+    <p>If you use Verigate in a business (a bar, club, shop, or event), <strong>you</strong> decide to scan other people's identity documents and you control the resulting on-device records. In doing so <strong>you may be a "data controller"</strong> (or equivalent) under the laws of your jurisdiction — for example US state privacy and ID-scanning statutes, Illinois BIPA and similar biometric laws, Canadian PIPEDA, or the EU/UK GDPR.</p>
+    <p><strong>You are responsible</strong> for scanning lawfully, for any notices or consent your local law requires, for retention limits, and for how you use flags and notes. We provide on-device, privacy-preserving tooling (no photo, no raw number, no cloud); we are not a party to, and have no access to, the data you collect about your guests, and we are therefore not a processor of it.</p>
+
+    <h2 id="s8" style="scroll-margin-top: 80px;">8. Children</h2>
+    <p>Verigate is a business tool for venue staff and is not directed to children, and we collect nothing from anyone. Note that the people an operator scans may themselves be under the age threshold — detecting that is the point of the check. The operator is responsible for handling any such data — <strong>including minors' data</strong> — lawfully under applicable law (see <a href="#s7" style="color: var(--accent);">section 7</a>).</p>
+
+    <h2 id="s9" style="scroll-margin-top: 80px;">9. Third parties</h2>
+    <ul>
+      <li><strong>Apple Inc.</strong> processes your purchase through the App Store under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>.</li>
+      <li>No other third party receives any data. Verigate bundles no third-party SDKs.</li>
+    </ul>
+
+    <h2 id="s10" style="scroll-margin-top: 80px;">10. Your privacy rights</h2>
+    <p>Because all data stays on your device and we never receive it, the rights typically granted under the GDPR, CCPA, and similar privacy laws — access, correction, deletion, and export — are exercised by you, on the device:</p>
+    <ul>
+      <li><strong>Access.</strong> Every scan is visible in History; every flagged guest in the Ban/VIP lists.</li>
+      <li><strong>Correction.</strong> Names, nicknames, notes, and flags are editable in-app.</li>
+      <li><strong>Deletion.</strong> <em>Clear scan history</em>, <em>Clear all data</em>, or delete the app entirely.</li>
+      <li><strong>Portability.</strong> Premium CSV/PDF export and the device-to-device list transfer.</li>
+      <li><strong>Withdrawal of consent.</strong> Delete the app.</li>
+    </ul>
+    <p>If you nonetheless have questions about your rights, contact us at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>. Note that we will only be able to confirm that we do not hold any data about you, since we do not collect any.</p>
+
+    <h2 id="s11" style="scroll-margin-top: 80px;">11. Cookies and tracking technologies</h2>
+    <p>Verigate is a native iOS application. It does not use cookies, web beacons, pixels, or any other web-tracking technology, and it does not perform any online tracking. Do-Not-Track signals are therefore not applicable — there is nothing for us to track.</p>
+
+    <h2 id="s12" style="scroll-margin-top: 80px;">12. Changes to this Privacy Policy</h2>
+    <p>If we materially change this Privacy Policy, we will update the <strong>Last updated</strong> date above and, where required by law, notify you the next time you open the app or update through the App Store. We encourage you to review this Privacy Policy periodically.</p>
+
+    <h2 id="s13" style="scroll-margin-top: 80px;">13. Contact us</h2>
+    <p>Questions about this Privacy Policy, or about how Verigate handles data on your iPhone, please contact us:</p>
+    <p><strong>Developer:</strong> Georgii Shilovskii, Mexico</p>
+    <p><strong>Email:</strong> <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a></p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../../shared.js"></script>
+<script>SiteChrome.render({ active: 'apps' });</script>
+</body>
+</html>
