@@ -408,7 +408,8 @@ window.APP_DETAILS = {
     price: "Free · Premium: subscription with free trial, or one-time Lifetime",
     privacyDoc: "verigate/privacy.html",
     termsDoc: "verigate/terms.html",
-    // heroImage omitted until launch screenshots are ready.
+    heroImage: "verigate-2-pass.png",
+    heroPortrait: true,
 
     tagline: "Scan IDs in two seconds.\nStore no photos.",
     subhead: "The fast, honest ID scanner for bars, clubs, and shops. Instant 21+ / expired / possible-fake on US & Canadian licenses — recognise your VIPs and banned guests by their ID, never a photo. Everything stays on the phone.",
@@ -437,6 +438,23 @@ window.APP_DETAILS = {
       { step: "02", title: "Read it across the room", body: "VALID, UNDERAGE, EXPIRED, POSSIBLE FAKE, or COULDN'T READ — a large, solid status card with the age and expiry. Every result carries the privacy pill: photo not saved, on this device." },
       { step: "03", title: "Remember the right guests", body: "Flag a guest VIP or banned once. Verigate recognises them on every visit by an irreversible hash of their license number — and warns you the moment they're back at the door." },
     ],
+
+    // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
+    screenshotsHeading: "Nine screens, the whole door.",
+    screenshotCols: 4,
+    screenshots: {
+      tour: [
+        { src: "verigate-1-scan.png", caption: "The scanner — torch on, auto-macro focus, and a verdict the instant the PDF417 barcode is in frame. \"Can't scan?\" drops to manual entry; the active door profile sits up top." },
+        { src: "verigate-2-pass.png", caption: "VALID — a big, solid card readable across a dark room. Age, date of birth, expiry and state, with the privacy pill: no photo stored, on this device." },
+        { src: "verigate-3-under21.png", caption: "UNDERAGE — the age threshold (16–25, with 18+ and 21+ presets) is built in, so every verdict follows your door's rule." },
+        { src: "verigate-4-expired.png", caption: "EXPIRED — the license is past its date, called out in amber even when the guest is over age. The expiry field is highlighted." },
+        { src: "verigate-5-fake.png", caption: "POSSIBLE FAKE — five AAMVA-consistency checks on the barcode; two or more failures escalate the scan. Each pass/fail is shown so staff see exactly why." },
+        { src: "verigate-6-vip.png", caption: "VIP guest — recognised by an irreversible hash of the license number, never a photo. Nickname and note (\"Bottle service, table 4\") surface at the door." },
+        { src: "verigate-7-banned.png", caption: "Banned — the watchlist fires a warning the moment a flagged guest is back, with the reason and who added it." },
+        { src: "verigate-8-history.png", caption: "History — every scan on-device: time, outcome, age-at-scan, state and profile, filterable by period (24h, week, month, all)." },
+        { src: "verigate-9-insights.png", caption: "Insights (Premium) — total scans, a per-status breakdown including VIP and banned hits, and an hourly distribution with the busiest hour called out." },
+      ],
+    },
 
     // ── Full feature catalogue (from PRODUCT_DOC §3) ──
     catalogue: [
