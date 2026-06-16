@@ -209,8 +209,8 @@ window.APP_DETAILS = {
 
   "json-pilot": {
     version: "1.0.0",
-    // versionDate omitted until App Store launch.
-    // appStore omitted until live — the Download button renders disabled.
+    versionDate: "June 3, 2026",
+    appStore: "https://apps.apple.com/us/app/json-pilot-viewer-editor/id6772857377",
     appStoreLabel: "Download on the App Store",
     price: "Free · Pro unlock in-app",
     privacyDoc: "json-pilot/privacy.html",
