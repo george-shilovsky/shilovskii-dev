@@ -402,8 +402,8 @@ window.APP_DETAILS = {
   // Source of truth: Verigate PRODUCT_DOC.md (2026-06-09, codebase commit 4c67eb5).
   verigate: {
     version: "1.0",
-    // versionDate omitted until App Store launch.
-    // appStore omitted until live — the Download button renders disabled.
+    versionDate: "June 16, 2026",
+    appStore: "https://apps.apple.com/us/app/verigate-id-scanner-21/id6775568994",
     appStoreLabel: "Download on the App Store",
     price: "Free · Premium: subscription with free trial, or one-time Lifetime",
     privacyDoc: "verigate/privacy.html",
