@@ -13,7 +13,8 @@
   const APPS = [
     { id: 'migaja', name: 'Migaja — Clipboard Manager', tag: 'macOS', summary: 'Clipboard search that actually understands what you copied.', color: '#30D158', glyph: 'M', icon: 'apps/migaja-icon.png' },
     { id: 'json-pilot', name: 'JSON Pilot — Viewer & Editor', tag: 'iOS', summary: 'A native JSON viewer & editor for iPhone, with an on-device AI assistant.', color: '#0A84FF', glyph: 'J', icon: 'apps/json-pilot-icon.png' },
-    { id: 'verigate', name: 'Verigate — ID Scanner', tag: 'iOS', summary: 'ID checks for bars and clubs — instant 21+ verdicts, fake-ID detection, no photos stored.', color: '#29B6AD', glyph: 'V', icon: 'apps/verigate-icon.png' },
+    { id: 'verigate', name: 'Verigate — ID Scanner & Age', tag: 'iOS', summary: 'ID checks for bars and clubs — instant 21+ verdicts, fake-ID detection, no photos stored.', color: '#29B6AD', glyph: 'V', icon: 'apps/verigate-icon.png' },
+    { id: 'filmeter', name: 'Filmeter — Film Light Meter', tag: 'iOS', summary: 'A light meter made for film — EV and exposure pairs, the Zone System, reciprocity, all on-device.', color: '#D9A24A', glyph: 'F', icon: 'apps/filmeter-icon.png' },
   ];
 
   const POSTS = [
