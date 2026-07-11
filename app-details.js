@@ -612,6 +612,7 @@ window.APP_DETAILS = {
   // Source of truth: Filmeter PRODUCT_DOC.md (2026-07-05, codebase commit e946508).
   filmeter: {
     version: "1.0.0",
+    appStore: "https://apps.apple.com/us/app/filmeter-film-light-meter/id6785722973",
     appStoreLabel: "Download on the App Store",
     price: "Free · Pro: subscription with free trial, or one-time Lifetime",
     privacyDoc: "filmeter/privacy.html",
