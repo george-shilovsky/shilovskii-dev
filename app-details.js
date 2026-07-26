@@ -806,4 +806,205 @@ window.APP_DETAILS = {
       { q: "How do I cancel?", a: "Manage or cancel any time via Apple’s native subscription sheet in Settings; cancelling stops auto-renewal and keeps access until the period ends. Or buy Lifetime once and never think about it again." },
     ],
   },
+
+  // Source of truth: Ovessa PRODUCT_DOC.md (2026-07-25, codebase commit 1701083).
+  ovessa: {
+    version: "1.0.0",
+    // versionDate omitted until App Store launch.
+    // appStore omitted until live — the Download button renders disabled.
+    appStoreLabel: "Download on the App Store",
+    price: "Subscription · pricing shown in the App Store",
+    privacyDoc: "ovessa/privacy.html",
+    termsDoc: "ovessa/terms.html",
+    // heroImage / screenshots omitted until the App Store screenshot lot is shot.
+
+    tagline: "The PCOS tracker\nthat never uploads\nyour cycle.",
+    subhead: "Ovessa is a private companion for PCOS — an honest cycle tracker built for irregularity, food scanning with a calm PCOS grade screened against your allergies, metabolic tracking through Apple Health, and a doctor-ready PDF. Everything stays on your iPhone. No account. No cloud. App Privacy label: Data Not Collected.",
+    blurb: "Ovessa is a native iPhone tracker for polycystic ovary syndrome — cycle, symptoms, food, supplements and metabolic health in one calm app, built for the way PCOS actually behaves. Cycles that refuse to run on a 28-day script get an honest probabilistic window instead of a fake exact day. Food gets a deterministic A–E PCOS grade computed from the label's own figures against published criteria — screened against your allergies first — by barcode scan, meal photo, or manual entry. Weight, CGM glucose, water, sleep and steps come through Apple Health, and a doctor-ready PDF turns it all into something you can put on the desk at your next appointment.",
+    pitch: "An honest cycle window instead of a fake exact day, a food grade computed from the label rather than guessed by a model, and a report your endocrinologist can read in 30 seconds — with your health data never leaving the iPhone.",
+
+    // ── Hero stats ──
+    stats: [
+      { value: "A–E", label: "deterministic food grade" },
+      { value: "31", label: "Apple Health types" },
+      { value: "0", label: "accounts or logins" },
+      { value: "0", label: "analytics SDKs" },
+    ],
+
+    // ── Top feature highlights (3 cards) ──
+    features: [
+      { title: "Built for irregularity, not against it.", body: "Most period trackers treat an irregular cycle as an error state. Ovessa refuses to fake precision: no prediction at all until it has seen at least three of your cycles, a likely window that never collapses below four days, a wider window when your history is more variable — and copy that says out loud that a wide window is normal with PCOS." },
+      { title: "Verified numbers, never AI slop.", body: "The PCOS grade is deterministic arithmetic over the product's own label figures, citing published public criteria — no model, no cloud verdict. For photo meals a vision model only says what and how much; the calories and macros come from the USDA food database, and any estimate that does surface is badged “≈ approximate”, forever." },
+      { title: "Private by architecture.", body: "No account, no cloud, no CloudKit, no analytics, no third-party SDKs. Health data is read in place from Apple Health, on-device. The only bytes that ever leave the iPhone: a meal photo you explicitly scan — processed in memory by a stateless service that writes no logs — and the barcode number of a packet." },
+    ],
+
+    // ── How it works ──
+    flowTitle: "Log it. Scan it. Share it.",
+    flow: [
+      { step: "01", title: "Log the day", body: "Period flow, symptoms with tap-cycled intensity, a note, supplements checked off, weight and water — one backdatable screen logs a whole day in seconds. Your existing cycle history in Apple Health fills the tracker from day one." },
+      { step: "02", title: "Scan what you eat", body: "Scan a barcode for an A–E PCOS grade from the label's own figures, photograph a plate and correct the portions in editable chips, or add a meal by hand. Your declared allergens are screened first, and they outrank the grade." },
+      { step: "03", title: "Walk in prepared", body: "One tap builds a doctor-ready PDF — cycle lengths with their real variability, symptoms, weight, glucose, supplements, nutrition — generated on the iPhone and shared only when you choose. Or export everything as CSV." },
+    ],
+
+    // ── Full feature catalogue ──
+    catalogue: [
+      {
+        kicker: "Cycle — built for irregularity",
+        items: [
+          "A month calendar with per-day marks: period fill by flow, a dashed predicted window on genuinely future days, symptom ticks, a today ring — and a legend that shows only the marks actually on screen.",
+          "Predictions are probabilistic by construction: never stored, always derived; the likely window can never collapse below four days; a more irregular history widens it rather than faking confidence.",
+          "No prediction at all until three recorded cycles. Before that you get a factual “This cycle · Day N” card, or calm progress toward three.",
+          "A “Your cycles” history — average length with its real min–max, average period days, cycles tracked, and a scaled timeline of every detected cycle. Unknowable figures read “—”.",
+          "Long-cycle copy is deliberately reassuring: “Your cycle tends to run long — this is normal for you, not a missed period.”",
+        ],
+      },
+      {
+        kicker: "Food — three ways in, one verdict",
+        items: [
+          "Barcode scan with live camera, torch, and a manual barcode fallback; anything scanned once is cached and works offline forever.",
+          "A deterministic A–E PCOS grade from the product's own per-100 g label figures, citing public criteria — UK front-of-pack thresholds, the UK soft-drinks levy band, the 10:1 carb-to-fibre refined-carb proxy, WHO guidance on trans fat and non-sugar sweeteners.",
+          "“Can't grade this one” is a first-class outcome: no sugar figure means no grade. Missing rule inputs cap the best possible grade and the copy names what's absent.",
+          "Meal photos: capture or pick from the library, then confirm editable name / quantity / unit chips with live USDA-verified nutrition per item before anything is saved.",
+          "Log a scanned product as a meal using the label's own numbers — by grams, by servings when the serving string parses, or by a fraction of the pack when the net weight does.",
+          "Meal totals never invent a zero: a nutrient the source is silent about reads “—”. Photo and manual meals carry a ±20–30 % estimate note.",
+        ],
+      },
+      {
+        kicker: "Allergies come first",
+        items: [
+          "The 14 legally-declarable allergens are a hard rule: a declared match always reads “avoid”, and it outranks the grade rather than sitting next to it.",
+          "Custom free-text allergens run a weaker declared-ingredient check — and the app says so plainly instead of implying more.",
+          "Ten dietary preferences ride as advisories only; a preference can never mask or soften an allergy warning.",
+          "The strongest affirmative the app will ever show is “no allergens from your list are declared on this label” — never “allergen-free”, never “safe”.",
+        ],
+      },
+      {
+        kicker: "Symptoms, supplements & the day",
+        items: [
+          "One Day-log sheet, shared by Today and any calendar day: period flow, symptoms at four intensity steps, and an optional note that survives on its own.",
+          "Custom symptoms join a persistent catalog — add once and the chip appears everywhere; symptoms you named during onboarding are hoisted first in every grid.",
+          "Supplements and medications with per-slot check-off, prescriptions filed with an Rx badge, and a discontinue path that keeps history instead of deleting it.",
+          "Gentle grouped reminders — one notification per time of day, never a barrage. Local only; nothing is sent anywhere. No streaks, no missed-dose shaming.",
+          "Weight in your own unit with no arbitrary upper cap, and a water card that writes through to Apple Health, 250 mL per tap.",
+        ],
+      },
+      {
+        kicker: "Apple Health & the doctor report",
+        items: [
+          "Two-way sync across 17 read and 14 written types — cycle, basal temperature, body mass, the dietary types, and seven symptom categories.",
+          "Glucose from a CGM, sleep and steps are read-only by design — sensor data Ovessa reads but never authors. The first sync imports your full history, so the tracker is populated from day one.",
+          "Edits replace samples in place under a stable sync identifier, local deletions propagate as tombstones, and a deletion made in the Health app mutes rather than destroys your own diary entry — with one tap to share it again.",
+          "A Summary lens that is the on-screen twin of the doctor PDF — every figure comes from the same aggregate, so screen and document can never disagree.",
+          "The doctor report is a vector US-Letter PDF built on the iPhone: cycle length only as mean, range and variability; absent figures nil rather than zero; estimates labelled. The patient name is optional.",
+          "An Insights lens gated until 14 distinct logged days, showing a weekly-bucketed symptom trend decided by a statistical test — and no correlation claims it cannot defend.",
+        ],
+      },
+      {
+        kicker: "Privacy — by architecture",
+        items: [
+          "No account, no cloud, no CloudKit, no analytics or telemetry, no crash reporters, no third-party SDKs at all. The App Privacy label is “Data Not Collected”.",
+          "A Privacy centre with live per-model counts of what's stored, a 10-file CSV export of everything, and a “Delete everything” that is immediate and permanent — “we can't recover it because we never had it”.",
+          "The meal-photo scan goes to a stateless service with no database and no request logging; images are processed in memory and discarded. Requests are authenticated with Apple App Attest — device integrity, never identity.",
+          "Barcode lookups go anonymously to Open Food Facts: the digits only, no cookies, nothing about you. Attribution is rendered on every product card under the ODbL.",
+          "Cycle, symptoms, supplements, weight, water, insights, the doctor PDF and CSV export all work fully offline.",
+        ],
+      },
+    ],
+
+    // ── System requirements ──
+    requirements: [
+      "iPhone running iOS 26.5 or later (iPad is supported; the positioning is iPhone-first)",
+      "A camera for barcode and meal-photo scanning — both have fallbacks: manual barcode entry, the photo library, or a fully manual meal entry",
+      "Apple Health is entirely optional and never required; every feature that uses it degrades gracefully without it",
+      "A network connection only for a first-ever barcode lookup, meal-photo recognition, nutrition lookup, and the App Store — everything else works offline",
+      "An auto-renewing subscription, with a free trial for eligible new subscribers; no account is ever created",
+    ],
+
+    permissionsNote: "Camera (to read a barcode on a packet, or to photograph a meal), Apple Health read and write (optional, type-by-type, controlled in the Health app), and local notifications for supplement reminders. The photo library is reached through Apple's out-of-process picker, so Ovessa sees only the photo you pick. No Location, Microphone, Contacts, or Local Network — and no advertising or tracking permission, because there is nothing to track.",
+    privacyTeaser: "Ovessa's App Privacy label is “Data Not Collected”. Your cycle, symptoms, supplements, weight and meals live in an on-device database with iCloud sync deliberately disabled; Apple Health data is read in place. Only a meal photo you explicitly scan and a barcode number ever leave the phone.",
+
+    // ── Long-form documentation ──
+    guide: [
+      {
+        id: "getting-started",
+        title: "Getting started",
+        body: `
+          <p>Onboarding is deliberately short — two explain pages and <strong>five quick questions</strong>, then a processing beat and a summary. It asks what brings you to Ovessa, which symptoms you have, anything you avoid (allergies as a hard rule, preferences as advisories), whether you take anything for it, and whether you'd like to connect Apple Health. Every question is skippable, and <strong>nothing is written to the device until the final “See your plan”</strong> — backing out mid-flow leaves your phone untouched.</p>
+          <p>The paywall comes after onboarding, before the tabs. Camera and notification permissions are <strong>not</strong> requested during onboarding; they're asked in context, the first time a feature needs them.</p>
+          <h4>The five tabs</h4>
+          <p><strong>Today</strong> is the daily dashboard — a live cycle card, supplements to check off, quick actions for a symptom, a food scan or a weight entry, and a water card. <strong>Cycle</strong> is the calendar and your cycle history. <strong>Food</strong> is the three ways in and your meal log. <strong>My Health</strong> holds the Summary and Insights lenses and the doctor report. <strong>Settings</strong> holds tracking setup, Apple Health, units, appearance, the Privacy centre, and support.</p>
+        `,
+      },
+      {
+        id: "cycle",
+        title: "Cycle tracking that doesn't fake precision",
+        body: `
+          <p>Ovessa's prediction engine is built around one rule: <strong>never pretend to know a day it can't know.</strong> Five constraints are enforced in the code and covered by tests — predictions are always derived and never stored; the “likely” window can never collapse below four days; a more irregular history produces a wider window rather than false confidence; there is <strong>no prediction at all until three recorded cycles</strong>; and the calendar tints exactly the window the card states.</p>
+          <p>The calendar's month grid marks period days (opacity by flow), the predicted window as a dashed outline on genuinely future days, symptom ticks, and today. Below it, the regime depends on your data: three or more cycles gets the prediction card with a date range and a confidence bar, two gets a factual “This cycle · Day N”, fewer gets calm progress toward three.</p>
+          <p>Your <strong>cycle history</strong> reports averages alongside their real min–max and how many cycles have been tracked, with a scaled timeline of each one. With two or more completed cycles it says the useful thing out loud: your cycles vary by about N days, which is typical with PCOS — so Ovessa tracks the range instead of pretending it's fixed.</p>
+        `,
+      },
+      {
+        id: "food",
+        title: "The food engine — how the grade is computed",
+        body: `
+          <p>The PCOS grade is a <strong>letter from A to E computed on your iPhone</strong> from the product's own label figures per 100 g. It is arithmetic, not a model: a score of 100 minus penalties, banded into five letters and mapped onto a three-step visual scale. Every rule names its public source in the code — the UK front-of-pack traffic-light thresholds for sugars, saturated fat and salt; the UK soft-drinks levy upper band for drink sugar; the 10:1 carbohydrate-to-fibre ratio as a refined-carb proxy; WHO guidance on industrial trans fat and on non-sugar sweeteners. The contested seed-oil rule exists but scores zero, shown as a note that says the evidence is contested.</p>
+          <p>There are honesty valves. <strong>No sugar figure means no grade at all</strong> — “can't grade this one” is a real outcome, not an error state. One or two missing rule inputs cap the best achievable grade at B, three or more at C, and the copy names which nutrients are missing.</p>
+          <h4>Where the numbers come from</h4>
+          <p>Barcode products use the label's own figures, fetched anonymously from <strong>Open Food Facts</strong> (attribution shown on every product card under the ODbL). Photo and manual meals get verified calories and macros from the public <strong>USDA FoodData Central</strong> database. A vision model is used for one job only — recognising <em>what</em> is on the plate and roughly how much — and where USDA has no match, its rough per-100 g figure appears only as a badged “≈ estimate”, which persists so the badge survives a relaunch.</p>
+          <p>The <strong>allergen screen runs before the grade and outranks it.</strong> The 14 declarable allergens are a hard rule; custom free-text allergens are a weaker declared-ingredient check that says so; dietary preferences are advisory and can never move the safety status. The strongest affirmative you will ever see is “no allergens from your list are declared on this label”.</p>
+        `,
+      },
+      {
+        id: "apple-health",
+        title: "Apple Health, two ways",
+        body: `
+          <p>Connecting Apple Health is optional and can be declined forever. When you do connect, Ovessa reads 17 types and writes 14 — cycle flow, basal body temperature, body mass, the dietary types, and seven symptom categories both ways; glucose from a CGM, sleep and steps <strong>read-only by design</strong>, because they're sensor data Ovessa has no business authoring. Water is the one metabolic stream it writes, 250 mL per tap, and it deletes only its own samples.</p>
+          <p>The first sync is a <strong>full-history import</strong>: whatever cycle history already sits in Apple Health from another tracker or your Watch populates Ovessa from day one. After that, reads are anchored deltas that run at launch, on foreground, and a couple of seconds after any local save — plus a manual “Sync now”. Writes carry a stable sync identifier so edits <strong>replace samples in place</strong> rather than duplicating them, and local deletions propagate as tombstones.</p>
+          <p>Deleting something in the Health app deletes Health-originated rows here, but only <strong>mutes</strong> rows Ovessa authored — your diary survives, Health's deletion is respected, and one tap shares the entry again. Two honest limits: HealthKit hides read authorization from apps, so Ovessa's status will only ever claim “requested”, never “connected and reading”; and sync runs on foreground triggers in v1, not in the background.</p>
+        `,
+      },
+      {
+        id: "doctor-report",
+        title: "The doctor report and your exports",
+        body: `
+          <p>The <strong>Summary</strong> lens in My Health is the on-screen twin of the PDF — both are rendered from the same aggregate, so the screen and the document can never disagree. Pick a period (last 30 or 90 days, six months, all time, or a custom range) and the cards appear in clinical order: cycle, symptoms, metabolic, nutrition, supplements and medications, allergies and diet, with a badge on anything read from Apple Health.</p>
+          <p>“Share report for your doctor” builds a <strong>vector US-Letter PDF</strong> on the device, multi-page, with a page-one preview before you share it. The honesty rules are baked into its types: cycle length appears only as a mean with its range and variability, and only once there are at least two period starts; absent figures are absent rather than zero; estimates are labelled. The patient name is optional — left blank, the report shows no name. It never leaves the iPhone until you send it.</p>
+          <p>Prefer raw data? The Privacy centre exports <strong>ten machine-stable CSV files</strong> — cycle days, symptoms, custom symptoms, supplements, intakes, weight, diet profile, meals, meal items, scanned products — with ISO-8601 dates, locale-free decimals, and an empty field (never a 0) for anything unknown.</p>
+        `,
+      },
+      {
+        id: "privacy-and-data",
+        title: "What leaves the iPhone, exactly",
+        body: `
+          <p>Two things, both at your explicit request. A <strong>meal photo you tap to scan</strong> is downscaled and sent once over HTTPS to a stateless service, which forwards it to a vision model under terms that prohibit training on it and returns what food it sees. That service has <strong>no database and no request logging</strong> — images are processed in memory and discarded — and its diagnostics carry status codes, never content. And a <strong>barcode number</strong>, looked up anonymously against Open Food Facts with no cookies and no identifiers.</p>
+          <p>Requests carry Apple <strong>App Attest</strong> proof that the caller is a genuine, un-tampered copy of Ovessa on real Apple hardware, plus an opaque per-install identifier used solely to enforce a daily scan cap. Neither is identity: the attestation binds a cryptographic key you never see, no account exists to link it to, and the rate-limit counter lives in memory that evaporates rather than in any datastore.</p>
+          <p>Everything else is local. Your logs live in an on-device database with iCloud sync <strong>deliberately disabled</strong>; Apple Health data is read in place and never copied out. The Privacy centre shows live per-model counts of exactly what's stored, and <strong>Delete everything</strong> erases all of it immediately and permanently — it never touches Apple Health itself, which stays yours to manage in the Health app. The full detail is in the <a href="ovessa/privacy.html" style="color: var(--accent);">privacy policy</a>.</p>
+        `,
+      },
+      {
+        id: "subscription",
+        title: "Subscription, trial, and what happens if you stop",
+        body: `
+          <p>Ovessa is a subscription — an <strong>Annual</strong> or a <strong>Monthly</strong> plan, with a <strong>free trial</strong> for eligible new subscribers. Current prices are shown in the App Store and on the paywall for your region, alongside the trial terms and the first charge date, before you commit — and trial copy appears only when Apple confirms you are eligible for it. There are no countdown timers, no fake discounts, and no offer that appears when you try to delete the app. Manage or cancel through Apple at any time: <strong>we never hold your card.</strong></p>
+          <p>The subscription <em>is</em> the app — there's no free tier and no feature-gating matrix. The price is the business model: no ads, no coaching upsell, and no monetising your data, which would be impossible anyway.</p>
+          <p><strong>Your data outlives your subscription.</strong> If you stop paying, Ovessa keeps letting you view the Summary lens, build the doctor PDF, export every CSV, and delete everything — free, without resubscribing. Resubscribing is only to keep tracking going. And because no account exists, the usual failure of “I paid but can't log in” simply cannot happen: entitlement comes from Apple's own verified transaction record, and “Restore purchases” is on the paywall and in Settings.</p>
+        `,
+      },
+    ],
+
+    // ── FAQ (from PRODUCT_DOC §14) ──
+    faq: [
+      { q: "Does Ovessa upload my cycle data anywhere?", a: "No. There's no account and no cloud. Your logs live on your iPhone and, if you connect it, in your own Apple Health. The App Privacy label is “Data Not Collected”." },
+      { q: "What leaves my phone when I scan something?", a: "A barcode scan sends only the barcode number, anonymously. A meal photo is sent once, over an authenticated connection, to be recognised — processed in memory, never stored, never logged — and nothing about you travels with it." },
+      { q: "Is the PCOS grade AI?", a: "No. It's deterministic arithmetic over the product's own label figures, using published public criteria that are cited in-app. A vision model is used only to recognise what's in a meal photo; the numbers come from the USDA database, and anything estimated is badged as an estimate." },
+      { q: "I have a food allergy — can I rely on the screen?", a: "Use it as a first filter, never the last word. Ovessa checks what a product's database record declares; records can be wrong or stale, and a photo can't see inside a sauce. Always read the physical label." },
+      { q: "My cycles are very irregular. Will predictions work?", a: "Ovessa was designed for exactly that. It shows a likely window that honestly widens with your variability — and shows nothing at all until it has seen at least three of your cycles." },
+      { q: "Does it work with my CGM?", a: "If your CGM writes to Apple Health, Ovessa reads the glucose on-device and puts it next to your cycle, food, and weight. It never authors glucose itself." },
+      { q: "What happens to my data if I stop paying?", a: "It stays on your phone, and Ovessa keeps letting you view, export, and delete it — free. Resubscribing is only for continued tracking." },
+      { q: "Do I need Apple Health?", a: "No. It's optional at every step, and there's an always-available “Maybe later”. Connecting it just means your existing cycle history fills the tracker from day one and your logs can flow back out to Health." },
+      { q: "Is Ovessa a medical device?", a: "No. It's a self-tracking journal — no diagnosis, no treatment, no dosing advice. Cycle estimates must never be used for contraception. Bring the doctor report to a professional; that's what it's for." },
+      { q: "How do I cancel?", a: "Through Apple, any time — iOS Settings → Apple Account → Subscriptions, or Settings → Subscription inside Ovessa, which opens Apple's own sheet. Cancelling keeps access until the period ends. Deleting the app does not cancel a subscription." },
+    ],
+  },
 };

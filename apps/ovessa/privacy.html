@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ovessa — Privacy policy</title>
+<meta name="description" content="Privacy policy for the Ovessa iOS app. Ovessa collects no data — your cycle, symptoms, supplements, weight and meals stay on your iPhone. Only a meal photo you explicitly scan and a barcode number ever leave the device, and neither is stored.">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 28px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .privacy-table th,
+  .privacy-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--fg-2);
+  }
+  .privacy-table thead th {
+    font-weight: 600;
+    color: var(--fg);
+    border-bottom: 1px solid var(--fg-3);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .privacy-table td code {
+    font-size: 0.85em;
+  }
+  .toc-list {
+    columns: 2;
+    column-gap: 32px;
+    margin-bottom: 20px;
+  }
+  .toc-list li {
+    break-inside: avoid;
+  }
+  @media (max-width: 640px) {
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 32px 0 0;">
+  <div class="container-prose">
+    <div class="crumb">
+      <a href="../../index.html">shilovskii.dev</a>
+      <span class="sep">/</span>
+      <a href="../../apps.html">Apps</a>
+      <span class="sep">/</span>
+      <a href="../ovessa.html">Ovessa</a>
+      <span class="sep">/</span>
+      <span class="here">Privacy</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 0 24px;">
+  <div class="container-prose">
+    <div class="tag-mono" style="margin-bottom: 16px;">Ovessa · effective July 26, 2026 · last updated July 26, 2026</div>
+    <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+      This Privacy Policy explains how the Ovessa application ("Ovessa", "we", "us", "our") handles information when you use it on your iPhone or iPad. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a> or via the <a href="../../contact.html?topic=support" style="color: var(--accent);">contact form</a>.
+    </p>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-top: 16px;">
+      If you do not agree with this Privacy Policy, please do not install or use Ovessa.
+    </p>
+  </div>
+</section>
+
+<section class="prose" style="padding: 24px 0;">
+  <div class="container-prose">
+
+    <h2>Summary</h2>
+    <p><strong>Ovessa does not collect your data.</strong> There is no account, no cloud copy of your logs, no analytics, no advertising, and no third-party SDK. Your cycle, symptoms, supplements, weight, meals and settings live on your device and — if you choose — in your own Apple Health. Exactly two things ever leave your iPhone, both at your explicit request: a <strong>meal photo you scan</strong> (processed in memory to recognise the food, then discarded — never stored, never logged) and a <strong>barcode number</strong> (looked up anonymously). We could not sell, share, or hand over your health data even if asked — <strong>we never have it</strong>. The App Store privacy label for Ovessa reads <strong>"Data Not Collected"</strong>.</p>
+
+    <h2>Table of contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1" style="color: var(--accent);">What Ovessa stores on your device</a></li>
+      <li><a href="#s2" style="color: var(--accent);">Apple Health</a></li>
+      <li><a href="#s3" style="color: var(--accent);">Data we collect about you</a></li>
+      <li><a href="#s4" style="color: var(--accent);">Network connections, exactly</a></li>
+      <li><a href="#s5" style="color: var(--accent);">The camera and your photos</a></li>
+      <li><a href="#s6" style="color: var(--accent);">Your doctor report and exports</a></li>
+      <li><a href="#s7" style="color: var(--accent);">Permissions</a></li>
+      <li><a href="#s8" style="color: var(--accent);">Retention and deletion</a></li>
+      <li><a href="#s9" style="color: var(--accent);">Children</a></li>
+      <li><a href="#s10" style="color: var(--accent);">Third parties</a></li>
+      <li><a href="#s11" style="color: var(--accent);">Your privacy rights</a></li>
+      <li><a href="#s12" style="color: var(--accent);">Cookies and tracking technologies</a></li>
+      <li><a href="#s13" style="color: var(--accent);">Changes to this Privacy Policy</a></li>
+      <li><a href="#s14" style="color: var(--accent);">Contact us</a></li>
+    </ol>
+
+    <h2 id="s1" style="scroll-margin-top: 80px;">1. What Ovessa stores on your device</h2>
+    <p>All of the following lives <strong>only on your device</strong>, in the app's local database or its settings. iCloud sync for this database is deliberately disabled.</p>
+    <table class="privacy-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Where it lives</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cycle days (period flow), symptoms and their intensity, day notes, your custom symptom names</td>
+          <td>The app's local on-device database</td>
+          <td>Your tracker.</td>
+        </tr>
+        <tr>
+          <td>Supplements and medications, schedules, reminder times, check-off history</td>
+          <td>The app's local on-device database</td>
+          <td>Your daily plan.</td>
+        </tr>
+        <tr>
+          <td>Weight entries</td>
+          <td>The app's local on-device database</td>
+          <td>Your metabolic log.</td>
+        </tr>
+        <tr>
+          <td>Allergies and dietary preferences</td>
+          <td>The app's local on-device database</td>
+          <td>To screen scanned food. Used on-device only; never transmitted.</td>
+        </tr>
+        <tr>
+          <td>Meals you log, and products you have scanned (cached so they work offline)</td>
+          <td>The app's local on-device database</td>
+          <td>Your food log.</td>
+        </tr>
+        <tr>
+          <td>Settings — units, appearance, your onboarding answers, reminder configuration, Apple Health sync state</td>
+          <td>iOS <code>UserDefaults</code></td>
+          <td>To remember your preferences.</td>
+        </tr>
+        <tr>
+          <td>An App Attest key identifier</td>
+          <td>The iOS Keychain</td>
+          <td>To let the app prove it is a genuine copy of Ovessa when you scan a meal photo (see §4).</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Ovessa never stores a meal photo</strong> — not on the device and not anywhere else. None of the data above is uploaded, transmitted to a server we control, or shared with any third party. We cannot see it and we cannot recover it for you.</p>
+
+    <h2 id="s2" style="scroll-margin-top: 80px;">2. Apple Health</h2>
+    <p>Connecting Apple Health is <strong>entirely optional</strong> and Ovessa works fully without it. If you connect it:</p>
+    <ul>
+      <li>Data you author in Ovessa — cycle days, symptoms, weight, water, and meal nutrition — can be <strong>saved into your own Apple Health</strong>, so it lives with you and is available to your other apps.</li>
+      <li>Data you already keep in Apple Health — cycle history, basal body temperature, weight, glucose from a CGM, sleep, steps, water — is <strong>read in place, on your device</strong>. Glucose, sleep and steps are read-only by design: Ovessa never writes them.</li>
+    </ul>
+    <p>Health data is <strong>never copied to any server, never synced to iCloud by Ovessa, and never sent to us.</strong> Apple's own rules additionally forbid using HealthKit data for advertising or sharing it with third parties, and we do neither. You control access <strong>type by type</strong> in the Health app and can revoke it at any time. Note that iOS deliberately hides read authorization from apps, so Ovessa's status screen will only ever say that access was <em>requested</em> — it can never truthfully claim to be "connected and reading".</p>
+    <p>Ovessa's "Delete everything" erases its own local data but <strong>never purges Apple Health</strong>; manage Health data in the Health app.</p>
+
+    <h2 id="s3" style="scroll-margin-top: 80px;">3. Data we collect about you</h2>
+    <p><strong>None.</strong> We do not collect personal data, health data, usage data, diagnostics, advertising identifiers, or analytics events. Ovessa contains no analytics, telemetry, or crash-reporting code and no third-party SDKs. There is no account to create, no profile on any server, and no App Tracking Transparency prompt because there is nothing to track. The App Store privacy label reads <strong>"Data Not Collected"</strong>.</p>
+
+    <h2 id="s4" style="scroll-margin-top: 80px;">4. Network connections, exactly</h2>
+    <p>Ovessa opens a network connection in <strong>only four situations</strong>:</p>
+    <ol>
+      <li><strong>Meal-photo scan — only when you tap scan.</strong> The photo (downscaled to roughly 100–300 KB) and your optional hint text are sent over HTTPS to our own stateless service on Google Cloud Run, which forwards them to a vision model on Google's Vertex AI — a paid tier, under terms that prohibit training on the data — and returns what food it sees. <strong>The service keeps nothing:</strong> it has no database, writes no request logs, and processes images in memory only; its diagnostics carry status codes, never content. The request carries a cryptographic proof that it comes from a genuine, un-tampered copy of Ovessa (Apple <strong>App Attest</strong>) and an opaque per-install identifier used only to enforce a daily scan limit. Neither says anything about <em>you</em>: no account exists to link them to, and the rate-limit counter lives in memory that evaporates rather than in any datastore. As with any internet service, Google's infrastructure processes transient technical data (such as IP addresses) to deliver the request under Google Cloud's own terms; we do not receive, log, or link any of it to your health data.</li>
+      <li><strong>Food nutrition lookup.</strong> Generic food words — "salmon", "white rice" — are sent to the same stateless service to fetch nutrition figures from the public USDA food database. No photo, and no identifiers beyond the same integrity proof.</li>
+      <li><strong>Barcode lookup, on the first scan of a product.</strong> The barcode digits are sent anonymously to <strong>Open Food Facts</strong>, a public open food database — with no cookies, no identifiers, and nothing about you. Products you have scanned before are cached on your device and work offline forever.</li>
+      <li><strong>App Store purchases.</strong> Apple's StoreKit handles the subscription; that traffic is Apple's, governed by <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>. We receive an entitlement signal ("subscription active") and never your payment details or Apple Account.</li>
+    </ol>
+    <p>Everything else — cycle, symptoms, supplements, weight, water, insights, the doctor report, CSV export — works entirely offline and makes no connection at all. The privacy, terms and support links inside the app open in your browser only when you tap them.</p>
+
+    <h2 id="s5" style="scroll-margin-top: 80px;">5. The camera and your photos</h2>
+    <p>The camera is used for two things you invoke. <strong>Reading a barcode:</strong> the camera frames are processed on your device and only the barcode <em>number</em> is looked up. <strong>Photographing a meal:</strong> the photo is sent once for recognition as described in §4 — and <strong>Ovessa does not store it</strong>, on your device or anywhere else. Choosing an existing photo instead uses Apple's out-of-process picker, so Ovessa sees only the single photo you pick and never your library.</p>
+
+    <h2 id="s6" style="scroll-margin-top: 80px;">6. Your doctor report and exports</h2>
+    <p>The PDF doctor report and the CSV export are generated <strong>on your device</strong> and go only where <strong>you</strong> send them through the iOS share sheet. The patient name on the report is optional and exists only inside the PDF you choose to share — left blank, the report shows no name. Both are written to a temporary folder that is wiped and recreated on each export.</p>
+
+    <h2 id="s7" style="scroll-margin-top: 80px;">7. Permissions</h2>
+    <p>Ovessa requests only what a feature you're using needs, and asks in context rather than up front:</p>
+    <ul>
+      <li><strong>Camera</strong> — to scan a barcode or photograph a meal. Declining leaves manual barcode entry, the photo library, and fully manual meal entry available.</li>
+      <li><strong>Apple Health, read and write</strong> — optional, granted type by type in the Health app, revocable at any time.</li>
+      <li><strong>Notifications</strong> — for local supplement reminders only. Nothing is sent anywhere; the notifications are scheduled on your device.</li>
+    </ul>
+    <p>Ovessa never requests Location, Microphone, Contacts, or Local Network access, and the photo library is reached through Apple's out-of-process picker.</p>
+
+    <h2 id="s8" style="scroll-margin-top: 80px;">8. Retention and deletion</h2>
+    <p>We retain nothing, because we hold nothing. On your device, data persists until you delete it:</p>
+    <ul>
+      <li>Edit or delete any individual entry in-app at any time.</li>
+      <li><strong>Settings → Privacy centre → What's stored &amp; where</strong> shows live counts of exactly what is on your device.</li>
+      <li><strong>Settings → Privacy centre → Delete everything</strong> erases every cycle day, symptom, supplement, weight entry, meal, scanned product, and your allergy and diet profile. It is immediate and permanent — <em>we can't recover it because we never had it</em>.</li>
+      <li>Deleting the app removes all of its local data.</li>
+      <li>Data you exported, shared, or saved into Apple Health remains wherever you put it. Apple Health data is managed in the Health app; Ovessa never purges it.</li>
+    </ul>
+
+    <h2 id="s9" style="scroll-margin-top: 80px;">9. Children</h2>
+    <p>Ovessa is a health tracker intended for users aged 13 and over. It is not directed to children under 13, and it collects nothing from anyone of any age.</p>
+
+    <h2 id="s10" style="scroll-margin-top: 80px;">10. Third parties</h2>
+    <ul>
+      <li><strong>Apple Inc.</strong> — App Store distribution, StoreKit purchases, HealthKit (on-device), and App Attest, under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>.</li>
+      <li><strong>Google Cloud</strong> (Cloud Run, Vertex AI) — infrastructure for the meal-photo scan service, acting as a processor of ephemeral requests. No training on your data; nothing stored by us.</li>
+      <li><strong>Open Food Facts</strong> — anonymous barcode lookups against a public database, available under the Open Database License (ODbL); attribution is shown in-app on every product card.</li>
+      <li>No other third party receives anything. Ovessa bundles no third-party SDKs.</li>
+    </ul>
+
+    <h2 id="s11" style="scroll-margin-top: 80px;">11. Your privacy rights</h2>
+    <p>Because your data never reaches us, the rights typically granted under the GDPR, CCPA/CPRA, and similar privacy laws — access, correction, deletion, and portability — are exercised by you, on the device:</p>
+    <ul>
+      <li><strong>Access.</strong> Everything is visible in-app, with live per-category counts under <em>Settings → Privacy centre → What's stored &amp; where</em>.</li>
+      <li><strong>Correction.</strong> Every entry, and your allergy and diet profile, is editable in-app.</li>
+      <li><strong>Deletion.</strong> Delete any entry, or use <em>Delete everything</em>, or delete the app.</li>
+      <li><strong>Portability.</strong> Export a ten-file CSV bundle, or a PDF doctor report, from inside the app.</li>
+      <li><strong>Withdrawal of consent.</strong> Revoke camera, notification, or Apple Health access in iOS Settings, or delete the app.</li>
+    </ul>
+    <p>We do not sell or share personal information, and we do not process personal data for advertising or profiling — there is none to process. If you nonetheless have questions about your rights, contact us at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>. Note that we will only be able to confirm that we hold no data about you, because we do not collect any.</p>
+
+    <h2 id="s12" style="scroll-margin-top: 80px;">12. Cookies and tracking technologies</h2>
+    <p>Ovessa is a native iOS application. It does not use cookies, web beacons, pixels, or any other web-tracking technology, and it performs no online tracking. Barcode lookups are made without cookies. Do-Not-Track signals are therefore not applicable — there is nothing for us to track.</p>
+
+    <h2 id="s13" style="scroll-margin-top: 80px;">13. Changes to this Privacy Policy</h2>
+    <p>If we materially change this Privacy Policy, we will update the <strong>Last updated</strong> date above and, where required by law, notify you the next time you open the app or update through the App Store. We encourage you to review this Privacy Policy periodically.</p>
+
+    <h2 id="s14" style="scroll-margin-top: 80px;">14. Contact us</h2>
+    <p>Questions about this Privacy Policy, or about how Ovessa handles data on your iPhone, please contact us:</p>
+    <p><strong>Developer:</strong> Georgii Shilovskii, Mexico</p>
+    <p><strong>Email:</strong> <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a></p>
+    <p><strong>Support form:</strong> <a href="../../contact.html?topic=support" style="color: var(--accent);">shilovskii.dev/contact.html</a></p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../../shared.js"></script>
+<script>SiteChrome.render({ active: 'apps' });</script>
+</body>
+</html>
