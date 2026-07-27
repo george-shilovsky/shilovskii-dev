@@ -816,7 +816,8 @@ window.APP_DETAILS = {
     price: "Subscription · pricing shown in the App Store",
     privacyDoc: "ovessa/privacy.html",
     termsDoc: "ovessa/terms.html",
-    // heroImage / screenshots omitted until the App Store screenshot lot is shot.
+    heroImage: "ovessa-2-cycle.png",
+    heroPortrait: true,
 
     tagline: "The PCOS tracker\nthat never uploads\nyour cycle.",
     subhead: "Ovessa is a private companion for PCOS — an honest cycle tracker built for irregularity, food scanning with a calm PCOS grade screened against your allergies, metabolic tracking through Apple Health, and a doctor-ready PDF. Everything stays on your iPhone. No account. No cloud. App Privacy label: Data Not Collected.",
@@ -845,6 +846,24 @@ window.APP_DETAILS = {
       { step: "02", title: "Scan what you eat", body: "Scan a barcode for an A–E PCOS grade from the label's own figures, photograph a plate and correct the portions in editable chips, or add a meal by hand. Your declared allergens are screened first, and they outrank the grade." },
       { step: "03", title: "Walk in prepared", body: "One tap builds a doctor-ready PDF — cycle lengths with their real variability, symptoms, weight, glucose, supplements, nutrition — generated on the iPhone and shared only when you choose. Or export everything as CSV." },
     ],
+
+    // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
+    screenshotsHeading: "Ten screens, the whole companion.",
+    screenshotCols: 4,
+    screenshots: {
+      tour: [
+        { src: "ovessa-1-today.png", caption: "Today — where the cycle day, the supplements still due, and one-tap Symptom / Scan food / Weight actions sit. The cycle card counts from your last logged period against how long your cycles usually run — no invented certainty." },
+        { src: "ovessa-2-cycle.png", caption: "The month calendar — period days filled by flow, a dashed predicted window on future days only, symptom ticks, a today ring. The legend lists only the marks actually on screen." },
+        { src: "ovessa-3-your-cycles.png", caption: "Your cycles — average length with its real min–max, average period days, cycles tracked, and a scaled timeline of every detected cycle. Variability is stated, not smoothed away." },
+        { src: "ovessa-4-day-log.png", caption: "The Day log — one backdatable sheet for flow, symptoms at four intensity steps, and an optional note. Custom symptoms join a catalog and appear everywhere afterwards." },
+        { src: "ovessa-5-food.png", caption: "Food — three ways in: scan a barcode, photograph a plate, or add a meal by hand. Every logged meal keeps the badge for how it got there." },
+        { src: "ovessa-6-grade.png", caption: "A scanned product — allergens first and above the grade, then a deterministic A–E PCOS read computed from the label's own per-100 g figures, with the reasons spelled out. A missing figure caps the grade instead of being assumed away." },
+        { src: "ovessa-7-meal-edit.png", caption: "A photo meal, before it is saved — every item's name, quantity and unit editable, nutrition per item, and a plain warning that a photo can't check allergens. Nothing is stored until you tap Save." },
+        { src: "ovessa-8-metabolic.png", caption: "My Health — weight, CGM glucose, water, sleep and steps. Sensor data is badged “Apple Health · read-only”: Ovessa reads it, never authors it." },
+        { src: "ovessa-9-summary.png", caption: "The Summary lens — the on-screen twin of the doctor PDF. Cycle length as mean, range and variability; symptom days with their averages and last date. Screen and document read from the same aggregate." },
+        { src: "ovessa-10-doctor-report.png", caption: "The doctor report — a vector US-Letter PDF built on the iPhone: cycle, allergies and diet, symptoms, weight and glucose. It never leaves the device until you choose to share it, and the patient name is optional." },
+      ],
+    },
 
     // ── Full feature catalogue ──
     catalogue: [
