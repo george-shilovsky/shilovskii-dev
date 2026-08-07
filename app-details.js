@@ -2,7 +2,7 @@
 // Source of truth for Migaja: PRODUCT_DOC.md (commit 6bdabdf, supersedes earlier drafts).
 window.APP_DETAILS = {
   migaja: {
-    version: "1.0.1",
+    version: "1.0.2",
     appStore: "https://apps.apple.com/us/app/migaja-clipboard-manager/id6770649369",
     heroImage: "migaja-search-programming.png",
 
@@ -207,7 +207,7 @@ window.APP_DETAILS = {
   },
 
   "json-pilot": {
-    version: "1.1.0",
+    version: "1.1.1",
     appStore: "https://apps.apple.com/us/app/json-pilot-viewer-editor/id6772857377",
     appStoreLabel: "Download on the App Store",
     price: "Free · Pro unlock in-app",
@@ -611,7 +611,7 @@ window.APP_DETAILS = {
 
   // Source of truth: Filmeter PRODUCT_DOC.md (2026-07-05, codebase commit e946508).
   filmeter: {
-    version: "1.0.0",
+    version: "1.0.1",
     appStore: "https://apps.apple.com/us/app/filmeter-film-light-meter/id6785722973",
     appStoreLabel: "Download on the App Store",
     price: "Free · Pro: subscription with free trial, or one-time Lifetime",
@@ -810,8 +810,7 @@ window.APP_DETAILS = {
   // Source of truth: Ovessa PRODUCT_DOC.md (2026-07-25, codebase commit 1701083).
   ovessa: {
     version: "1.0.0",
-    // versionDate omitted until App Store launch.
-    // appStore omitted until live — the Download button renders disabled.
+    appStore: "https://apps.apple.com/us/app/ovessa-pcos-hormone-tracker/id6789788263",
     appStoreLabel: "Download on the App Store",
     price: "Subscription · pricing shown in the App Store",
     privacyDoc: "ovessa/privacy.html",
