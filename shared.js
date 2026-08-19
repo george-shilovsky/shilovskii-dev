@@ -16,6 +16,7 @@
     { id: 'verigate', name: 'Verigate: ID Scanner & Age', tag: 'iOS', summary: 'ID checks for bars and clubs — instant 21+ verdicts, fake-ID detection, no photos stored.', color: '#29B6AD', glyph: 'V', icon: 'apps/verigate-icon.png' },
     { id: 'filmeter', name: 'Filmeter: Film Light Meter', tag: 'iOS', summary: 'A light meter made for film — EV and exposure pairs, the Zone System, reciprocity, all on-device.', color: '#D9A24A', glyph: 'F', icon: 'apps/filmeter-icon.png' },
     { id: 'ovessa', name: 'Ovessa: PCOS & Hormone Tracker', tag: 'iOS', summary: 'A private PCOS companion — honest cycle windows, food with a PCOS grade, and a doctor-ready PDF. Nothing leaves the iPhone.', color: '#6B4A61', glyph: 'O', icon: 'apps/ovessa-icon.png' },
+    { id: 'rayita', name: 'Rayita: Peptide Calculator', tag: 'iOS', status: 'Coming soon', summary: 'A reconstitution calculator and injection journal — the units to draw, with the arithmetic shown, and vials that count down. No account, no server.', color: '#0E6E4E', glyph: 'R', icon: 'apps/rayita-icon.png' },
   ];
 
   const POSTS = [

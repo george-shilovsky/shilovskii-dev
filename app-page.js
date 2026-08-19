@@ -42,7 +42,7 @@
               : `<div class="app-icon" style="width: 64px; height: 64px; border-radius: 16px; background: ${app.color}; font-size: 28px;">${app.glyph}</div>`}
             <div>
               <div style="font-size: 22px; font-weight: 600; letter-spacing: -0.02em;">${app.name}</div>
-              <div style="font-size: 12px; color: var(--fg-3); margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, monospace;">${app.tag} · v${detail.version}${detail.versionDate ? ` · ${detail.versionDate}` : ''}</div>
+              <div style="font-size: 12px; color: var(--fg-3); margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, monospace;">${app.tag} · v${detail.version}${detail.versionDate ? ` · ${detail.versionDate}` : ''}${detail.status ? ` · <span style="color: var(--accent);">${esc(detail.status)}</span>` : ''}</div>
             </div>
           </div>
           <h1 class="hero-title" style="font-size: 52px; line-height: 1.04; letter-spacing: -0.035em; font-weight: 600; margin-bottom: 22px; text-wrap: balance;">${tagline}</h1>
@@ -58,7 +58,9 @@
         <div>
           ${detail.heroImage
             ? `<img src="${detail.heroImage}" alt="${app.name} screenshot" style="${detail.heroPortrait ? 'width: auto; max-width: 100%; max-height: 660px; margin: 0 auto;' : 'width: 100%;'} height: auto; display: block; border-radius: 14px; box-shadow: 0 1px 0 var(--line), 0 24px 48px -16px rgba(0,0,0,0.18), 0 8px 16px -8px rgba(0,0,0,0.10);">`
-            : `<div class="img-ph" style="aspect-ratio: 4/3; background-color: ${app.color}15;">screenshot · ${app.name}.app</div>`
+            : app.icon
+              ? `<img src="${SiteChrome.BASE}${app.icon}" alt="${app.name} icon" style="width: 100%; max-width: 320px; height: auto; display: block; margin: 0 auto; border-radius: 22%; box-shadow: 0 24px 48px -16px rgba(0,0,0,0.28), 0 8px 16px -8px rgba(0,0,0,0.16);">`
+              : `<div class="img-ph" style="aspect-ratio: 4/3; background-color: ${app.color}15;">screenshot · ${app.name}.app</div>`
           }
         </div>
       </div>
@@ -340,7 +342,7 @@
                   : `<div class="app-icon" style="width: 36px; height: 36px; border-radius: 9px; background: ${a.color}; font-size: 16px;">${a.glyph}</div>`}
                 <div class="app-card-meta">
                   <div class="app-card-name" style="font-size: 14px;">${a.name}</div>
-                  <div class="app-card-tag">${a.tag}</div>
+                  <div class="app-card-tag">${a.tag}${a.status ? ` · <span style="color: var(--accent);">${a.status}</span>` : ''}</div>
                 </div>
               </div>
             </a>

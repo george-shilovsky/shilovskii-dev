@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rayita — Privacy policy</title>
+<meta name="description" content="Privacy policy for the Rayita iOS app. Rayita collects no data — it makes no network requests of its own at all. Your vials, doses, schedules and measurements stay on your iPhone, and the optional backup goes into your own private iCloud.">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 28px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .privacy-table th,
+  .privacy-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--fg-2);
+  }
+  .privacy-table thead th {
+    font-weight: 600;
+    color: var(--fg);
+    border-bottom: 1px solid var(--fg-3);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .privacy-table td code {
+    font-size: 0.85em;
+  }
+  .toc-list {
+    columns: 2;
+    column-gap: 32px;
+    margin-bottom: 20px;
+  }
+  .toc-list li {
+    break-inside: avoid;
+  }
+  @media (max-width: 640px) {
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 32px 0 0;">
+  <div class="container-prose">
+    <div class="crumb">
+      <a href="../../index.html">shilovskii.dev</a>
+      <span class="sep">/</span>
+      <a href="../../apps.html">Apps</a>
+      <span class="sep">/</span>
+      <a href="../rayita.html">Rayita</a>
+      <span class="sep">/</span>
+      <span class="here">Privacy</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 0 24px;">
+  <div class="container-prose">
+    <div class="tag-mono" style="margin-bottom: 16px;">Rayita · effective August 19, 2026 · last updated August 19, 2026</div>
+    <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+      This Privacy Policy explains how the Rayita application ("Rayita", "we", "us", "our") handles information when you use it on your iPhone or iPad. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a> or via the <a href="../../contact.html?topic=support" style="color: var(--accent);">contact form</a>.
+    </p>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty; margin-top: 16px;">
+      If you do not agree with this Privacy Policy, please do not install or use Rayita.
+    </p>
+  </div>
+</section>
+
+<section class="prose" style="padding: 24px 0;">
+  <div class="container-prose">
+
+    <h2>Summary</h2>
+    <p><strong>Rayita does not collect your data.</strong> There is no account, no server of ours, no analytics, no advertising and no third-party SDK. In fact the app makes <strong>no network requests of its own at all</strong>. Your vials, doses, schedules, measurements and settings live on your device — and, only if you switch backup on, in <strong>your own private iCloud</strong>, which we cannot read. We could not sell, share or hand over your injection log even if asked: <strong>we never have it.</strong> The App Store privacy label for Rayita reads <strong>"Data Not Collected"</strong>.</p>
+
+    <h2>Table of contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1" style="color: var(--accent);">What Rayita stores on your device</a></li>
+      <li><a href="#s2" style="color: var(--accent);">Apple Health</a></li>
+      <li><a href="#s3" style="color: var(--accent);">Data we collect about you</a></li>
+      <li><a href="#s4" style="color: var(--accent);">Network connections, exactly</a></li>
+      <li><a href="#s5" style="color: var(--accent);">iCloud backup</a></li>
+      <li><a href="#s6" style="color: var(--accent);">Your exports and the doctor report</a></li>
+      <li><a href="#s7" style="color: var(--accent);">Permissions</a></li>
+      <li><a href="#s8" style="color: var(--accent);">Retention and deletion</a></li>
+      <li><a href="#s9" style="color: var(--accent);">Children</a></li>
+      <li><a href="#s10" style="color: var(--accent);">Third parties</a></li>
+      <li><a href="#s11" style="color: var(--accent);">Your privacy rights</a></li>
+      <li><a href="#s12" style="color: var(--accent);">Cookies and tracking technologies</a></li>
+      <li><a href="#s13" style="color: var(--accent);">Changes to this Privacy Policy</a></li>
+      <li><a href="#s14" style="color: var(--accent);">Contact us</a></li>
+    </ol>
+
+    <h2 id="s1" style="scroll-margin-top: 80px;">1. What Rayita stores on your device</h2>
+    <p>All of the following lives <strong>only on your device</strong>, in the app's local database or its settings — unless you switch on iCloud backup, in which case a copy also lives in your own private iCloud (§5).</p>
+    <table class="privacy-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Where it lives</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vials: substance, amount, solvent, concentration, mix date, expiry, batch, source, storage</td>
+          <td>The app's local on-device database</td>
+          <td>Your inventory, and the arithmetic over it.</td>
+        </tr>
+        <tr>
+          <td>Injections: dose, units drawn, date and time, site, note, and the vial and protocol they belong to</td>
+          <td>The app's local on-device database</td>
+          <td>Your log.</td>
+        </tr>
+        <tr>
+          <td>Protocols and their schedule segments</td>
+          <td>The app's local on-device database</td>
+          <td>Your plan, kept as history so past periods stay true.</td>
+        </tr>
+        <tr>
+          <td>Measurements: weight, waist, mood, energy, sleep</td>
+          <td>The app's local on-device database</td>
+          <td>Your own numbers.</td>
+        </tr>
+        <tr>
+          <td>Substances you name, and any half-life you enter</td>
+          <td>The app's local on-device database</td>
+          <td>Reference data for your own calculations.</td>
+        </tr>
+        <tr>
+          <td>Settings — dose and weight units, default syringe, appearance, rest period, vial expiry, reminder configuration</td>
+          <td>iOS <code>UserDefaults</code></td>
+          <td>To remember your preferences.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>None of this is uploaded to a server we control, transmitted to us, or shared with any third party. We cannot see it and we cannot recover it for you.</p>
+
+    <h2 id="s2" style="scroll-margin-top: 80px;">2. Apple Health</h2>
+    <p>Connecting Apple Health is <strong>entirely optional</strong> and Rayita works fully without it. If you connect it:</p>
+    <ul>
+      <li>Weight, waist measurements and moods you enter in Rayita can be <strong>saved into your own Apple Health</strong>, so your history lives in one place and is available to your other apps.</li>
+      <li>Weight, waist, mood and sleep you already keep in Apple Health are <strong>read in place, on your device</strong>, so your charts are filled in from day one. <strong>Sleep is read-only</strong> and never written, because Health recomputes a night after you wake.</li>
+    </ul>
+    <p>Health data is <strong>never copied to any server, never sent to us, and never used for advertising or shared with third parties</strong> — which is also Apple's own rule for HealthKit apps. You control access <strong>type by type</strong> in the Health app and can revoke it at any time. Deleting an entry in the Health app silences it in Rayita rather than resurrecting it; Rayita never purges Apple Health itself, which stays yours to manage in the Health app.</p>
+
+    <h2 id="s3" style="scroll-margin-top: 80px;">3. Data we collect about you</h2>
+    <p><strong>None.</strong> We do not collect personal data, health data, usage data, diagnostics, advertising identifiers, or analytics events. Rayita contains no analytics, telemetry, or crash-reporting code, and <strong>no third-party SDKs of any kind</strong> — the project resolves zero external packages, and every framework it uses is Apple's. There is no account to create, no profile on any server, and no App Tracking Transparency prompt, because there is nothing to track. The App Store privacy label reads <strong>"Data Not Collected"</strong>.</p>
+
+    <h2 id="s4" style="scroll-margin-top: 80px;">4. Network connections, exactly</h2>
+    <p>Rayita issues <strong>no network requests of its own</strong>. There is no HTTP client anywhere in the app. Traffic can occur in only three situations, all of them Apple's or yours:</p>
+    <ol>
+      <li><strong>iCloud backup — only if you turn it on.</strong> Your records are copied into your own private iCloud database using Apple's CloudKit, under your Apple Account. See §5.</li>
+      <li><strong>App Store purchases.</strong> Apple's StoreKit handles the subscription; that traffic is Apple's, governed by <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>. We receive an entitlement signal ("subscription active"), never your payment details or Apple Account.</li>
+      <li><strong>A source link you tap.</strong> Where Rayita shows a published half-life it also shows a link to the source — for example a medicine label on DailyMed or a study on PubMed. Tapping it opens <strong>Safari</strong>, outside the app; that request is an ordinary web visit made by your browser, and we are not part of it. The same is true of the privacy, terms and support links inside the app.</li>
+    </ol>
+    <p>Everything else — the calculator, vials, the log, schedules, sites, the estimated level, charts, CSV export and the PDF report — works entirely offline and makes no connection at all.</p>
+
+    <h2 id="s5" style="scroll-margin-top: 80px;">5. iCloud backup</h2>
+    <p>iCloud backup is <strong>off by default</strong> and is a single switch under <em>Settings → Data</em>. Turning it on copies your records into <strong>your own private CloudKit database</strong> — Apple's storage under your Apple Account. There is no account with us and no server of ours: <strong>we cannot read that database</strong>, we have no console for it, and we hold no copy of it. Turning the switch off copies everything back to the device and removes the cloud copy; either direction takes effect on the next launch, and a failure at any step leaves the switch as it was rather than leaving a half-migrated state. Apple's handling of your iCloud data is governed by <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>. Because a file you keep depends on nothing, the app recommends exporting before you change this setting.</p>
+
+    <h2 id="s6" style="scroll-margin-top: 80px;">6. Your exports and the doctor report</h2>
+    <p>The four CSV tables — doses, vials, measurements and schedule — and the PDF report for your doctor are generated <strong>on your device</strong> and go only where <strong>you</strong> send them through the iOS share sheet. Nothing leaves the device until you send it.</p>
+
+    <h2 id="s7" style="scroll-margin-top: 80px;">7. Permissions</h2>
+    <p>Rayita requests only what a feature you are using needs, and asks in context rather than at launch:</p>
+    <ul>
+      <li><strong>Apple Health, read and write</strong> — optional, granted type by type in the Health app, revocable at any time. Sleep is read only.</li>
+      <li><strong>Notifications</strong> — for local dose reminders only, requested the first time you switch a reminder on. The notifications are scheduled on your device and nothing is sent anywhere.</li>
+    </ul>
+    <p>Rayita never requests Camera, Photos, Location, Microphone, Contacts, or Local Network access.</p>
+
+    <h2 id="s8" style="scroll-margin-top: 80px;">8. Retention and deletion</h2>
+    <p>We retain nothing, because we hold nothing. On your device, data persists until you delete it:</p>
+    <ul>
+      <li>Edit or delete any individual vial, dose, protocol or measurement in-app at any time.</li>
+      <li>Turn iCloud backup off to bring the copy home and remove it from iCloud.</li>
+      <li>Deleting the app removes all of its local data.</li>
+      <li>Data you exported, shared, or saved into Apple Health remains wherever you put it. Apple Health data is managed in the Health app; Rayita never purges it.</li>
+    </ul>
+
+    <h2 id="s9" style="scroll-margin-top: 80px;">9. Children</h2>
+    <p>Rayita is intended for users aged 13 and over. It is not directed to children under 13, and it collects nothing from anyone of any age.</p>
+
+    <h2 id="s10" style="scroll-margin-top: 80px;">10. Third parties</h2>
+    <ul>
+      <li><strong>Apple Inc.</strong> — App Store distribution, StoreKit purchases, HealthKit (on-device), and CloudKit (your own private database), under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>.</li>
+      <li>No other third party receives anything. Rayita bundles no third-party SDKs and contacts no servers of ours, because none exist.</li>
+    </ul>
+    <p>Published sources quoted in the app — such as DailyMed labels or PubMed abstracts — are shown as short attributed quotations with a link. Following that link is an ordinary visit made by your browser, to a site with its own privacy policy.</p>
+
+    <h2 id="s11" style="scroll-margin-top: 80px;">11. Your privacy rights</h2>
+    <p>Because your data never reaches us, the rights typically granted under the GDPR, CCPA/CPRA, and similar privacy laws — access, correction, deletion, and portability — are exercised by you, on the device:</p>
+    <ul>
+      <li><strong>Access.</strong> Everything is visible in-app; nothing is hidden from you.</li>
+      <li><strong>Correction.</strong> Every vial, dose, protocol, measurement and substance is editable.</li>
+      <li><strong>Deletion.</strong> Delete any entry, turn backup off, or delete the app.</li>
+      <li><strong>Portability.</strong> Export four CSV tables, or a PDF report, from inside the app.</li>
+      <li><strong>Withdrawal of consent.</strong> Revoke notification or Apple Health access in iOS Settings, or delete the app.</li>
+    </ul>
+    <p>We do not sell or share personal information, and we do not process personal data for advertising or profiling — there is none to process. If you nonetheless have questions about your rights, contact us at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>. Note that we will only be able to confirm that we hold no data about you, because we do not collect any.</p>
+
+    <h2 id="s12" style="scroll-margin-top: 80px;">12. Cookies and tracking technologies</h2>
+    <p>Rayita is a native iOS application. It does not use cookies, web beacons, pixels, or any other web-tracking technology, and it embeds no browser. Do-Not-Track signals are therefore not applicable — there is nothing for us to track.</p>
+
+    <h2 id="s13" style="scroll-margin-top: 80px;">13. Changes to this Privacy Policy</h2>
+    <p>If we materially change this Privacy Policy, we will update the <strong>Last updated</strong> date above and, where required by law, notify you the next time you open the app or update through the App Store. We encourage you to review this Privacy Policy periodically.</p>
+
+    <h2 id="s14" style="scroll-margin-top: 80px;">14. Contact us</h2>
+    <p>Questions about this Privacy Policy, or about how Rayita handles data on your iPhone, please contact us:</p>
+    <p><strong>Developer:</strong> Georgii Shilovskii, Mexico</p>
+    <p><strong>Email:</strong> <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a></p>
+    <p><strong>Support form:</strong> <a href="../../contact.html?topic=support" style="color: var(--accent);">shilovskii.dev/contact.html</a></p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../../shared.js"></script>
+<script>SiteChrome.render({ active: 'apps' });</script>
+</body>
+</html>

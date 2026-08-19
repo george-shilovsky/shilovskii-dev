@@ -80,7 +80,7 @@
           : `<div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: ${app.color}; font-size: 22px;">${app.glyph}</div>`}
         <div class="app-card-meta">
           <div class="app-card-name">${app.name}</div>
-          <div class="app-card-tag">${app.tag}</div>
+          <div class="app-card-tag">${app.tag}${app.status ? ` · <span style="color: var(--accent);">${app.status}</span>` : ''}</div>
         </div>
         <span style="color: var(--fg-3); font-size: 18px;">→</span>
       </div>
