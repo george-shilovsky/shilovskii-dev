@@ -1026,7 +1026,7 @@ window.APP_DETAILS = {
     ],
   },
 
-  // Source of truth: Rayita PRODUCT_DOC.md (2026-08-18, codebase commit 9a2cfc6). Not yet released.
+  // Source of truth: Rayita PRODUCT_DOC.md (2026-08-21, codebase commit cd59fed). Not yet released.
   rayita: {
     version: "1.0.0",
     status: "Coming soon",
@@ -1034,6 +1034,8 @@ window.APP_DETAILS = {
     price: "The calculator is free and unlimited · an optional subscription lifts the limits · pricing on the App Store",
     privacyDoc: "rayita/privacy.html",
     termsDoc: "rayita/terms.html",
+    heroImage: "rayita-1-calculator.png",
+    heroPortrait: true,
 
     tagline: "The syringe number —\nand the arithmetic\nbehind it.",
     subhead: "Rayita is a reconstitution calculator and injection journal for people who mix their own vials. Enter what's in the vial and the dose you're taking; get the units to draw, with the working shown. Then keep the rest honest: what's left in each vial, when it expires, what you injected and where. Everything stays on your iPhone — no account, and the app makes no network requests of its own.",
@@ -1062,6 +1064,20 @@ window.APP_DETAILS = {
       { step: "02", title: "Save the vial, log the shot", body: "Carry the numbers straight into a vial or a dose entry. Every logged dose comes off the vial, and what's left is recalculated from your log each time you look — so correcting last week's entry corrects the vial too." },
       { step: "03", title: "Keep the record honest", body: "A week strip without a score, sites ranked by what has rested longest, schedules kept as history, your own measurements, and an estimated level with its assumptions named. Export four CSV tables or a PDF for your doctor, generated on the iPhone." },
     ],
+
+    // ── Screenshot gallery (portrait iPhone shots, light appearance) ──
+    screenshotsHeading: "Six screens, the whole vial.",
+    screenshotCols: 3,
+    screenshots: {
+      tour: [
+        { src: "rayita-1-calculator.png", caption: "The calculator — 5 mg in 2 mL, a 250 mcg dose, and the answer in type you can read at arm's length: 10 units, over a drawn U-100 scale. Volume, concentration and doses per vial sit underneath, and the syringe you actually hold is picked in the toolbar." },
+        { src: "rayita-2-vials.png", caption: "Vials — doses left, a remaining bar, the mix date and the use-by date on every card. None of those numbers is stored: they are recomputed from your log each time you look, so correcting an entry corrects the vial too." },
+        { src: "rayita-3-log.png", caption: "The log — a seven-column week with four honest states (logged, due, not logged, and an entry with nothing to match it to) and no score anywhere. Below it, what today still holds, and the day-by-day entries with site and delivered dose." },
+        { src: "rayita-4-sites.png", caption: "Sites — ten of them in four groups, each reporting days rested, with the longest-rested one suggested from your own log. The rest period is yours to set, and sites you don't use can be switched off." },
+        { src: "rayita-5-level.png", caption: "The estimated level — how much has not yet cleared, solid for your logged doses and dashed for the projection, from a published half-life. The screen says plainly that it is calculated from your own entries and is not medical data, and the assumptions are one tap away." },
+        { src: "rayita-6-weight.png", caption: "Weight — the latest weigh-in, the change since you started, and your own goal. Dose changes are marked on the same time axis, with deliberately no line drawn between dose and weight. No BMI, no photos, no scores." },
+      ],
+    },
 
     // ── Full feature catalogue ──
     catalogue: [
@@ -1094,11 +1110,13 @@ window.APP_DETAILS = {
         kicker: "The log, protocols and sites",
         items: [
           "Entries grouped by day, each row showing time, site, the dose requested and the dose actually delivered — with backdating treated as normal rather than exceptional.",
+          "The syringe is part of the record, not an assumption. Every logged dose stores the barrel it was drawn with, and the amount taken off the vial is computed from that — because a silently assumed scale would corrupt the vial's remaining amount, not just the display.",
           "A seven-column week strip with four honest states: logged, pending, not logged, and an entry with nothing to match it to. Colour identifies the substance and never shifts between weeks.",
           "No adherence score on screen. Scheduled-but-unlogged doses read “not logged”, never “missed”, and each offers a button that back-fills the entry.",
           "Protocols carry substance, dose, frequency (daily through weekly, days of the week, custom interval or as-needed), an optional time and a start date, with per-protocol reminders.",
           "A schedule is a history of segments: change the dose from a date and Rayita opens a new period instead of overwriting the old one, so what you were taking in June still reads correctly in December.",
           "Ten injection sites in four groups with days rested, a suggested next site drawn from your own log, an editable rest period, and sites you can switch off — the same suggestion appears in the dose sheet.",
+          "Reminders are local notifications and nothing else. Settings → Notifications is the one place that shows the whole plan at once: for each protocol, when the next one arrives — or which of six reasons means it won't, so the fix is never on a screen you have to guess at.",
         ],
       },
       {
@@ -1155,8 +1173,8 @@ window.APP_DETAILS = {
         id: "getting-started",
         title: "Getting started",
         body: `
-          <p>Onboarding is three screens and exists for exactly two things that otherwise never happen: reading the disclaimer, and seeing that the calculator works before you type anything real. <strong>Where it stays</strong> explains what the app keeps and where. <strong>The calculator</strong> runs a worked example on the real control. <strong>The disclaimer</strong> is the same screen the Settings row opens — there is no second copy of that text anywhere in the product, because two copies would eventually promise different things.</p>
-          <p>No questions, no profile, no account, nothing skippable-but-nagging, and no paywall in the way. After onboarding you land on the Calculator tab with the app fully usable.</p>
+          <p>Onboarding is four screens, and not one of them asks you to type anything. <strong>Set your defaults</strong> is two pickers — your dose unit and your syringe — both changeable later in Settings. <strong>Where it stays</strong> explains what the app keeps and where. <strong>Start with a number</strong> shows the three calculator modes with a worked example computed by the real calculator on the syringe you just chose, and carries the disclaimer — the same screen the Settings row opens, because there is no second copy of that text anywhere in the product. The <strong>subscription screen</strong> comes last and is closed with the ✕ in its top bar; the disclaimer stands before it by design, so no purchase screen can shadow the required text.</p>
+          <p>No questions, no profile, no account, and nothing asked about what you are taking or why. After onboarding you land on the Calculator tab with the app fully usable, whether or not you subscribed.</p>
           <h4>The five tabs</h4>
           <p><strong>Calculator</strong> is the main free screen. <strong>Vials</strong> is your inventory and what's left in it. <strong>Doses</strong> holds the log, your protocols and your injection sites. <strong>Progress</strong> holds the estimated level, weight, and the rest of your measurements. <strong>Settings</strong> holds units and defaults, appearance, notifications, Apple Health, data and export, the methodology pages, and the disclaimer.</p>
         `,
@@ -1204,7 +1222,7 @@ window.APP_DETAILS = {
         id: "subscription",
         title: "What's free, what the subscription adds",
         body: `
-          <p><strong>The calculator is free, unlimited and permanent</strong> — along with your log, two vials, one protocol with its reminders, site rotation, the estimated level, your measurements, and CSV export. There is no hard paywall: onboarding leads straight into the app, and a reviewer or a first-time user can do real work without paying anything.</p>
+          <p><strong>The calculator is free, unlimited and permanent</strong> — along with your log, two vials, one protocol with its reminders, site rotation, the estimated level, your measurements, and CSV export. There is no hard paywall. Onboarding ends on the subscription screen, and that screen is closed with a ✕ — a first-time user, or a reviewer, can walk past it and do real work without paying anything.</p>
           <p>An optional auto-renewing subscription — annual or monthly, with a free trial on the annual plan for eligible new subscribers — lifts the vial and protocol limits, brings reminders for every protocol rather than the first, and adds the PDF report for your doctor. <strong>The limit counts only what is running now:</strong> emptied and archived vials and ended protocols do not count against it, because a limit that punishes you for keeping honest records would contradict the whole product.</p>
           <p>Current pricing is shown on the App Store and on the paywall in your own currency, with the renewal terms and your trial eligibility already applied. Billing is entirely Apple's — <strong>we never hold your card</strong> — and cancelling happens in iOS Settings → Apple Account → Subscriptions or through Settings → Subscription in the app.</p>
           <p><strong>Your data outlives your subscription.</strong> Stop paying and everything you logged stays on the iPhone, still viewable, editable, exportable and deletable. CSV export is deliberately free, because you cannot charge for the antidote to your own risk when the whole pitch is that your records don't get lost.</p>
