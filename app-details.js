@@ -807,9 +807,9 @@ window.APP_DETAILS = {
     ],
   },
 
-  // Source of truth: Ovessa PRODUCT_DOC.md (2026-07-25, codebase commit 1701083).
+  // Audited against Ovessa 1.2.0, commit e9cc1b4 (2026-09-01).
   ovessa: {
-    version: "1.0.0",
+    version: "1.2.0",
     appStore: "https://apps.apple.com/us/app/ovessa-pcos-hormone-tracker/id6789788263",
     appStoreLabel: "Download on the App Store",
     price: "Subscription · pricing shown in the App Store",
@@ -835,7 +835,7 @@ window.APP_DETAILS = {
     features: [
       { title: "Built for irregularity, not against it.", body: "Most period trackers treat an irregular cycle as an error state. Ovessa refuses to fake precision: no prediction at all until it has seen at least three of your cycles, a likely window that never collapses below four days, a wider window when your history is more variable — and copy that says out loud that a wide window is normal with PCOS." },
       { title: "Verified numbers, never AI slop.", body: "The PCOS grade is deterministic arithmetic over the product's own label figures, citing published public criteria — no model, no cloud verdict. For photo meals a vision model only says what and how much; the calories and macros come from the USDA food database, and any estimate that does surface is badged “≈ approximate”, forever." },
-      { title: "Private by architecture.", body: "No account, no cloud, no CloudKit, no analytics, no third-party SDKs. Health data is read in place from Apple Health, on-device. The only bytes that ever leave the iPhone: a meal photo you explicitly scan — processed in memory by a stateless service that writes no logs — and the barcode number of a packet." },
+      { title: "Private by architecture.", body: "No account, no cloud, no CloudKit, no analytics, no third-party SDKs. Your health logs stay on the iPhone. When you explicitly scan or look up food, Ovessa sends only the photo or generic food/barcode query needed for that request, together with the app language and integrity proof; the stateless service keeps no content." },
     ],
 
     // ── How it works ──
@@ -847,20 +847,23 @@ window.APP_DETAILS = {
     ],
 
     // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
-    screenshotsHeading: "Ten screens, the whole companion.",
+    screenshotsHeading: "Thirteen screens, the whole companion.",
     screenshotCols: 4,
     screenshots: {
       tour: [
-        { src: "ovessa-1-today.png", caption: "Today — where the cycle day, the supplements still due, and one-tap Symptom / Scan food / Weight actions sit. The cycle card counts from your last logged period against how long your cycles usually run — no invented certainty." },
         { src: "ovessa-2-cycle.png", caption: "The month calendar — period days filled by flow, a dashed predicted window on future days only, symptom ticks, a today ring. The legend lists only the marks actually on screen." },
-        { src: "ovessa-3-your-cycles.png", caption: "Your cycles — average length with its real min–max, average period days, cycles tracked, and a scaled timeline of every detected cycle. Variability is stated, not smoothed away." },
-        { src: "ovessa-4-day-log.png", caption: "The Day log — one backdatable sheet for flow, symptoms at four intensity steps, and an optional note. Custom symptoms join a catalog and appear everywhere afterwards." },
-        { src: "ovessa-5-food.png", caption: "Food — three ways in: scan a barcode, photograph a plate, or add a meal by hand. Every logged meal keeps the badge for how it got there." },
         { src: "ovessa-6-grade.png", caption: "A scanned product — allergens first and above the grade, then a deterministic A–E PCOS read computed from the label's own per-100 g figures, with the reasons spelled out. A missing figure caps the grade instead of being assumed away." },
-        { src: "ovessa-7-meal-edit.png", caption: "A photo meal, before it is saved — every item's name, quantity and unit editable, nutrition per item, and a plain warning that a photo can't check allergens. Nothing is stored until you tap Save." },
+        { src: "ovessa-5-food.png", caption: "The food log — today's meals, approximate calories and macros, and the ingredients and portions behind every photo estimate. Start a photo scan or add a meal by hand from the same screen." },
+        { src: "ovessa-7-photo-scan.png", caption: "Scan a meal — take a new photo or choose one from the library. Ovessa explains that the result is an estimate, that you can correct it before saving, and that the photo is sent once for recognition and never stored." },
+        { src: "ovessa-1-today.png", caption: "Today — where the cycle day, the supplements still due, and one-tap Symptom / Scan food / Weight actions sit. The cycle card counts from your last logged period against how long your cycles usually run — no invented certainty." },
+        { src: "ovessa-4-day-log.png", caption: "The Day log — one backdatable sheet for flow, symptoms at four intensity steps, and an optional note. Custom symptoms join a catalog and appear everywhere afterwards." },
         { src: "ovessa-8-metabolic.png", caption: "My Health — weight, CGM glucose, water, sleep and steps. Sensor data is badged “Apple Health · read-only”: Ovessa reads it, never authors it." },
         { src: "ovessa-9-summary.png", caption: "The Summary lens — the on-screen twin of the doctor PDF. Cycle length as mean, range and variability; symptom days with their averages and last date. Screen and document read from the same aggregate." },
         { src: "ovessa-10-doctor-report.png", caption: "The doctor report — a vector US-Letter PDF built on the iPhone: cycle, allergies and diet, symptoms, weight and glucose. It never leaves the device until you choose to share it, and the patient name is optional." },
+        { src: "ovessa-3-your-cycles.png", caption: "Your cycles — average length with its real min–max, average period days, cycles tracked, and a scaled timeline of every detected cycle. Variability is stated, not smoothed away." },
+        { src: "ovessa-11-supplements-today.png", caption: "Today's supplements — scheduled doses and as-needed items in one checklist, with the amount and time of day kept visible while you log each dose." },
+        { src: "ovessa-12-supplements-manage.png", caption: "Supplements & medications — manage each item, its dose and schedule, and see how recently it was taken without turning adherence into a score." },
+        { src: "ovessa-13-privacy.png", caption: "The Privacy centre — a plain-language summary of what stays on the iPhone, plus local export and immediate deletion controls. No account, no health-data analytics, no hidden cloud copy." },
       ],
     },
 
@@ -931,15 +934,16 @@ window.APP_DETAILS = {
 
     // ── System requirements ──
     requirements: [
-      "iPhone running iOS 26.5 or later (iPad is supported; the positioning is iPhone-first)",
+      "iPhone running iOS 26.0 or later (iPad is supported; the positioning is iPhone-first)",
       "A camera for barcode and meal-photo scanning — both have fallbacks: manual barcode entry, the photo library, or a fully manual meal entry",
       "Apple Health is entirely optional and never required; every feature that uses it degrades gracefully without it",
       "A network connection only for a first-ever barcode lookup, meal-photo recognition, nutrition lookup, and the App Store — everything else works offline",
-      "An auto-renewing subscription, with a free trial for eligible new subscribers; no account is ever created",
+      "English and Mexican Spanish; Ovessa follows the per-app language selected in iOS Settings",
+      "An auto-renewing Annual or Monthly subscription; eligible new subscribers can try Annual free for seven days, while Monthly bills immediately; no account is ever created",
     ],
 
     permissionsNote: "Camera (to read a barcode on a packet, or to photograph a meal), Apple Health read and write (optional, type-by-type, controlled in the Health app), and local notifications for supplement reminders. The photo library is reached through Apple's out-of-process picker, so Ovessa sees only the photo you pick. No Location, Microphone, Contacts, or Local Network — and no advertising or tracking permission, because there is nothing to track.",
-    privacyTeaser: "Ovessa's App Privacy label is “Data Not Collected”. Your cycle, symptoms, supplements, weight and meals live in an on-device database with iCloud sync deliberately disabled; Apple Health data is read in place. Only a meal photo you explicitly scan and a barcode number ever leave the phone.",
+    privacyTeaser: "Ovessa's App Privacy label is “Data Not Collected”. Your cycle, symptoms, supplements, weight and meals live in an on-device database with iCloud sync deliberately disabled; Apple Health data is read in place. When you explicitly scan or look up food, only the photo or generic food/barcode query needed for that request is sent, together with the app language and integrity proof; purchases are handled by Apple.",
 
     // ── Long-form documentation ──
     guide: [
@@ -995,7 +999,7 @@ window.APP_DETAILS = {
         id: "privacy-and-data",
         title: "What leaves the iPhone, exactly",
         body: `
-          <p>Two things, both at your explicit request. A <strong>meal photo you tap to scan</strong> is downscaled and sent once over HTTPS to a stateless service, which forwards it to a vision model under terms that prohibit training on it and returns what food it sees. That service has <strong>no database and no request logging</strong> — images are processed in memory and discarded — and its diagnostics carry status codes, never content. And a <strong>barcode number</strong>, looked up anonymously against Open Food Facts with no cookies and no identifiers.</p>
+          <p>Your health logs never leave the iPhone. Network requests happen only when you explicitly scan or look up food, or when Apple handles an App Store purchase: a <strong>meal photo and optional hint</strong> go to Ovessa's stateless service for recognition; generic food words go to the same service for a USDA nutrition lookup; and <strong>barcode digits</strong> go anonymously to Open Food Facts. The food-service requests also carry the selected app language.</p>
           <p>Requests carry Apple <strong>App Attest</strong> proof that the caller is a genuine, un-tampered copy of Ovessa on real Apple hardware, plus an opaque per-install identifier used solely to enforce a daily scan cap. Neither is identity: the attestation binds a cryptographic key you never see, no account exists to link it to, and the rate-limit counter lives in memory that evaporates rather than in any datastore.</p>
           <p>Everything else is local. Your logs live in an on-device database with iCloud sync <strong>deliberately disabled</strong>; Apple Health data is read in place and never copied out. The Privacy centre shows live per-model counts of exactly what's stored, and <strong>Delete everything</strong> erases all of it immediately and permanently — it never touches Apple Health itself, which stays yours to manage in the Health app. The full detail is in the <a href="ovessa/privacy.html" style="color: var(--accent);">privacy policy</a>.</p>
         `,
@@ -1004,7 +1008,7 @@ window.APP_DETAILS = {
         id: "subscription",
         title: "Subscription, trial, and what happens if you stop",
         body: `
-          <p>Ovessa is a subscription — an <strong>Annual</strong> or a <strong>Monthly</strong> plan, with a <strong>free trial</strong> for eligible new subscribers. Current prices are shown in the App Store and on the paywall for your region, alongside the trial terms and the first charge date, before you commit — and trial copy appears only when Apple confirms you are eligible for it. There are no countdown timers, no fake discounts, and no offer that appears when you try to delete the app. Manage or cancel through Apple at any time: <strong>we never hold your card.</strong></p>
+          <p>Ovessa is a subscription — an <strong>Annual</strong> or a <strong>Monthly</strong> plan. Eligible new subscribers can receive a <strong>seven-day free trial on Annual</strong>; Monthly bills immediately. Current prices are shown in the App Store and on the paywall for your region, alongside the trial terms and the first charge date, before you commit — and trial copy appears only when Apple confirms you are eligible for it. There are no countdown timers, no fake discounts, and no offer that appears when you try to delete the app. Manage or cancel through Apple at any time: <strong>we never hold your card.</strong></p>
           <p>The subscription <em>is</em> the app — there's no free tier and no feature-gating matrix. The price is the business model: no ads, no coaching upsell, and no monetising your data, which would be impossible anyway.</p>
           <p><strong>Your data outlives your subscription.</strong> If you stop paying, Ovessa keeps letting you view the Summary lens, build the doctor PDF, export every CSV, and delete everything — free, without resubscribing. Resubscribing is only to keep tracking going. And because no account exists, the usual failure of “I paid but can't log in” simply cannot happen: entitlement comes from Apple's own verified transaction record, and “Restore purchases” is on the paywall and in Settings.</p>
         `,

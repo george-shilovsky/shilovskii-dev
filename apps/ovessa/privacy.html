@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ovessa — Privacy policy</title>
-<meta name="description" content="Privacy policy for the Ovessa iOS app. Ovessa collects no data — your cycle, symptoms, supplements, weight and meals stay on your iPhone. Only a meal photo you explicitly scan and a barcode number ever leave the device, and neither is stored.">
+<meta name="description" content="Privacy policy for the Ovessa iOS app. Ovessa collects no data — your health logs stay on your iPhone, while explicit food lookups send only the input needed to answer the request.">
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../styles.css">
 <style>
@@ -66,7 +66,7 @@
 
 <section style="padding: 32px 0 24px;">
   <div class="container-prose">
-    <div class="tag-mono" style="margin-bottom: 16px;">Ovessa · effective July 26, 2026 · last updated July 26, 2026</div>
+    <div class="tag-mono" style="margin-bottom: 16px;">Ovessa · effective July 26, 2026 · last updated September 2, 2026</div>
     <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
     <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
       This Privacy Policy explains how the Ovessa application ("Ovessa", "we", "us", "our") handles information when you use it on your iPhone or iPad. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a> or via the <a href="../../contact.html?topic=support" style="color: var(--accent);">contact form</a>.
@@ -81,7 +81,7 @@
   <div class="container-prose">
 
     <h2>Summary</h2>
-    <p><strong>Ovessa does not collect your data.</strong> There is no account, no cloud copy of your logs, no analytics, no advertising, and no third-party SDK. Your cycle, symptoms, supplements, weight, meals and settings live on your device and — if you choose — in your own Apple Health. Exactly two things ever leave your iPhone, both at your explicit request: a <strong>meal photo you scan</strong> (processed in memory to recognise the food, then discarded — never stored, never logged) and a <strong>barcode number</strong> (looked up anonymously). We could not sell, share, or hand over your health data even if asked — <strong>we never have it</strong>. The App Store privacy label for Ovessa reads <strong>"Data Not Collected"</strong>.</p>
+    <p><strong>Ovessa does not collect your data.</strong> There is no account, no cloud copy of your logs, no analytics, no advertising, and no third-party SDK. Your cycle, symptoms, supplements, weight, meals and settings live on your device and — if you choose — in your own Apple Health. Network requests happen only when you explicitly scan or look up food, or when Apple handles an App Store purchase: a meal photo and optional hint go to Ovessa's stateless service for recognition; generic food words go to the same service for a USDA nutrition lookup; and barcode digits go anonymously to Open Food Facts. Food-service requests also carry the selected app language and integrity proof, but no account identity. Photos are processed in memory and discarded — never stored or logged. We could not sell, share, or hand over your health data even if asked — <strong>we never have it</strong>. The App Store privacy label for Ovessa reads <strong>"Data Not Collected"</strong>.</p>
 
     <h2>Table of contents</h2>
     <ol class="toc-list">
@@ -166,8 +166,8 @@
     <h2 id="s4" style="scroll-margin-top: 80px;">4. Network connections, exactly</h2>
     <p>Ovessa opens a network connection in <strong>only four situations</strong>:</p>
     <ol>
-      <li><strong>Meal-photo scan — only when you tap scan.</strong> The photo (downscaled to roughly 100–300 KB) and your optional hint text are sent over HTTPS to our own stateless service on Google Cloud Run, which forwards them to a vision model on Google's Vertex AI — a paid tier, under terms that prohibit training on the data — and returns what food it sees. <strong>The service keeps nothing:</strong> it has no database, writes no request logs, and processes images in memory only; its diagnostics carry status codes, never content. The request carries a cryptographic proof that it comes from a genuine, un-tampered copy of Ovessa (Apple <strong>App Attest</strong>) and an opaque per-install identifier used only to enforce a daily scan limit. Neither says anything about <em>you</em>: no account exists to link them to, and the rate-limit counter lives in memory that evaporates rather than in any datastore. As with any internet service, Google's infrastructure processes transient technical data (such as IP addresses) to deliver the request under Google Cloud's own terms; we do not receive, log, or link any of it to your health data.</li>
-      <li><strong>Food nutrition lookup.</strong> Generic food words — "salmon", "white rice" — are sent to the same stateless service to fetch nutrition figures from the public USDA food database. No photo, and no identifiers beyond the same integrity proof.</li>
+      <li><strong>Meal-photo scan — only when you tap scan.</strong> The photo (downscaled to roughly 100–300 KB), your optional hint text, and the selected app language are sent over HTTPS to our own stateless service on Google Cloud Run, which forwards the image and hint to a vision model on Google's Vertex AI — a paid tier, under terms that prohibit training on the data — and returns what food it sees in the app's language. <strong>The service keeps nothing:</strong> it has no database, writes no request logs, and processes images in memory only; its diagnostics carry status codes, never content. The request carries a cryptographic proof that it comes from a genuine, un-tampered copy of Ovessa (Apple <strong>App Attest</strong>) and an opaque per-install identifier used only to enforce a daily scan limit. Neither says anything about <em>you</em>: no account exists to link them to, and the rate-limit counter lives in memory that evaporates rather than in any datastore. As with any internet service, Google's infrastructure processes transient technical data (such as IP addresses) to deliver the request under Google Cloud's own terms; we do not receive, log, or link any of it to your health data.</li>
+      <li><strong>Food nutrition lookup.</strong> Generic food words — "salmon", "white rice" — and the input language when needed for translation are sent to the same stateless service to fetch nutrition figures from the public USDA food database. No photo, and no identifiers beyond the same integrity proof.</li>
       <li><strong>Barcode lookup, on the first scan of a product.</strong> The barcode digits are sent anonymously to <strong>Open Food Facts</strong>, a public open food database — with no cookies, no identifiers, and nothing about you. Products you have scanned before are cached on your device and work offline forever.</li>
       <li><strong>App Store purchases.</strong> Apple's StoreKit handles the subscription; that traffic is Apple's, governed by <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>. We receive an entitlement signal ("subscription active") and never your payment details or Apple Account.</li>
     </ol>
@@ -204,7 +204,7 @@
     <h2 id="s10" style="scroll-margin-top: 80px;">10. Third parties</h2>
     <ul>
       <li><strong>Apple Inc.</strong> — App Store distribution, StoreKit purchases, HealthKit (on-device), and App Attest, under <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>.</li>
-      <li><strong>Google Cloud</strong> (Cloud Run, Vertex AI) — infrastructure for the meal-photo scan service, acting as a processor of ephemeral requests. No training on your data; nothing stored by us.</li>
+      <li><strong>Google Cloud</strong> (Cloud Run, Vertex AI) — infrastructure for meal-photo recognition and generic food nutrition lookups, acting as a processor of ephemeral requests. No training on your data; nothing stored by us.</li>
       <li><strong>Open Food Facts</strong> — anonymous barcode lookups against a public database, available under the Open Database License (ODbL); attribution is shown in-app on every product card.</li>
       <li>No other third party receives anything. Ovessa bundles no third-party SDKs.</li>
     </ul>
