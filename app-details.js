@@ -1030,20 +1030,21 @@ window.APP_DETAILS = {
     ],
   },
 
-  // Source of truth: Rayita PRODUCT_DOC.md (2026-08-21, codebase commit cd59fed). Not yet released.
+  // Source of truth: Rayita 1.0.0 release (App Store and codebase tag 1.0.0, verified 2026-09-02).
   rayita: {
     version: "1.0.0",
-    status: "Coming soon",
-    appStoreLabel: "Coming to the App Store",
-    price: "The calculator is free and unlimited · an optional subscription lifts the limits · pricing on the App Store",
+    versionDate: "September 2, 2026",
+    appStore: "https://apps.apple.com/us/app/rayita-peptide-tracker/id6797090328",
+    appStoreLabel: "Download on the App Store",
+    price: "The converter is free and unlimited · an optional subscription lifts the limits · pricing on the App Store",
     privacyDoc: "rayita/privacy.html",
     termsDoc: "rayita/terms.html",
-    heroImage: "rayita-1-calculator.png",
+    heroImage: "rayita-3-convert-framed.png",
     heroPortrait: true,
 
     tagline: "The syringe number —\nand the arithmetic\nbehind it.",
-    subhead: "Rayita is a reconstitution calculator and injection journal for people who mix their own vials. Enter what's in the vial and the dose you're taking; get the units to draw, with the working shown. Then keep the rest honest: what's left in each vial, when it expires, what you injected and where. Everything stays on your iPhone — no account, and the app makes no network requests of its own.",
-    blurb: "Rayita is a native iPhone reconstitution calculator and injection journal, built for people who mix their own vials — compounded GLP-1, research peptides, TRT. You enter the dose you are taking and it converts it into marks on your syringe, showing the arithmetic it used. Vials count down from your own log, schedules are kept as history rather than overwritten, injection sites report what has rested longest, and your weight, waist, sleep and mood ride along through Apple Health. Nothing is computed anywhere but on the device.",
+    subhead: "Rayita is a private injection journal and unit converter for people who manage their own vials. Start with what's in each vial and what is left, keep an honest log of what you injected and where, and convert your dose into syringe units with the working shown. Everything stays on your device — no account, and the app makes no network requests of its own.",
+    blurb: "Rayita is a native iPhone and iPad peptide tracker, built around your vials and injection log. You enter the dose you are taking and it converts it into marks on your syringe, showing the arithmetic it used. Vials count down from your own log, schedules are kept as history rather than overwritten, injection sites report what has rested longest, and your weight, waist, sleep and mood ride along through Apple Health. Nothing is computed anywhere but on the device.",
     pitch: "You enter the dose. Rayita converts it into units on your syringe, prints the arithmetic, and keeps an honest count of what is left — without an account, a server, or a single network request of its own.",
 
     // ── Hero stats ──
@@ -1074,21 +1075,21 @@ window.APP_DETAILS = {
     screenshotCols: 3,
     screenshots: {
       tour: [
-        { src: "rayita-1-calculator.png", caption: "The calculator — 5 mg in 2 mL, a 250 mcg dose, and the answer in type you can read at arm's length: 10 units, over a drawn U-100 scale. Volume, concentration and doses per vial sit underneath, and the syringe you actually hold is picked in the toolbar." },
-        { src: "rayita-2-vials.png", caption: "Vials — doses left, a remaining bar, the mix date and the use-by date on every card. None of those numbers is stored: they are recomputed from your log each time you look, so correcting an entry corrects the vial too." },
-        { src: "rayita-3-log.png", caption: "The log — a seven-column week with four honest states (logged, due, not logged, and an entry with nothing to match it to) and no score anywhere. Below it, what today still holds, and the day-by-day entries with site and delivered dose." },
-        { src: "rayita-4-sites.png", caption: "Sites — ten of them in four groups, each reporting days rested, with the longest-rested one suggested from your own log. The rest period is yours to set, and sites you don't use can be switched off." },
-        { src: "rayita-5-level.png", caption: "The estimated level — how much has not yet cleared, solid for your logged doses and dashed for the projection, from a published half-life. The screen says plainly that it is calculated from your own entries and is not medical data, and the assumptions are one tap away." },
-        { src: "rayita-6-weight.png", caption: "Weight — the latest weigh-in, the change since you started, and your own goal. Dose changes are marked on the same time axis, with deliberately no line drawn between dose and weight. No BMI, no photos, no scores." },
+        { src: "rayita-1-vials-framed.png", caption: "Vials — doses left, a remaining bar, the mix date and the use-by date on every card. None of those numbers is stored: they are recomputed from your log each time you look, so correcting an entry corrects the vial too." },
+        { src: "rayita-2-week-framed.png", caption: "The log — a seven-column week with four honest states (logged, due, not logged, and an entry with nothing to match it to) and no score anywhere. Below it, what today still holds, and the day-by-day entries with site and delivered dose." },
+        { src: "rayita-3-convert-framed.png", caption: "Convert — 5 mg in 2 mL, a 250 mcg dose, and the answer in type you can read at arm's length: 10 units, over a drawn U-100 scale. Volume, concentration and doses per vial sit underneath, and the syringe you actually hold is picked at the top." },
+        { src: "rayita-4-sites-framed.png", caption: "Sites — ten of them in four groups, each reporting days rested, with the longest-rested one suggested from your own log. The rest period is yours to set, and sites you don't use can be switched off." },
+        { src: "rayita-5-level-framed.png", caption: "The estimated level — how much has not yet cleared, solid for your logged doses and dashed for the projection, from a published half-life. The screen says plainly that it is calculated from your own entries and is not medical data, and the assumptions are one tap away." },
+        { src: "rayita-6-weight-framed.png", caption: "Weight — the latest weigh-in, the change since you started, and your own goal. Dose changes are marked on the same time axis, with deliberately no line drawn between dose and weight. No BMI, no photos, no scores." },
       ],
     },
 
     // ── Full feature catalogue ──
     catalogue: [
       {
-        kicker: "The calculator — free and unlimited",
+        kicker: "The converter — free and unlimited",
         items: [
-          "Three modes sharing one dose field: reconstitution (powder plus solvent), a premixed solution, and oil-based TRT vials. Premixed and TRT are the same arithmetic and stay separate because they are two audiences.",
+          "Three modes sharing one dose field: reconstitution (powder plus solvent), a premixed solution, and an oil-based solution. The fields change to match what is on your vial while the dose stays yours.",
           "The answer card: units in 56 pt over a drawn syringe scale, then volume, concentration and doses per vial. Empty input reads a calm “—— units”, never an error.",
           "Two scales, three barrels each: U-100 holds 100 units per mL and U-40 holds 40, and both come as 1 mL, 0.5 mL and 0.3 mL — marked to 100, 50 or 30 units on U-100, and to 40, 20 or 12 on U-40.",
           "Changing barrel inside a scale changes only whether the volume fits and how easy it is to read. Changing scale changes the answer, by a factor of 2.5 — which is why the scale is its own choice and the arithmetic follows the syringe you picked.",
@@ -1165,7 +1166,7 @@ window.APP_DETAILS = {
       "No account, no sign-in, and no network connection — every feature works fully offline",
       "Apple Health is entirely optional; every screen that uses it works without it",
       "iCloud backup is optional and off by default, and uses your own Apple Account",
-      "An optional auto-renewing subscription for unlimited vials and protocols and the doctor PDF; the calculator and the log never require it",
+      "An optional auto-renewing subscription for unlimited vials and protocols and the doctor PDF; the converter and the log never require it",
     ],
 
     permissionsNote: "Apple Health read and write (optional, granted type by type in the Health app) and local notifications, requested only when you switch a reminder on — never at launch. No camera, photos, location, microphone, contacts or local network, and no tracking permission, because there is nothing to track.",
@@ -1177,10 +1178,10 @@ window.APP_DETAILS = {
         id: "getting-started",
         title: "Getting started",
         body: `
-          <p>Onboarding is four screens, and not one of them asks you to type anything. <strong>Set your defaults</strong> is two pickers — your dose unit and your syringe — both changeable later in Settings. <strong>Where it stays</strong> explains what the app keeps and where. <strong>Start with a number</strong> shows the three calculator modes with a worked example computed by the real calculator on the syringe you just chose, and carries the disclaimer — the same screen the Settings row opens, because there is no second copy of that text anywhere in the product. The <strong>subscription screen</strong> comes last and is closed with the ✕ in its top bar; the disclaimer stands before it by design, so no purchase screen can shadow the required text.</p>
-          <p>No questions, no profile, no account, and nothing asked about what you are taking or why. After onboarding you land on the Calculator tab with the app fully usable, whether or not you subscribed.</p>
+          <p>Onboarding is four screens, and not one of them asks you to type anything. <strong>Set your defaults</strong> is two pickers — your dose unit and your syringe — both changeable later in Settings. <strong>Where it stays</strong> explains what the app keeps and where. <strong>Start with a number</strong> shows the three conversion modes with a worked example computed by the real converter on the syringe you just chose, and carries the disclaimer — the same screen the Settings row opens, because there is no second copy of that text anywhere in the product. The <strong>subscription screen</strong> comes last and is closed with the ✕ in its top bar; the disclaimer stands before it by design, so no purchase screen can shadow the required text.</p>
+          <p>No questions, no profile, no account, and nothing asked about what you are taking or why. After onboarding you land on Vials with the app fully usable, whether or not you subscribed.</p>
           <h4>The five tabs</h4>
-          <p><strong>Calculator</strong> is the main free screen. <strong>Vials</strong> is your inventory and what's left in it. <strong>Doses</strong> holds the log, your protocols and your injection sites. <strong>Progress</strong> holds the estimated level, weight, and the rest of your measurements. <strong>Settings</strong> holds units and defaults, appearance, notifications, Apple Health, data and export, the methodology pages, and the disclaimer.</p>
+          <p><strong>Vials</strong> is the starting screen: your inventory and what's left in it. <strong>Doses</strong> holds the log, your protocols and your injection sites. <strong>Convert</strong> is the free unit converter. <strong>Progress</strong> holds the estimated level, weight, and the rest of your measurements. <strong>Settings</strong> holds units and defaults, appearance, notifications, Apple Health, data and export, the methodology pages, and the disclaimer.</p>
         `,
       },
       {
@@ -1226,7 +1227,7 @@ window.APP_DETAILS = {
         id: "subscription",
         title: "What's free, what the subscription adds",
         body: `
-          <p><strong>The calculator is free, unlimited and permanent</strong> — along with your log, two vials, one protocol with its reminders, site rotation, the estimated level, your measurements, and CSV export. There is no hard paywall. Onboarding ends on the subscription screen, and that screen is closed with a ✕ — a first-time user, or a reviewer, can walk past it and do real work without paying anything.</p>
+          <p><strong>The converter is free, unlimited and permanent</strong> — along with your log, two vials, one protocol with its reminders, site rotation, the estimated level, your measurements, and CSV export. There is no hard paywall. Onboarding ends on the subscription screen, and that screen is closed with a ✕ — a first-time user, or a reviewer, can walk past it and do real work without paying anything.</p>
           <p>An optional auto-renewing subscription — annual or monthly, with a free trial on the annual plan for eligible new subscribers — lifts the vial and protocol limits, brings reminders for every protocol rather than the first, and adds the PDF report for your doctor. <strong>The limit counts only what is running now:</strong> emptied and archived vials and ended protocols do not count against it, because a limit that punishes you for keeping honest records would contradict the whole product.</p>
           <p>Current pricing is shown on the App Store and on the paywall in your own currency, with the renewal terms and your trial eligibility already applied. Billing is entirely Apple's — <strong>we never hold your card</strong> — and cancelling happens in iOS Settings → Apple Account → Subscriptions or through Settings → Subscription in the app.</p>
           <p><strong>Your data outlives your subscription.</strong> Stop paying and everything you logged stays on the iPhone, still viewable, editable, exportable and deletable. CSV export is deliberately free, because you cannot charge for the antidote to your own risk when the whole pitch is that your records don't get lost.</p>
@@ -1236,7 +1237,7 @@ window.APP_DETAILS = {
 
     // ── FAQ (from PRODUCT_DOC §14) ──
     faq: [
-      { q: "When is Rayita available?", a: "Not yet — this page describes version 1.0 ahead of its App Store release. There is no download link here until the app is live; the privacy policy and terms are published in advance." },
+      { q: "Where can I download Rayita?", a: "Rayita 1.0 is available now on the App Store for iPhone and iPad. Use the Download on the App Store button at the top of this page." },
       { q: "Does Rayita tell me what dose to take?", a: "No, and it never will. You enter the dose you and your prescriber decided on; Rayita converts it into marks on your syringe and keeps the record. There are no recommended doses, ranges or protocols anywhere in the app." },
       { q: "How is the units number calculated?", a: "Concentration = amount ÷ solvent. Volume = dose ÷ concentration. Units = volume × the syringe's scale. It's printed in the app under Settings → Sources & methodology, with a worked example." },
       { q: "Does it work with U-40 syringes?", a: "Yes, as its own scale and in all three barrels — 1 mL, 0.5 mL and 0.3 mL, marked to 40, 20 and 12 units. U-40 holds 40 units per mL instead of 100, so switching scale changes the answer by a factor of 2.5, which is exactly why the scale is a separate choice. Rayita doesn't label U-40 “veterinary”: that's the US situation, and human U-40 is still sold elsewhere." },
@@ -1244,7 +1245,7 @@ window.APP_DETAILS = {
       { q: "Is the level estimate a blood concentration?", a: "No. It's a one-compartment decay model over your logged doses — no absorption, no bioavailability. The app lists its own assumptions on screen." },
       { q: "Does my data go anywhere?", a: "No. The app makes no network requests of its own. Optional backup goes into your own private iCloud, which we can't read." },
       { q: "What happens if I stop subscribing?", a: "Everything you logged stays and stays usable — view, edit, export, delete. The subscription only covers extra vials and protocols, reminders, and the doctor PDF." },
-      { q: "Is Rayita a medical device?", a: "No. It's a calculator and a journal — no diagnosis, no treatment, no dose recommendations. Always verify a result against the vial and syringe in front of you, and consult your healthcare provider." },
+      { q: "Is Rayita a medical device?", a: "No. It's a unit converter and a journal — no diagnosis, no treatment, no dose recommendations. Always verify a result against the vial and syringe in front of you, and consult your healthcare provider." },
     ],
   },
 };

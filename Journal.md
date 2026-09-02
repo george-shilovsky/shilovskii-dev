@@ -21,6 +21,18 @@ Plain HTML, CSS, and JavaScript keep this portfolio fast, portable, and easy to 
 
 # The Journey
 
+## 2026-09-02 — Rayita leaves “Coming soon” behind
+
+The launch flag finally flipped: Rayita 1.0.0 is live on the App Store as **Rayita: Peptide Tracker**. The website had been standing at the station with an old “Peptide Calculator” sign and a disabled button, so the public page now links to the real listing and uses the shipped product language. The latest app commit also changed the tour of the house: Vials is the front door, the tabs now run Vials, Doses, Convert, Progress, Settings, and the public-facing calculator name is Convert. The site copy, metadata, FAQ, and legal pages now tell that same story while preserving the precise safety boundary: Rayita converts a dose the user supplies; it never chooses one.
+
+Release reviews are a useful reminder that naming is architecture at the product boundary. Internal types can keep an accurate engineering name, but every public surface — screenshots, navigation, metadata, support copy, and legal text — needs to describe the same product the reviewer and customer actually see.
+
+One last ghost survived in the browser cache. The product list lives in `shared.js`, so updating that file fixed the source but not tabs that had already cached its old URL: the Rayita detail page looked current while the home page and Apps catalogue still said “Coming soon.” Every HTML entry point now requests the dated `shared.js?v=20260902` asset. When one shared script paints cards across the whole site, its cache key is part of the release—not housekeeping to remember afterward.
+
+## 2026-09-02 — Rayita steps into the frame
+
+Rayita's first web gallery used clean simulator captures. The updated 6.9-inch App Store set reflects the current navigation and naming — most visibly, Calculator has become Convert — and presents every screen inside the same softly tilted iPhone frame. For the website, the marketing headline and subhead are cropped away so they do not compete with the page's own copy, while the frame, shadow, gradient, and app UI remain untouched. The six published derivatives are normalized to 900 × 1655; the full 1320 × 2868 masters remain in the product vault.
+
 ## 2026-09-02 — Ovessa's new tour
 
 The original Ovessa gallery had ten early product screenshots. The refreshed English 6.9-inch set added the current cycle design, updated food and health flows, supplements, and the in-app privacy centre. The raw captures exposed black pixels in the rounded screen corners and had no physical device frame, so the gallery now uses deterministic crops of the App Store marketing renders: the headline is removed while the iPhone frame, shadow, and slight alternating tilt stay intact. Every crop is normalized to 900 × 1678 without regenerating or altering the UI itself.
