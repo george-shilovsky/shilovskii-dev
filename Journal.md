@@ -21,6 +21,14 @@ Plain HTML, CSS, and JavaScript keep this portfolio fast, portable, and easy to 
 
 # The Journey
 
+## 2026-09-04 — Verigate learns the names before it sees the cards
+
+Verigate 1.1 closes two awkward gaps at a busy door. A worn barcode no longer turns into a shrug: staff can enter the guest's details directly, or let on-device OCR pencil in suggestions from the front of the ID. The important bit is the human checkpoint — the image disappears after OCR, and the operator still compares every field with the physical card before continuing. Think of OCR as the junior taking notes, not the manager making the admission decision.
+
+Ban and VIP lists also no longer need a guest to arrive before they can exist. Staff can add people manually or import a spreadsheet-ready CSV, review invalid and duplicate rows, and resolve possible name-and-date-of-birth matches before an atomic save. Document identity remains the strong key: an issuer-scoped digest is definitive, while a soft match is only a raised hand asking for confirmation. That distinction prevents the nastiest kind of convenience bug — confidently merging two different people who happen to share a name and birthday.
+
+The website had preserved the v1.0 story in amber: it still described Manual Entry as pasted barcode text, put the entire possible-fake verdict behind Premium, and promised that the camera never captured any image. The v1.1 refresh now separates the free warning from the Premium detail report, explains the temporary OCR image honestly, updates the public identity language, and adds the two real 6.9-inch screens to the gallery. The lesson is simple: privacy copy ages like code. When a new capability crosses a sensitive boundary, even safely, marketing and legal pages must ship in the same mental transaction.
+
 ## 2026-09-02 — Rayita leaves “Coming soon” behind
 
 The launch flag finally flipped: Rayita 1.0.0 is live on the App Store as **Rayita: Peptide Tracker**. The website had been standing at the station with an old “Peptide Calculator” sign and a disabled button, so the public page now links to the real listing and uses the shipped product language. The latest app commit also changed the tour of the house: Vials is the front door, the tabs now run Vials, Doses, Convert, Progress, Settings, and the public-facing calculator name is Convert. The site copy, metadata, FAQ, and legal pages now tell that same story while preserving the precise safety boundary: Rayita converts a dose the user supplies; it never chooses one.

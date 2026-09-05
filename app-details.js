@@ -397,21 +397,21 @@ window.APP_DETAILS = {
     ],
   },
 
-  // Source of truth: Verigate PRODUCT_DOC.md (2026-06-09, codebase commit 4c67eb5).
+  // Source of truth: Verigate PRODUCT_DOC.md (verified 2026-09-04, codebase commit f843ef3).
   verigate: {
-    version: "1.0.1",
+    version: "1.1.0",
     appStore: "https://apps.apple.com/us/app/verigate-id-scanner-21/id6775568994",
     appStoreLabel: "Download on the App Store",
-    price: "Free · Premium: subscription with free trial, or one-time Lifetime",
+    price: "Free · Premium: subscription with a trial for eligible users, or one-time Lifetime",
     privacyDoc: "verigate/privacy.html",
     termsDoc: "verigate/terms.html",
     heroImage: "verigate-2-pass.png",
     heroPortrait: true,
 
     tagline: "Scan IDs in two seconds.\nStore no photos.",
-    subhead: "The fast, honest ID scanner for bars, clubs, and shops. Instant 21+ / expired / possible-fake on US & Canadian licenses — recognise your VIPs and banned guests by their ID, never a photo. Everything stays on the phone.",
-    blurb: "Verigate is a native iPhone ID scanner for age-gated venues. Point the camera at the PDF417 barcode on the back of a US or Canadian driver's license and get an instant verdict — valid, underage, expired, possible fake, or couldn't read — plus a clean entry log. Repeat and flagged guests are recognised by an irreversible hash of the license number, never a photo and never the raw number.",
-    pitch: "Card the line in two seconds. Real fake-ID detection, VIP & ban lists, entry logs — all on-device. No photos, no cloud, one honest price.",
+    subhead: "The fast, honest ID scanner for bars, clubs, and shops. Scan US & Canadian licenses, handle a worn barcode with reviewed manual entry, and build Ban/VIP lists by hand or from CSV. No stored ID photos, no cloud.",
+    blurb: "Verigate is a native iPhone ID scanner for age-gated venues. Point the camera at the PDF417 barcode on the back of a US or Canadian driver's license and get an instant verdict — valid, underage, expired, possible fake, or couldn't read — plus a clean entry log. When a barcode will not scan, enter the guest manually or use on-device OCR to suggest fields that the operator must verify against the physical ID.",
+    pitch: "Card the line in two seconds. Possible-fake alerts, reviewed manual check-in, CSV-ready VIP & ban lists, and entry logs — all on-device. No stored ID photos, no cloud.",
 
     // ── Hero stats ──
     stats: [
@@ -424,8 +424,8 @@ window.APP_DETAILS = {
     // ── Top feature highlights (3 cards) ──
     features: [
       { title: "Built for the speed of the line.", body: "A purpose-built camera pipeline with the torch on and auto-macro focus reads the barcode the instant it's in frame — no clunky hardware, no \"hold still and wait.\" The verdict is a big, solid card you can read across a dark room." },
-      { title: "Private by architecture, not by promise.", body: "The data model has no field for a photo or a raw license number — guests are recognised by an irreversible one-way hash. No cloud, no account, no analytics. The only network the app ever uses is Apple's App Store for your purchase." },
-      { title: "Honest pricing.", body: "One clear Monthly or Yearly plan with a free trial — or buy once with Lifetime. Cancel any time in one tap via Apple's native sheet. No confusing in-app-purchase maze, and no per-device fees." },
+      { title: "Private by architecture, not by promise.", body: "The data model has no field for an ID image or a raw license number. Optional front-ID OCR processes one temporary image on-device and discards it. No cloud, no account, no analytics." },
+      { title: "Build the list before the line starts.", body: "Add a Ban or VIP guest by name and date of birth, or import a spreadsheet-ready CSV with a built-in template and review step. Possible matches always wait for an operator decision — Verigate never merges people automatically." },
     ],
 
     // ── How it works ──
@@ -433,21 +433,23 @@ window.APP_DETAILS = {
     flow: [
       { step: "01", title: "Point at the barcode", body: "Aim at the PDF417 barcode on the back of a US or Canadian license. The torch is on, auto-macro keeps focus up close, and the decode fires the moment the code is in frame." },
       { step: "02", title: "Read it across the room", body: "VALID, UNDERAGE, EXPIRED, POSSIBLE FAKE, or COULDN'T READ — a large, solid status card with the age and expiry. Every result carries the privacy pill: photo not saved, on this device." },
-      { step: "03", title: "Remember the right guests", body: "Flag a guest VIP or banned once. Verigate recognises them on every visit by an irreversible hash of their license number — and warns you the moment they're back at the door." },
+      { step: "03", title: "Build and remember your lists", body: "Flag a scanned guest, add someone manually, or import a CSV. Exact issuer-scoped document identity is definitive; a name-and-date-of-birth match is only a suggestion that the operator must confirm." },
     ],
 
     // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
-    screenshotsHeading: "Nine screens, the whole door.",
+    screenshotsHeading: "Eleven screens, the whole door.",
     screenshotCols: 4,
     screenshots: {
       tour: [
         { src: "verigate-1-scan.png", caption: "The scanner — torch on, auto-macro focus, and a verdict the instant the PDF417 barcode is in frame. \"Can't scan?\" drops to manual entry; the active door profile sits up top." },
+        { src: "verigate-10-manual-entry.png", caption: "Manual entry — handle a worn or unsupported barcode with name, date of birth, and optional expiry. On-device OCR can suggest the fields, but the operator must verify them against the physical ID before continuing." },
         { src: "verigate-2-pass.png", caption: "VALID — a big, solid card readable across a dark room. Age, date of birth, expiry and state, with the privacy pill: no photo stored, on this device." },
         { src: "verigate-3-under21.png", caption: "UNDERAGE — the age threshold (16–25, with 18+ and 21+ presets) is built in, so every verdict follows your door's rule." },
         { src: "verigate-4-expired.png", caption: "EXPIRED — the license is past its date, called out in amber even when the guest is over age. The expiry field is highlighted." },
-        { src: "verigate-5-fake.png", caption: "POSSIBLE FAKE — five AAMVA-consistency checks on the barcode; two or more failures escalate the scan. Each pass/fail is shown so staff see exactly why." },
-        { src: "verigate-6-vip.png", caption: "VIP guest — recognised by an irreversible hash of the license number, never a photo. Nickname and note (\"Bottle service, table 4\") surface at the door." },
+        { src: "verigate-5-fake.png", caption: "POSSIBLE FAKE — five AAMVA-consistency checks on the barcode; two or more failures escalate the scan. The warning is free, while Premium shows the detailed pass/fail report." },
+        { src: "verigate-6-vip.png", caption: "VIP guest — recognised by an irreversible, issuer-scoped digest of the license number, never a photo. Nickname and note (\"Bottle service, table 4\") surface at the door." },
         { src: "verigate-7-banned.png", caption: "Banned — the watchlist fires a warning the moment a flagged guest is back, with the reason and who added it." },
+        { src: "verigate-11-csv-import.png", caption: "CSV list setup — save the built-in template or import a file from Excel, Numbers, or Google Sheets. Verigate previews invalid, duplicate, and possible-match rows before anything changes." },
         { src: "verigate-8-history.png", caption: "History — every scan on-device: time, outcome, age-at-scan, state and profile, filterable by period (24h, week, month, all)." },
         { src: "verigate-9-insights.png", caption: "Insights (Premium) — total scans, a per-status breakdown including VIP and banned hits, and an hourly distribution with the busiest hour called out." },
       ],
@@ -461,24 +463,27 @@ window.APP_DETAILS = {
           "PDF417 barcode scanning with a purpose-built camera pipeline — torch on, auto-macro focus, late frames dropped so the preview never stutters.",
           "Five verdicts: VALID, UNDERAGE, EXPIRED, POSSIBLE FAKE, COULDN'T READ — each a large, opaque card readable in a dark doorway.",
           "Age threshold built in: 18+ and 21+ presets, or any custom value from 16 to 25. Every verdict follows your setting.",
-          "Manual entry — type or paste a barcode payload to run the same checks without the camera.",
+          "Manual entry — enter name, date of birth, and optional expiry when a barcode is worn or unsupported; on-device OCR can suggest fields from one temporary image that is discarded after processing.",
+          "The operator must compare OCR suggestions with the physical ID and explicitly verify the details before continuing.",
           "Every result shows \"Photo not saved · on this device\" and the assist-tool disclaimer.",
         ],
       },
       {
-        kicker: "Fake-ID detection — Premium",
+        kicker: "Possible-fake details — Premium",
         items: [
           "Five AAMVA-consistency checks on the barcode: issuer number, document-number shape, date of birth, expiry-vs-issue encoding, and jurisdiction code.",
-          "Two or more failed checks escalate an otherwise-valid scan to POSSIBLE FAKE.",
-          "Each pass/fail check is shown on the result screen, so staff can see exactly why a document was flagged.",
+          "Two or more failed checks escalate an otherwise-valid scan to POSSIBLE FAKE; that warning verdict is part of the free core.",
+          "Premium shows the detailed pass/fail checklist so staff can see exactly why a document was flagged.",
           "Honest framing: fake detection never overrides an underage or expired verdict, and it's an assist — not a forensic guarantee.",
         ],
       },
       {
         kicker: "Guests & watchlists — Premium",
         items: [
-          "Identity by hash: the license number is hashed with SHA-256 into an irreversible fingerprint — the raw number is never stored.",
+          "Identity by document: the license number is combined with a validated issuer scope and hashed with SHA-256 — the raw number is never stored.",
           "Flag a guest VIP (gold) or banned (red) once; every future scan shows the flag and fires a warning haptic.",
+          "Add a guest before their first scan by name and date of birth, or import a CSV into the Ban or VIP list.",
+          "Name-and-date-of-birth matches are suggestions only; an operator decides whether records belong to the same person, and nothing merges automatically.",
           "Attach a nickname (\"Redhead from the 12th\") and a note (\"Banned — fight 05/12\") to any guest.",
           "Passback detection: the same ID scanned again within 5 minutes is flagged — someone is handing their license back over the rope.",
         ],
@@ -497,7 +502,8 @@ window.APP_DETAILS = {
           "CSV export — the scan log as one clean spreadsheet table. The license number and the hash are never exported.",
           "PDF report — header, history table, ban and VIP lists, and an insights summary, paginated so a card never splits across pages.",
           "Transfer lists device-to-device as a JSON file you send yourself — two doors, one ban list, no server in the middle.",
-          "Hardened import: size caps, strict hash validation, version checks, and merge rules that treat a transferred list as a hint, never a correction.",
+          "List setup by CSV: use the built-in spreadsheet template, preview invalid and duplicate rows, resolve possible matches, then apply the import atomically.",
+          "Device-transfer import is hardened with size caps, strict digest validation, version checks, and merge rules that treat a transferred list as a hint, never a correction.",
         ],
       },
       {
@@ -512,10 +518,10 @@ window.APP_DETAILS = {
       {
         kicker: "Privacy — always on",
         items: [
-          "No photo, ever — the PDF417 barcode contains none, and the data model has no image field.",
-          "No raw license number — only the one-way SHA-256 hash.",
+          "No ID image is stored — barcode scanning takes no still, and optional front-ID OCR discards its temporary in-memory image after processing.",
+          "No raw license number — only an issuer-scoped, one-way SHA-256 digest.",
           "No network beyond Apple's StoreKit for purchases. No CloudKit, no third-party SDKs, no analytics, no telemetry.",
-          "One permission: the camera, used only to read the barcode.",
+          "One permission: the camera, used for PDF417 scanning and optional front-ID OCR.",
         ],
       },
     ],
@@ -528,7 +534,7 @@ window.APP_DETAILS = {
       "No network connection required — scanning and logging are fully offline; internet is only needed for the App Store purchase flow",
     ],
 
-    permissionsNote: "One — the Camera, used solely to read the PDF417 barcode on the back of a license. No photo is ever captured. Verigate requests no other iOS permission: not Photos, Location, Microphone, Contacts, or Local Network.",
+    permissionsNote: "One — the Camera, used for PDF417 scanning and optional front-ID OCR. Barcode scanning takes no still; OCR processes one temporary in-memory image on-device and discards it after recognition. Verigate requests no Photos, Location, Microphone, Contacts, or Local Network access.",
     privacyTeaser: "Verigate collects no data and ships no analytics, telemetry or crash reporters. Scans, guest records and lists live on the phone; the only network traffic is Apple's StoreKit.",
 
     // ── Long-form documentation ──
@@ -539,7 +545,7 @@ window.APP_DETAILS = {
         body: `
           <p>On first launch, Verigate walks through a short onboarding: what it does, how the privacy model works, and a setup page where you pick your <strong>age threshold</strong> — 18+ and 21+ presets, or any custom value from 16 to 25. You can change it any time in <em>Settings → Door</em>. The last step asks for the camera; that's the only permission Verigate ever requests.</p>
           <h4>The first scan</h4>
-          <p>Flip the license over and point the camera at the <strong>PDF417 barcode</strong> — the wide, dense barcode on the back. The torch is already on and the lens auto-switches for close focus; the moment the code is in frame, the verdict appears. If the guest's ID won't read (worn card, cracked laminate), the result is an honest <strong>COULDN'T READ</strong>, never a guess.</p>
+          <p>Flip the license over and point the camera at the <strong>PDF417 barcode</strong> — the wide, dense barcode on the back. The torch is already on and the lens auto-switches for close focus; the moment the code is in frame, the verdict appears. If the barcode is worn or unsupported, open <strong>Manual entry</strong> and enter name, date of birth, and optional expiry. On a physical iPhone, <strong>Scan ID front</strong> can fill those fields with on-device OCR; compare every suggestion with the physical ID and explicitly verify it before continuing.</p>
           <p>If you decline the camera permission, the Scan tab shows a "Camera is off" screen with an <strong>Open Settings</strong> button — the app never dead-ends.</p>
         `,
       },
@@ -552,7 +558,7 @@ window.APP_DETAILS = {
             <li><strong>VALID</strong> — at or over your age threshold and not expired.</li>
             <li><strong>UNDERAGE</strong> — below the threshold. The card shows the age, so a near-miss is obvious.</li>
             <li><strong>EXPIRED</strong> — past the expiry date encoded in the barcode.</li>
-            <li><strong>POSSIBLE FAKE</strong> (Premium) — a valid-looking document that fails two or more internal consistency checks, with the failing checks listed.</li>
+            <li><strong>POSSIBLE FAKE</strong> — a valid-looking document that fails two or more internal consistency checks. The warning verdict is free; Premium shows the detailed pass/fail checklist.</li>
             <li><strong>COULDN'T READ</strong> — no date of birth could be parsed from the barcode.</li>
           </ul>
           <p>Every result carries the disclaimer <em>"Assist tool — not a legal guarantee of identity."</em> Verigate informs your decision; the admission call is always yours.</p>
@@ -562,8 +568,9 @@ window.APP_DETAILS = {
         id: "watchlists",
         title: "VIPs, bans, and repeat guests",
         body: `
-          <p>Verigate recognises people <em>by document, never by photo</em>. When a license is scanned, its number is normalised and hashed with <strong>SHA-256</strong> — a one-way fingerprint that cannot be reversed back into the number. The same guest re-scans to the same record; the raw number is never stored.</p>
+          <p>Verigate recognises people <em>by document, never by photo</em>. When a license is scanned, its number is normalised, combined with a validated issuer scope, and hashed with <strong>SHA-256</strong> — a one-way digest that cannot be reversed back into the number. The same document re-scans to the same record; the raw number is never stored.</p>
           <p>With Premium, flag a guest <strong>VIP</strong> (gold) or <strong>banned</strong> (red) once — on any future visit the result card shows the flag, marked <em>"Matched by license # · no photo stored,"</em> and fires a warning haptic. Add a nickname and a note so the flag means something at 1 a.m. ("Banned — fight 05/12").</p>
+          <p>You can also add someone before their document has ever been scanned. Enter a name and date of birth manually, or import a CSV into the Ban or VIP list. A later name-and-date-of-birth match is only a suggestion: the operator chooses whether it is the same person or a different person, and Verigate never merges records automatically.</p>
           <p><strong>Passback detection</strong> catches the oldest trick at the rope: if the same ID is scanned again within 5 minutes, the scan is marked as a passback.</p>
         `,
       },
@@ -581,29 +588,29 @@ window.APP_DETAILS = {
         title: "Two doors, one list",
         body: `
           <p><strong>Transfer lists</strong> (Premium) moves your Ban and VIP lists between iPhones — for example, the front and back doors of one venue — as a JSON file you send yourself over AirDrop, Files, or any channel you trust. <strong>Nothing goes through a server.</strong></p>
-          <p>The import side is hardened: oversized files are rejected before reading, every entry must carry a well-formed hash, files from a newer app version are refused, and string lengths are clamped. Merging is conservative — incoming names and notes only overwrite when non-empty, and scan-derived facts only fill gaps. A transferred list is a hint, never a correction. A separate "replace" mode clears existing flags first if you want a clean slate.</p>
+          <p>The import side is hardened: oversized files are rejected before reading, every document identity must carry a well-formed digest, files from a newer app version are refused, and string lengths are clamped. Merging is conservative — incoming names and notes only overwrite when non-empty, and scan-derived facts only fill gaps. A transferred list is a hint, never a correction. A separate "replace" mode clears existing flags first if you want a clean slate.</p>
         `,
       },
       {
         id: "premium",
         title: "Free, Premium, and Lifetime",
         body: `
-          <p>The core is free: scanning, the live age/expiry verdict, the age threshold, the on-device History log, manual entry, and two profiles. <strong>Premium</strong> adds fake-ID detection, the VIP/ban watchlist with passback alerts, Insights, CSV/PDF export, device-to-device list transfer, and unlimited profiles.</p>
-          <p>Premium is one clear choice: a <strong>Monthly</strong> or <strong>Yearly</strong> subscription with a free trial, or a one-time <strong>Lifetime</strong> purchase that never renews. Prices are shown in the App Store for your region. Manage or cancel any time in <em>Settings → Subscription → Manage subscription</em> — it opens Apple's native sheet, and cancelling keeps access until the period ends. <em>Restore purchases</em> always reports a visible result.</p>
+          <p>The core is free: scanning, every live verdict including the possible-fake warning, the age threshold, passback signals, the on-device History log, manual check-in, and two profiles. <strong>Premium</strong> adds the detailed AAMVA report, Ban/VIP lists with manual and CSV setup, Insights, CSV/PDF export, device-to-device list transfer, and unlimited profiles.</p>
+          <p>Premium is one clear choice: a <strong>Monthly</strong> or <strong>Yearly</strong> subscription with a trial for eligible users, or a one-time <strong>Lifetime</strong> purchase that never renews. Prices are shown in the App Store for your region. Manage or cancel any time in <em>Settings → Subscription → Manage subscription</em> — it opens Apple's native sheet, and cancelling keeps access until the period ends. <em>Restore purchases</em> always reports a visible result.</p>
         `,
       },
     ],
 
     // ── FAQ (from PRODUCT_DOC §11) ──
     faq: [
-      { q: "Do you store a photo of the ID?", a: "No. Verigate reads only the barcode; the app has no field for a photo. The barcode itself contains no photo either." },
-      { q: "Do you store the license number?", a: "No. We hash it (one-way SHA-256) so the app can recognise a repeat or banned guest, and store only that hash. The raw number is discarded." },
-      { q: "Is the hash \"biometric\"?", a: "No — it's derived from the document number, not from a face or fingerprint. It's an irreversible fingerprint of the card, not of the person." },
-      { q: "Does any data leave the phone?", a: "No, other than Apple's App Store traffic for your purchase. There's no cloud, no account, no analytics — and the list-transfer feature moves a file directly between your own devices." },
+      { q: "Do you store a photo of the ID?", a: "No. Barcode scanning takes no still image. If you choose front-ID OCR for Manual Entry, one temporary image is processed on-device and discarded after recognition; the app has no image field." },
+      { q: "Do you store the license number?", a: "No. We combine it with a validated issuer scope and hash it with one-way SHA-256 so the app can recognise a repeat or banned document. The raw number is discarded." },
+      { q: "Is the digest \"biometric\"?", a: "No — it's derived from the document number and issuer scope, not from a face or fingerprint. It's an irreversible fingerprint of the card, not of the person." },
+      { q: "Does any data leave the phone?", a: "Verigate has no cloud, account, or analytics, and the developer receives none of your data. A report or transferred list leaves the phone only when you explicitly share it to a destination through iOS; StoreKit handles purchases with Apple." },
       { q: "Which IDs work?", a: "US and Canadian driver's licenses / state IDs with an AAMVA PDF417 barcode — the wide barcode on the back. Passports are on the roadmap." },
       { q: "Can it 100% guarantee a fake or someone's age?", a: "No. Verigate is an assist tool, not a legal guarantee — the possible-fake indicator is a consistency check, not a forensic determination, and the final call is always yours." },
       { q: "Do I need internet?", a: "No. Scanning, verdicts, lists, and logging are fully offline. Internet is only needed for the App Store purchase flow." },
-      { q: "What's free, and what's Premium?", a: "Free: scanning, the live age/expiry verdict, the age threshold, the on-device history log, manual entry, and two profiles. Premium: fake-ID detection, VIP/ban lists with passback alerts, insights, CSV/PDF export, device-to-device list transfer, and unlimited profiles." },
+      { q: "What's free, and what's Premium?", a: "Free: scanning, every live verdict including possible fake, the age threshold, passback signals, the on-device history log, manual check-in, and two profiles. Premium: the detailed AAMVA report, Ban/VIP lists with manual and CSV setup, insights, CSV/PDF export, device-to-device list transfer, and unlimited profiles." },
       { q: "Are there per-device fees?", a: "No. Unlike per-device SaaS scanners, Verigate has no per-seat licensing — and the built-in list transfer moves your Ban/VIP lists between your phones for free." },
       { q: "How do I cancel?", a: "One tap: Settings → Subscription → Manage subscription opens Apple's native sheet. Cancelling stops auto-renewal and keeps access until the period ends. Or buy Lifetime once and never think about it again." },
     ],
