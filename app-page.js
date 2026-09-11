@@ -276,7 +276,7 @@
             </ul>
             <div style="margin-top: 28px; padding: 16px 18px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--line);">
               <div class="tag-mono" style="border: none; padding: 0; margin-bottom: 6px;">Permissions</div>
-              <p style="font-size: 13px; color: var(--fg-2); line-height: 1.55; margin: 0;">${esc(detail.permissionsNote || 'None. Migaja never requests Accessibility, Full Disk Access, Automation, Screen Recording, or any other macOS permission — pasting is your own ⌘V.')}</p>
+              <p style="font-size: 13px; color: var(--fg-2); line-height: 1.55; margin: 0;">${esc(detail.permissionsNote || 'None specified.')}</p>
             </div>
           </div>
           <div id="faq" style="scroll-margin-top: 80px;">

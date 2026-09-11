@@ -11,7 +11,6 @@
   })();
 
   const APPS = [
-    { id: 'migaja', name: 'Migaja: Clipboard Manager', tag: 'macOS', summary: 'Clipboard search that actually understands what you copied.', color: '#30D158', glyph: 'M', icon: 'apps/migaja-icon.png' },
     { id: 'json-pilot', name: 'JSON Pilot: Viewer & Editor', tag: 'iOS', summary: 'A native JSON viewer & editor for iPhone, with an on-device AI assistant.', color: '#0A84FF', glyph: 'J', icon: 'apps/json-pilot-icon.png' },
     { id: 'verigate', name: 'Verigate: ID Scanner & Age', tag: 'iOS', summary: 'ID checks for bars and clubs — instant 21+ verdicts, fake-ID detection, no photos stored.', color: '#29B6AD', glyph: 'V', icon: 'apps/verigate-icon.png' },
     { id: 'filmeter', name: 'Filmeter: Film Light Meter', tag: 'iOS', summary: 'A light meter made for film — EV and exposure pairs, the Zone System, reciprocity, all on-device.', color: '#D9A24A', glyph: 'F', icon: 'apps/filmeter-icon.png' },
@@ -19,10 +18,7 @@
     { id: 'rayita', name: 'Rayita: Peptide Tracker', tag: 'iOS', summary: 'A private injection journal and unit converter — vials that count down, an honest log, and no account or server.', color: '#0E6E4E', glyph: 'R', icon: 'apps/rayita-icon.png' },
   ];
 
-  const POSTS = [
-    { id: 'offline-search', date: '2026-05-14', dateLabel: 'May 14, 2026', read: '8 min', title: 'How Migaja searches your clipboard offline', kicker: 'Engineering', summary: 'Two retrieval stages, one query box, zero network. A walk through the pipeline that turns a vague memory into the right clip in under 300 ms.' },
-    { id: 'zero-network', date: '2026-05-13', dateLabel: 'May 13, 2026', read: '7 min', title: 'Zero network: how Migaja achieves privacy by construction', kicker: 'Engineering', summary: 'Most \u201Cprivate\u201D apps achieve privacy with a policy. Migaja achieves it with the binary \u2014 the app cannot phone home because macOS will not let it open a socket.' },
-  ];
+  const POSTS = [];
 
   function navHTML(active) {
     const link = (id, label) => {

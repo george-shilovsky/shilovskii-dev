@@ -21,6 +21,10 @@ Plain HTML, CSS, and JavaScript keep this portfolio fast, portable, and easy to 
 
 # The Journey
 
+## 2026-09-10 — A product leaves the gallery
+
+A retired product and the material built around it have been removed together: its catalogue card, product route, legal pages, screenshots, and the two engineering essays. Taking down only the card would be like removing a gallery label while leaving the whole exhibition open through an old corridor. The app count and Writing label now describe the collection that actually remains, and the shared rendering data no longer publishes links to retired routes.
+
 ## 2026-09-04 — Verigate learns the names before it sees the cards
 
 Verigate 1.1 closes two awkward gaps at a busy door. A worn barcode no longer turns into a shrug: staff can enter the guest's details directly, or let on-device OCR pencil in suggestions from the front of the ID. The important bit is the human checkpoint — the image disappears after OCR, and the operator still compares every field with the physical card before continuing. Think of OCR as the junior taking notes, not the manager making the admission decision.
