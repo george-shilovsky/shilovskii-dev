@@ -66,7 +66,7 @@
 
 <section style="padding: 32px 0 24px;">
   <div class="container-prose">
-    <div class="tag-mono" style="margin-bottom: 16px;">Verigate · effective June 9, 2026 · last updated September 4, 2026</div>
+    <div class="tag-mono" style="margin-bottom: 16px;">Verigate · effective June 9, 2026 · last updated September 14, 2026</div>
     <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
     <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
       This Privacy Policy explains how the Verigate application ("Verigate", "we", "us", "our") handles information when you use it on your iPhone. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.
@@ -113,7 +113,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>Scan events — time, outcome, age-at-scan, jurisdiction, the active profile</td>
+          <td>Checks — time, ID result, Ban/VIP status at check, age, jurisdiction, method, Event/Location/Door/Staff snapshots, entry decision, and any correction audit</td>
           <td>A local SwiftData store inside the app sandbox</td>
           <td>The History log and Insights.</td>
         </tr>
@@ -123,9 +123,9 @@
           <td>To recognise repeat, VIP, and banned guests by document — never by a photo.</td>
         </tr>
         <tr>
-          <td>Profiles — staff/door name, type, optional PIN</td>
+          <td>Operational catalog — saved Venues, Events, one-off Locations, Doors, Staff names, and an optional local Staff PIN</td>
           <td>Same store</td>
-          <td>Per-door / per-staff logging and stats.</td>
+          <td>To attribute admission records locally and reuse the right Door or Staff setup.</td>
         </tr>
         <tr>
           <td>Settings (age threshold, auto-return, log retention, etc.) and a cached Premium flag</td>
@@ -134,14 +134,14 @@
         </tr>
       </tbody>
     </table>
-    <p>We never store a photo or image of any ID, and we never store the raw license number. None of this data is uploaded or transmitted to a server we control. A report or list leaves the phone only when you explicitly share it to a destination through iOS. We cannot see your data and cannot recover it for you.</p>
+    <p>We never store a photo or image of any ID, and we never store the raw license number. Old Profile records may remain solely as compatibility data for earlier History/export records; Profiles are not created or used by the active 1.2.0 workflow. None of this data is uploaded or transmitted to a server we control. A report or list leaves the phone only when you explicitly share it to a destination through iOS. We cannot see your data and cannot recover it for you.</p>
 
     <h2 id="s2" style="scroll-margin-top: 80px;">2. Data we collect about you</h2>
     <p><strong>None.</strong> We do not collect personal data, usage data, diagnostics, advertising identifiers, or analytics events. Verigate contains no third-party SDKs and no analytics, telemetry, or crash-reporting code.</p>
 
     <h2 id="s3" style="scroll-margin-top: 80px;">3. Network behaviour</h2>
     <p>Verigate opens a network connection in <strong>exactly one situation</strong>: Apple's <strong>StoreKit</strong> framework communicates with the App Store when you start, restore, or refresh a purchase. That traffic is handled by iOS and governed by <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>; we receive only the resulting entitlement signal ("you have Premium"), never payment details.</p>
-    <p>Verigate makes <strong>no other outbound connection</strong> — it does not phone home, sync, or report anything. The website/support/privacy/terms links in Settings open in your browser only when you tap them. The list-transfer feature produces a file you move between your own devices yourself; it never touches a server.</p>
+    <p>Verigate makes <strong>no other outbound connection</strong> — it does not phone home, sync, or report anything. The website/support/privacy/terms links in Settings open in your browser only when you tap them. Transfer Lists produces a Ban/VIP file you move between your own devices yourself; it never touches a server and is not live sync. Version 1.2.0 does not share History, decisions, Ban/VIP changes, or passback state between devices.</p>
 
     <h2 id="s4" style="scroll-margin-top: 80px;">4. How identity recognition works (and why it's private)</h2>
     <p>To recognise a returning, VIP, or banned document, Verigate normalises the license number, combines it with a validated issuer identifier — or, conservatively, its country and jurisdiction — and computes a <strong>SHA-256 digest</strong>. It stores the digest, never the raw number. The digest is one-way and is derived from the <strong>document number, not from a face or fingerprint</strong>, so it is <strong>not biometric data</strong>.</p>
@@ -153,7 +153,7 @@
     <h2 id="s6" style="scroll-margin-top: 80px;">6. Retention and deletion</h2>
     <ul>
       <li>You control retention: <em>Settings → Privacy → Auto-delete logs</em> (Never / 30 days / 90 days).</li>
-      <li><em>Clear scan history</em> deletes scan events and unflagged people (keeps your Ban/VIP lists and profiles). <em>Clear all data</em> deletes everything.</li>
+      <li><em>Clear scan history</em> deletes checks and unflagged people; your Ban/VIP lists and operational catalog stay. <em>Clear all data</em> deletes entries, people, operational context, and legacy compatibility Profiles.</li>
       <li>Uninstalling the app removes all local data.</li>
     </ul>
 
@@ -174,7 +174,7 @@
     <p>Because all data stays on your device and we never receive it, the rights typically granted under the GDPR, CCPA, and similar privacy laws — access, correction, deletion, and export — are exercised by you, on the device:</p>
     <ul>
       <li><strong>Access.</strong> Every scan is visible in History; every flagged guest in the Ban/VIP lists.</li>
-      <li><strong>Correction.</strong> Names, nicknames, notes, and flags are editable in-app.</li>
+      <li><strong>Correction.</strong> Names, nicknames, notes, and flags are editable in-app. Admit/Deny corrections create a visible audit revision rather than silently replacing the original decision.</li>
       <li><strong>Deletion.</strong> <em>Clear scan history</em>, <em>Clear all data</em>, or delete the app entirely.</li>
       <li><strong>Portability.</strong> Premium CSV/PDF export and the device-to-device list transfer.</li>
       <li><strong>Withdrawal of consent.</strong> Delete the app.</li>
@@ -195,7 +195,7 @@
 </section>
 
 <div id="site-footer"></div>
-<script src="../../shared.js?v=20260902"></script>
+<script src="../../shared.js?v=20260914"></script>
 <script>SiteChrome.render({ active: 'apps' });</script>
 </body>
 </html>

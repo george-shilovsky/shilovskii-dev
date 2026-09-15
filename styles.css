@@ -507,6 +507,7 @@ html.dark .kbd { background: var(--bg-3); }
   .post-row { grid-template-columns: 1fr; gap: 4px; }
   .post-row .date { order: -1; }
   .features-grid { grid-template-columns: 1fr !important; }
+  .other-apps-grid { grid-template-columns: 1fr !important; }
   .footer-inner { flex-direction: column; gap: 16px; }
 }
 

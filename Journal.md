@@ -21,6 +21,14 @@ Plain HTML, CSS, and JavaScript keep this portfolio fast, portable, and easy to 
 
 # The Journey
 
+## 2026-09-14 — Verigate separates the check from the call
+
+Verigate 1.2 turns one old all-purpose Profile into a clearer little operations desk. Quick Scan answers the narrow question — what does this ID say? — while the admission workflow records the human call, Admit or Deny, beside an Event, Location, Door, and Staff member. The distinction matters: an underage result is not secretly a denial, a valid ID is not proof that someone entered, and a Ban/VIP flag is context rather than an automatic decision. History, Insights, CSV, and PDF now keep those facts in separate labelled drawers, including a paper trail when a decision is corrected.
+
+The website had to unlearn the previous architecture as carefully as the app did. Active Profiles, profile filters, and “unlimited profiles” were not harmless old vocabulary; they advertised a workflow that no longer exists. The legal pages now describe the operational catalog that really stays on the phone, while acknowledging old Profile rows only where compatibility data matters. Transfer Lists is also labelled for what it is: a file the operator moves manually, not a tiny Team Sync service hiding behind an AirDrop button.
+
+Nine screenshots were older than the product story they were meant to prove. Instead of dressing QA fixtures up as launch art, the public gallery now uses physical-iPhone captures of the 1.2.0 workflows: Quick Scan, admission results, Under 21, Expired, Ban/VIP, Manual Entry, operational setup, History, Insights, and CSV import. The existing Possible Fake frame stayed only after its controls were checked against the current app. A screenshot is sworn testimony with rounded corners: when it shows an “All profiles” filter or an old privacy pill, a fresh caption cannot make it current.
+
 ## 2026-09-10 — A product leaves the gallery
 
 A retired product and the material built around it have been removed together: its catalogue card, product route, legal pages, screenshots, and the two engineering essays. Taking down only the card would be like removing a gallery label while leaving the whole exhibition open through an old corridor. The app count and Writing label now describe the collection that actually remains, and the shared rendering data no longer publishes links to retired routes.

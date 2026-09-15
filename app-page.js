@@ -333,7 +333,7 @@
           <h2 class="section-title">Other apps</h2>
           <a href="${SiteChrome.BASE}apps.html" class="section-meta">All apps →</a>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(${Math.min(otherApps.length, 4)}, 1fr); gap: 12px;">
+        <div class="other-apps-grid" style="display: grid; grid-template-columns: repeat(${Math.min(otherApps.length, 4)}, 1fr); gap: 12px;">
           ${otherApps.map(a => `
             <a href="${SiteChrome.appHref(a.id)}" class="app-card" style="padding: 18px;">
               <div class="app-card-row">
