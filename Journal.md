@@ -21,6 +21,14 @@ Plain HTML, CSS, and JavaScript keep this portfolio fast, portable, and easy to 
 
 # The Journey
 
+## 2026-10-10 — Verigate opens a second door, and the fine print follows it
+
+Verigate 2.0 adds team events: an organizer's iPhone and up to ten staff phones scan for one event, share guests and Ban/VIP lists, and end the night with one report. For the first time the app talks to a server of its own, so the website had to stop saying it never does. The old page wore "0 bytes to a cloud" as a badge and answered "Does Verigate sync a team live?" with a flat "No". Both were true for 1.2.0 and would have been false the day 2.0 shipped — the same page is the App Store's Support and Marketing URL, so App Review would read the contradiction too.
+
+The privacy policy grew a "Team events" section that reads like an inventory rather than a slogan. Guest records are end-to-end encrypted with a key the relay never has, so the honest part is listing what the relay *can* see: random installation IDs, public keys, whether a staff phone has Premium, and each record's type, time, and size, plus Google Cloud's request logs with IP addresses for 30 days. Deletion promises were written from how the clean-up really runs: an unfinished event goes once it is 30 days old *at the next routine pass*, not to the minute. The terms gained a matching section — the relay is "as is", the organizer decides who joins and answers for sharing guests' data.
+
+A new page, "How Team events work", is written in the first person because a solo developer is the honest narrator: what it costs (only the organizer pays), what you need (App Attest, so no Mac or Simulator), the five steps from Start to the first scan, and what happens when the night ends or someone leaves. The app page links to it from a new guide section, and its stats swapped "0 bytes to a cloud" for "10 staff phones per team event" — a number that is true and actually useful.
+
 ## 2026-09-14 — Verigate separates the check from the call
 
 Verigate 1.2 turns one old all-purpose Profile into a clearer little operations desk. Quick Scan answers the narrow question — what does this ID say? — while the admission workflow records the human call, Admit or Deny, beside an Event, Location, Door, and Staff member. The distinction matters: an underage result is not secretly a denial, a valid ID is not proof that someone entered, and a Ban/VIP flag is context rather than an automatic decision. History, Insights, CSV, and PDF now keep those facts in separate labelled drawers, including a paper trail when a decision is corrected.

@@ -193,7 +193,7 @@ window.APP_DETAILS = {
 
   // Source of truth: Verigate PRODUCT_DOC.md (verified 2026-09-14, codebase commit 42da54f).
   verigate: {
-    version: "1.2.0",
+    version: "2.0.0",
     appStore: "https://apps.apple.com/us/app/verigate-id-scanner-age/id6775568994",
     appStoreLabel: "Download on the App Store",
     price: "Free · Premium: subscription with a trial for eligible users, or one-time Lifetime",
@@ -203,22 +203,22 @@ window.APP_DETAILS = {
     heroPortrait: true,
 
     tagline: "Scan IDs in two seconds.\nStore no photos.",
-    subhead: "The fast, honest ID scanner and local admission log for bars, clubs, shops, and events. Use Quick Scan for an age check, or record Admit/Deny with Event, Location, Door, and Staff context. No stored ID photos, no cloud.",
-    blurb: "Verigate scans the AAMVA PDF417 barcode on the back of a US or Canadian driver's license and returns an ID result — valid, underage, expired, possible fake, or couldn't read. Quick Scan keeps the line moving without an entry decision. The admission workflow records the operator's separate Admit or Deny choice with the active Event, saved Venue or one-off Location, Door, and Staff.",
-    pitch: "Check age quickly, or keep a local admission record with an explicit operator decision. ID result, Ban/VIP status, and Admit/Deny stay separate — all on-device, with no stored ID photos and no cloud.",
+    subhead: "The fast, honest ID scanner and admission log for bars, clubs, shops, and events. Use Quick Scan for an age check, record Admit/Deny with Event, Location, Door, and Staff context, or run several doors as one team event. No stored ID photos; records stay on your phone unless you share them with your team, end-to-end encrypted.",
+    blurb: "Verigate scans the AAMVA PDF417 barcode on the back of a US or Canadian driver's license and returns an ID result — valid, underage, expired, possible fake, or couldn't read. Quick Scan keeps the line moving without an entry decision. The admission workflow records the operator's separate Admit or Deny choice with the active Event, saved Venue or one-off Location, Door, and Staff. Team events let up to 10 Staff phones scan for one event and share guests, lists, and decisions, end-to-end encrypted.",
+    pitch: "Check age quickly, keep an admission record with an explicit operator decision, or run every door as one team event. ID result, Ban/VIP status, and Admit/Deny stay separate — on your phone by default, with no stored ID photos; team events sync end-to-end encrypted.",
 
     // ── Hero stats ──
     stats: [
       { value: "2 s", label: "scan to verdict" },
       { value: "5", label: "fake-ID checks" },
       { value: "0", label: "photos stored" },
-      { value: "0", label: "bytes to a cloud" },
+      { value: "10", label: "staff phones per team event" },
     ],
 
     // ── Top feature highlights (3 cards) ──
     features: [
       { title: "Two workflows, one fast scanner.", body: "Quick Scan gives a fast age check with optional attribution. Record admissions adds explicit Admit and Deny controls and requires a complete Event, Door, and Staff setup before a decision is saved." },
-      { title: "Private by architecture, not by promise.", body: "The data model has no field for an ID image or a raw license number. Optional front-ID OCR processes one temporary image on-device and discards it. No cloud, no account, no analytics." },
+      { title: "Private by architecture, not by promise.", body: "The data model has no field for an ID image or a raw license number. Optional front-ID OCR processes one temporary image on-device and discards it. No account, no analytics — and team events are end-to-end encrypted, so the relay can't read your guests." },
       { title: "Three facts, never one guess.", body: "The ID result, Ban/VIP status at scan, and operator Admit/Deny decision are recorded separately. History, Insights, and exports keep that vocabulary — including later decision corrections." },
     ],
 
@@ -231,7 +231,7 @@ window.APP_DETAILS = {
     ],
 
     // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
-    screenshotsHeading: "Current 1.2.0 screens.",
+    screenshotsHeading: "A look inside.",
     screenshotCols: 4,
     screenshots: {
       tour: [
@@ -274,6 +274,18 @@ window.APP_DETAILS = {
         ],
       },
       {
+        kicker: "Team events — Premium organizer",
+        items: [
+          "Run several doors as one event: the organizer and up to 10 Staff phones scan for the same event and see the same guests, Ban list, and VIP list.",
+          "Staff join free by scanning the organizer's code — no account or subscription on their phone; the organizer's Premium covers the team.",
+          "The organizer names each phone and sets its door; Staff phones receive the event's name, location, and doors automatically.",
+          "Scans and Admit/Deny decisions reach every door. Staff can flag a guest at the door; only the organizer can lift a ban.",
+          "End the event to get one report with every door's scans and decisions, as CSV or PDF.",
+          "End-to-end encrypted: the relay stores and forwards records it can't read. An event leaves the relay with Delete, within 14 days after End, or after 30 days if it is never ended.",
+          "Staff can leave an event at any time; a borrowed phone without Premium goes home clean when the event ends.",
+        ],
+      },
+      {
         kicker: "Possible-fake details — Premium",
         items: [
           "Five AAMVA-consistency checks on the barcode: issuer number, document-number shape, date of birth, expiry-vs-issue encoding, and jurisdiction code.",
@@ -307,7 +319,7 @@ window.APP_DETAILS = {
         items: [
           "CSV export — one 21-field scan log with ID result, list status, entry decision, Event/Location/Door/Staff, method, and correction audit. The license number and digest are never exported.",
           "PDF report — analytical overview, operational breakdowns, history, correction audit, and optional Ban/VIP appendices.",
-          "Transfer Ban/VIP lists as a JSON file you share yourself. This is manual file transfer, not live sync; no server sits in the middle.",
+          "Transfer Ban/VIP lists as a JSON file you share yourself. This is manual file transfer and doesn't go through a server; for live sharing between doors, use a team event.",
           "List setup by CSV: use the built-in spreadsheet template, preview invalid and duplicate rows, resolve possible matches, then apply the import atomically.",
           "Device-transfer import is hardened with size caps, strict digest validation, version checks, and merge rules that treat a transferred list as a hint, never a correction.",
         ],
@@ -319,7 +331,7 @@ window.APP_DETAILS = {
           "Saved Venue Doors are reusable; one-off Location Doors belong only to that Event.",
           "Staff can use an optional local 4-digit convenience PIN for switch, edit, and archive actions.",
           "Auto-return jumps straight back to the camera after each verdict (1–10 s) — built for throughput on a busy line.",
-          "No account and no login. Team Sync and a shared cross-device journal are not part of 1.2.0.",
+          "No account and no login — not even for team events.",
         ],
       },
       {
@@ -327,22 +339,24 @@ window.APP_DETAILS = {
         items: [
           "No ID image is stored — barcode scanning takes no still, and optional front-ID OCR discards its temporary in-memory image after processing.",
           "No raw license number — only an issuer-scoped, one-way SHA-256 digest.",
-          "No network beyond Apple's StoreKit for purchases. No CloudKit, backend, Team Sync, third-party SDKs, analytics, or telemetry.",
-          "One permission: the camera, used for PDF417 scanning and optional front-ID OCR.",
+          "Outside team events, no network beyond Apple's StoreKit for purchases. No CloudKit, third-party SDKs, analytics, or telemetry.",
+          "Team events go through Verigate's relay end-to-end encrypted; it sees only technical data such as random device IDs, and an event's records are deleted with the event.",
+          "One permission: the camera, used for PDF417 scanning, optional front-ID OCR, and scanning an organizer's team code.",
         ],
       },
     ],
 
     // ── System requirements (from PRODUCT_DOC §1) ──
     requirements: [
-      "iPhone running iOS 18.0 or later",
+      "iPhone or iPad running iOS 18.0 or later",
       "A rear camera with autofocus — the scanner needs close focus on the barcode",
       "Works with US & Canadian driver's licenses / state IDs that carry an AAMVA PDF417 barcode (the barcode on the back)",
-      "No network connection required — scanning and logging are fully offline; internet is only needed for the App Store purchase flow",
+      "Scanning and logging work offline; internet is needed for App Store purchases and for team events",
+      "Team events: a device that supports Apple's App Attest (current iPhones and iPads; not Mac), and Premium on the organizer's device",
     ],
 
-    permissionsNote: "One — the Camera, used for PDF417 scanning and optional front-ID OCR. Barcode scanning takes no still; OCR processes one temporary in-memory image on-device and discards it after recognition. Verigate requests no Photos, Location, Microphone, Contacts, or Local Network access.",
-    privacyTeaser: "Verigate collects no data and ships no analytics, telemetry or crash reporters. Scans, guest records and lists live on the phone; the only network traffic is Apple's StoreKit.",
+    permissionsNote: "One — the Camera, used for PDF417 scanning, optional front-ID OCR, and scanning an organizer's team code. Barcode scanning takes no still; OCR processes one temporary in-memory image on-device and discards it after recognition. Verigate requests no Photos, Location, Microphone, Contacts, or Local Network access.",
+    privacyTeaser: "No analytics, telemetry or crash reporters. Scans, guest records and lists live on the phone; team events share them end-to-end encrypted through a relay that can't read them.",
 
     // ── Long-form documentation ──
     guide: [
@@ -351,6 +365,7 @@ window.APP_DETAILS = {
         title: "Getting started",
         body: `
           <p>On first launch, choose <strong>Check age</strong> for Quick Scan or <strong>Record admissions</strong> for an explicit Admit/Deny decision. Both paths explain barcode, front-ID OCR, and manual entry, then set an age rule — 18+ and 21+ quick choices, or any custom value from 1 to 99. Record admissions also creates the first Event, saved Venue or one-off Location, Door, and Staff setup.</p>
+          <p>Staff joining an organizer's team event choose <strong>Join a team</strong> instead: the organizer sets their door and age rule, so Verigate goes straight to scanning the organizer's code.</p>
           <p>Your choices remain drafts until <strong>Finish setup</strong>. Camera permission is requested later, when the first scan begins, and Manual Entry remains available if permission is declined.</p>
           <h4>The first scan</h4>
           <p>Flip the license over and point the camera at the <strong>PDF417 barcode</strong> — the wide, dense barcode on the back. The torch is already on and the lens auto-switches for close focus; the moment the code is in frame, the verdict appears. If the barcode is worn or unsupported, open <strong>Manual entry</strong> and enter name, date of birth, and optional expiry. On a physical iPhone, <strong>Scan ID front</strong> can fill those fields with on-device OCR; compare every suggestion with the physical ID and explicitly verify it before continuing.</p>
@@ -364,6 +379,15 @@ window.APP_DETAILS = {
           <p><strong>Quick Scan</strong> is the shortest path: it records the ID check with <em>Entry decision: Not recorded</em>. Event, Location, Door, and Staff attribution is optional, and auto-return can move directly to the next check.</p>
           <p><strong>Admit/Deny</strong> requires a complete Event, Door, and Staff setup. The result first shows the name read from the current ID, the ID result, and any Ban/VIP status. The operator then records <strong>Admit</strong> or <strong>Deny</strong>; that decision is not inferred from age, expiry, or a watchlist flag.</p>
           <p>A later correction creates a visible decision revision. History and reports preserve the original and corrected values instead of silently rewriting the past.</p>
+        `,
+      },
+      {
+        id: "team",
+        title: "Team events",
+        body: `
+          <p>From version 2.0, an organizer with Premium can run several doors as one <strong>team event</strong>. Up to 10 Staff phones join free by scanning the organizer's code in <em>Settings → Team</em>, and the organizer gives each phone a name and a door. Every door then sees the same guests, Ban list, and VIP list, and Admit/Deny decisions from all doors reach every phone.</p>
+          <p>Records are end-to-end encrypted on the phones; Verigate's relay passes them along without being able to read them. When the night is over, end the event to get one report with every door's scans and decisions, then delete it from the relay.</p>
+          <p>The full walkthrough — starting, joining, lists, ending, leaving, and what the relay can see — is on <a href="verigate/team.html" style="color: var(--accent);">How Team events work</a>.</p>
         `,
       },
       {
@@ -406,7 +430,7 @@ window.APP_DETAILS = {
         title: "Two doors, one list",
         body: `
           <p><strong>Transfer lists</strong> (Premium) moves your Ban and VIP lists between iPhones as a JSON file you explicitly share over AirDrop, Files, or any channel you trust. <strong>Nothing goes through a server, and this is not live sync.</strong></p>
-          <p>Verigate 1.2.0 does not share History, Ban/VIP changes, entry decisions, or passback state live between devices. Each phone keeps its own local records.</p>
+          <p>Outside a team event, each phone keeps its own History, decisions, and lists. To share them live between doors, start a <a href="verigate/team.html" style="color: var(--accent);">team event</a>.</p>
           <p>The import side is hardened: oversized files are rejected before reading, every document identity must carry a well-formed digest, files from a newer app version are refused, and string lengths are clamped. Merging is conservative — incoming names and notes only overwrite when non-empty, and scan-derived facts only fill gaps. A transferred list is a hint, never a correction. A separate "replace" mode clears existing flags first if you want a clean slate.</p>
         `,
       },
@@ -414,7 +438,7 @@ window.APP_DETAILS = {
         id: "premium",
         title: "Free, Premium, and Lifetime",
         body: `
-          <p>The core is free: barcode and manual checks, every live ID result including the possible-fake warning, age-threshold settings, the default passback signal, Quick Scan, Admit/Deny, and viewing on-device History. <strong>Premium</strong> adds the detailed AAMVA report, Ban/VIP list management and CSV import, Insights, CSV/PDF export, extended passback settings, and manual device-to-device list transfer.</p>
+          <p>The core is free: barcode and manual checks, every live ID result including the possible-fake warning, age-threshold settings, the default passback signal, Quick Scan, Admit/Deny, and viewing on-device History. <strong>Premium</strong> adds the detailed AAMVA report, Ban/VIP list management and CSV import, Insights, CSV/PDF export, extended passback settings, manual device-to-device list transfer, and team events for up to 10 Staff phones, who join free.</p>
           <p>Premium is one clear choice: a <strong>Monthly</strong> or <strong>Yearly</strong> subscription with a trial for eligible users, or a one-time <strong>Lifetime</strong> purchase that never renews. Prices are shown in the App Store for your region. Manage or cancel any time in <em>Settings → Subscription → Manage subscription</em> — it opens Apple's native sheet, and cancelling keeps access until the period ends. <em>Restore purchases</em> always reports a visible result.</p>
         `,
       },
@@ -425,13 +449,13 @@ window.APP_DETAILS = {
       { q: "Do you store a photo of the ID?", a: "No. Barcode scanning takes no still image. If you choose front-ID OCR for Manual Entry, one temporary image is processed on-device and discarded after recognition; the app has no image field." },
       { q: "Do you store the license number?", a: "No. We combine it with a validated issuer scope and hash it with one-way SHA-256 so the app can recognise a repeat or banned document. The raw number is discarded." },
       { q: "Is the digest \"biometric\"?", a: "No — it's derived from the document number and issuer scope, not from a face or fingerprint. It's an irreversible fingerprint of the card, not of the person." },
-      { q: "Does any data leave the phone?", a: "Verigate has no cloud, account, or analytics, and the developer receives none of your data. A report or transferred list leaves the phone only when you explicitly share it to a destination through iOS; StoreKit handles purchases with Apple." },
+      { q: "Does any data leave the phone?", a: "Only when you choose: a report or transferred list you explicitly share through iOS, and team events, which share guest records end-to-end encrypted through Verigate's relay. There is no account or analytics, and the developer can't read your guests' data. StoreKit handles purchases with Apple." },
       { q: "Which IDs work?", a: "US and Canadian driver's licenses / state IDs with an AAMVA PDF417 barcode — the wide barcode on the back. Passports are on the roadmap." },
       { q: "Can it 100% guarantee a fake or someone's age?", a: "No. Verigate is an assist tool, not a legal guarantee — the possible-fake indicator is a consistency check, not a forensic determination, and the final call is always yours." },
-      { q: "Do I need internet?", a: "No. Scanning, verdicts, lists, and logging are fully offline. Internet is only needed for the App Store purchase flow." },
-      { q: "What's free, and what's Premium?", a: "Free: barcode and manual checks, every live ID result including possible fake, age-threshold settings, the default passback signal, Quick Scan, Admit/Deny, and viewing on-device History. Premium: detailed AAMVA checks, Ban/VIP list management and CSV import, Insights, CSV/PDF export, extended passback settings, and manual list transfer." },
-      { q: "Does Verigate sync a team live?", a: "No. Version 1.2.0 has no Team Sync, shared journal, or cross-device passback. Transfer Lists is a Premium manual file transfer for Ban/VIP lists only; each phone keeps its own History and decisions." },
-      { q: "Are there per-device fees?", a: "No. Verigate has no per-seat or per-device licensing. Each device uses the App Store entitlement available to that Apple account; list transfer remains a manual Premium feature, not a team service." },
+      { q: "Do I need internet?", a: "Not for scanning, verdicts, lists, or logging. Internet is needed for App Store purchases and for team events; a team phone that loses signal keeps scanning and sends its records when it reconnects." },
+      { q: "What's free, and what's Premium?", a: "Free: barcode and manual checks, every live ID result including possible fake, age-threshold settings, the default passback signal, Quick Scan, Admit/Deny, and viewing on-device History. Premium: detailed AAMVA checks, Ban/VIP list management and CSV import, Insights, CSV/PDF export, extended passback settings, manual list transfer, and team events." },
+      { q: "Does Verigate sync a team live?", a: "Yes, from version 2.0, with team events. The organizer's Premium covers up to 10 Staff phones that join free; scans, decisions, and Ban/VIP lists reach every door, end-to-end encrypted. See \"Team events\" in the guide above and How Team events work." },
+      { q: "Are there per-device fees?", a: "No. Verigate has no per-seat or per-device licensing. Staff phones join a team event free; the organizer's Premium covers up to 10 of them." },
       { q: "How do I cancel?", a: "One tap: Settings → Subscription → Manage subscription opens Apple's native sheet. Cancelling stops auto-renewal and keeps access until the period ends. Or buy Lifetime once and never think about it again." },
     ],
   },

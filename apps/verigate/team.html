@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verigate — How Team events work</title>
+<meta name="description" content="How Verigate team events work: up to 10 Staff phones scan for one event, share guests and Ban/VIP lists end-to-end encrypted, and the organizer gets one report.">
+<link rel="canonical" href="https://shilovskii.dev/apps/verigate/team.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Verigate — How Team events work">
+<meta property="og:description" content="Several doors, one event: Staff phones join free, guest records stay end-to-end encrypted, and the organizer gets one report at the end.">
+<meta property="og:url" content="https://shilovskii.dev/apps/verigate/team.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 28px;
+    counter-reset: step;
+  }
+  .steps li {
+    position: relative;
+    padding: 14px 0 14px 52px;
+    border-bottom: 1px solid var(--line);
+    counter-increment: step;
+  }
+  .steps li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+  }
+  .steps .who {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--fg-3);
+    margin-bottom: 4px;
+  }
+  .toc-list {
+    columns: 2;
+    column-gap: 32px;
+    margin-bottom: 20px;
+  }
+  .toc-list li {
+    break-inside: avoid;
+  }
+  @media (max-width: 640px) {
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section style="padding: 32px 0 0;">
+  <div class="container-prose">
+    <div class="crumb">
+      <a href="../../index.html">shilovskii.dev</a>
+      <span class="sep">/</span>
+      <a href="../../apps.html">Apps</a>
+      <span class="sep">/</span>
+      <a href="../verigate.html">Verigate</a>
+      <span class="sep">/</span>
+      <span class="here">Team events</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 32px 0 24px;">
+  <div class="container-prose">
+    <div class="tag-mono" style="margin-bottom: 16px;">Verigate 2.0 · Team events</div>
+    <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">How Team events work</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
+      Verigate started as one phone at one door. Then venues with a front door, a patio, and a VIP entrance asked me for the obvious thing: let every door see the same guests. A team event does exactly that. Several phones scan for one event, a ban added at one door shows up at the others, and the organizer gets one report at the end. Guest records travel end-to-end encrypted, so my relay passes them along without being able to read them.
+    </p>
+  </div>
+</section>
+
+<section class="prose" style="padding: 24px 0;">
+  <div class="container-prose">
+
+    <h2>On this page</h2>
+    <ol class="toc-list">
+      <li><a href="#what" style="color: var(--accent);">What a team event is</a></li>
+      <li><a href="#cost" style="color: var(--accent);">Who pays</a></li>
+      <li><a href="#need" style="color: var(--accent);">What you need</a></li>
+      <li><a href="#start" style="color: var(--accent);">Starting and joining</a></li>
+      <li><a href="#during" style="color: var(--accent);">During the event</a></li>
+      <li><a href="#end" style="color: var(--accent);">Ending and the report</a></li>
+      <li><a href="#leave" style="color: var(--accent);">Leaving an event</a></li>
+      <li><a href="#privacy" style="color: var(--accent);">What my relay can and can't see</a></li>
+      <li><a href="#faq" style="color: var(--accent);">Questions</a></li>
+    </ol>
+
+    <h2 id="what" style="scroll-margin-top: 80px;">What a team event is</h2>
+    <p>One <strong>organizer</strong> — usually the manager's iPhone — and up to <strong>10 Staff phones</strong> work one event together. Every phone scans for the same event and sees the same guests, Ban list, and VIP list. Each Staff phone works one door with a name the organizer gives it, so every record says who checked the ID and where. Admit/Deny is always on in a team event: each check ends with a decision that the whole team can see.</p>
+    <p>Everything else about Verigate stays the same. Scanning, verdicts, and the possible-fake warning work exactly as on a single phone, and outside a team event your records never leave your iPhone.</p>
+
+    <h2 id="cost" style="scroll-margin-top: 80px;">Who pays</h2>
+    <p>Only the organizer. Starting a team event needs <strong>Verigate Premium</strong> on the organizer's iPhone, and that covers up to 10 Staff phones. Staff join free: no account, no subscription, no per-device fee. A Staff phone with its own Premium simply keeps a little more when the event ends (see <a href="#end" style="color: var(--accent);">below</a>).</p>
+
+    <h2 id="need" style="scroll-margin-top: 80px;">What you need</h2>
+    <ul>
+      <li>Verigate 2.0 or later on every phone, iPhone or iPad with iOS 18 or later.</li>
+      <li>A device that supports Apple's <strong>App Attest</strong>. Recent iPhones and iPads do; Macs and the iOS Simulator don't. If a device can't take part, <em>Settings → Team</em> says so instead of failing halfway.</li>
+      <li>An internet connection for starting and joining. During the event, a phone that loses signal keeps scanning; its records wait on the phone and go out when it is back online.</li>
+    </ul>
+
+    <h2 id="start" style="scroll-margin-top: 80px;">Starting and joining</h2>
+    <ol class="steps">
+      <li><span class="who">Organizer</span>Open <em>Settings → Team</em> and tap <strong>Start a team event</strong>. Choose an open event or create one. Its name, location, and doors go to every Staff phone, so set them up the way you want staff to see them.</li>
+      <li><span class="who">Organizer</span>Keep the Team screen open. It shows a code under <em>Staff scan this code</em> that refreshes on its own.</li>
+      <li><span class="who">Staff</span>On the Staff phone, open <em>Settings → Team</em> and tap <strong>Join a team</strong>, or choose <strong>Join a team</strong> when a fresh install asks how you'll use Verigate. Scan the organizer's code. The phone then shows a short code of its own.</li>
+      <li><span class="who">Organizer</span>The phone appears under <em>Waiting to join</em> with the same short code. Check that the codes match, then add it with a name and a door.</li>
+      <li><span class="who">Everyone</span>Scan. The Staff phone picks up the event, its door, and its name by itself; there is nothing to set up on it.</li>
+    </ol>
+    <p>The matching code is there so that nobody standing near the organizer can slip an unknown phone onto the team: a phone only joins once the organizer adds it.</p>
+
+    <h2 id="during" style="scroll-margin-top: 80px;">During the event</h2>
+    <ul>
+      <li><strong>Every door sees every guest.</strong> Scans and Admit/Deny decisions from all doors reach the other phones as soon as they are online. History shows the team's records next to your own.</li>
+      <li><strong>Ban and VIP lists.</strong> The organizer's lists go to every phone. Staff can flag a guest at the door, and a Staff phone can turn a VIP into a ban, but only the organizer can lift a ban or take someone off the team's list.</li>
+      <li><strong>The organizer stays in charge.</strong> From the Team screen the organizer can rename a Staff phone, move it to another door, add or remove doors, and remove a phone from the team. Each phone shows when it last synced, and the event shows when it started.</li>
+      <li><strong>Staff see their place.</strong> On a Staff phone, the Scan screen shows the team event and the door it works; the door and name are read-only because the organizer sets them.</li>
+    </ul>
+
+    <h2 id="end" style="scroll-margin-top: 80px;">Ending and the report</h2>
+    <p>When the night is over, the organizer taps <strong>End team event</strong>. The relay keeps accepting late records for 72 hours, so a phone that was offline at closing time can still catch up. The organizer's report — one report with every door's scans and decisions, as CSV or PDF — is in <em>Settings → Team → Event reports</em> and stays on the organizer's iPhone.</p>
+    <p>Then the organizer can choose <strong>Delete from relay</strong>, and the relay forgets the event straight away. If nobody deletes it, the relay removes an ended event on its own within 14 days, and an event that was never ended at all once it is 30 days old. I'd still recommend ending every event: the 30-day rule is a safety net, not a plan.</p>
+    <p>On the Staff phones, the event ends too. They drop the guest records they received from the team. A Staff phone with its own Premium keeps the scans it made; a Staff phone without Premium removes those as well, so a borrowed phone goes home clean.</p>
+
+    <h2 id="leave" style="scroll-margin-top: 80px;">Leaving an event</h2>
+    <p>A Staff phone can leave at any time with <em>Settings → Team → Leave team event</em>. Leaving happens on the phone itself, so it works offline. Before it goes, Verigate tells you what will be removed and whether any records haven't been sent yet — those never reach the team. A phone that has left can't rejoin the same event; the organizer simply sees that it stopped syncing.</p>
+
+    <h2 id="privacy" style="scroll-margin-top: 80px;">What my relay can and can't see</h2>
+    <p>The organizer's iPhone creates a key for each event and hands it only to the phones the organizer adds. Guest names, dates of birth, document fingerprints, flags, notes, decisions, and even staff and door names are encrypted on the phone that makes them. My relay never gets that key.</p>
+    <p>What the relay does see is what it needs to deliver records: random IDs for the event and the phones, public keys, whether each Staff phone has Premium, and the type, time, and size of each record. Google Cloud, where the relay runs (us-central1, United States), keeps request logs with IP addresses for 30 days. Everything an event leaves on the relay is deleted with the event. The <a href="privacy.html#s4" style="color: var(--accent);">privacy policy</a> has the full list, and the <a href="terms.html#s6" style="color: var(--accent);">terms</a> cover who is responsible for what.</p>
+
+    <h2 id="faq" style="scroll-margin-top: 80px;">Questions</h2>
+    <p><strong>Do my staff need an account or a subscription?</strong><br>No. They install Verigate, tap Join a team, and scan your code.</p>
+    <p><strong>Can I have more than 10 Staff phones?</strong><br>Not in one event yet. If you need more, write to me — it tells me what to build next.</p>
+    <p><strong>What happens if the Wi-Fi drops at a door?</strong><br>That door keeps scanning. Its records wait on the phone and go out when it reconnects; the Scan screen shows that it is offline and how many records are waiting.</p>
+    <p><strong>Can a Staff phone use its own events while it is on a team?</strong><br>While it is on a team event, it scans for that event. When the event ends or the phone leaves, it goes back to its own events.</p>
+    <p><strong>Can you read my guests' details?</strong><br>No. I don't have the key, and neither does Google. The relay only stores and forwards encrypted records.</p>
+    <p><strong>Something doesn't work.</strong><br>Email me at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>. I'm the only developer, so you'll hear back from the person who wrote the code.</p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../../shared.js?v=20260914"></script>
+<script>SiteChrome.render({ active: 'apps' });</script>
+</body>
+</html>

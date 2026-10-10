@@ -12,7 +12,7 @@
 
   const APPS = [
     { id: 'json-pilot', name: 'JSON Pilot: Viewer & Editor', tag: 'iOS', summary: 'A native JSON viewer & editor for iPhone, with an on-device AI assistant.', color: '#0A84FF', glyph: 'J', icon: 'apps/json-pilot-icon.png' },
-    { id: 'verigate', name: 'Verigate: ID Scanner & Age', tag: 'iOS', summary: 'On-device ID checks and admission logs for bars and events — Quick Scan or Admit/Deny, with no stored ID photos or cloud.', color: '#29B6AD', glyph: 'V', icon: 'apps/verigate-icon.png' },
+    { id: 'verigate', name: 'Verigate: ID Scanner & Age', tag: 'iOS', summary: 'ID checks and admission logs for bars and events — Quick Scan, Admit/Deny, or several doors as one encrypted team event, with no stored ID photos.', color: '#29B6AD', glyph: 'V', icon: 'apps/verigate-icon.png' },
     { id: 'filmeter', name: 'Filmeter: Film Light Meter', tag: 'iOS', summary: 'A light meter made for film — EV and exposure pairs, the Zone System, reciprocity, all on-device.', color: '#D9A24A', glyph: 'F', icon: 'apps/filmeter-icon.png' },
     { id: 'ovessa', name: 'Ovessa: PCOS & Hormone Tracker', tag: 'iOS', summary: 'A private PCOS companion — honest cycle windows, food with a PCOS grade, and a doctor-ready PDF. Nothing leaves the iPhone.', color: '#6B4A61', glyph: 'O', icon: 'apps/ovessa-icon.png' },
     { id: 'rayita', name: 'Rayita: Peptide Tracker', tag: 'iOS', summary: 'A private injection journal and unit converter — vials that count down, an honest log, and no account or server.', color: '#0E6E4E', glyph: 'R', icon: 'apps/rayita-icon.png' },
