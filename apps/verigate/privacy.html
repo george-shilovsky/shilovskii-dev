@@ -68,7 +68,7 @@
 
 <section style="padding: 32px 0 24px;">
   <div class="container-prose">
-    <div class="tag-mono" style="margin-bottom: 16px;">Verigate · effective June 9, 2026 · last updated October 10, 2026</div>
+    <div class="tag-mono" style="margin-bottom: 16px;">Verigate · effective June 9, 2026 · last updated October 11, 2026</div>
     <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
     <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
       This Privacy Policy explains how the Verigate application ("Verigate", "we", "us", "our") handles information when you use it on your iPhone or iPad. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.
@@ -205,7 +205,7 @@
         </tr>
       </tbody>
     </table>
-    <p>Inside the team, everyone on the event can read its records. The organizer decides who joins, sets each phone's name and door, and can rename or remove a Staff phone.</p>
+    <p>Inside the team, everyone on the event can read its records. The organizer decides who joins and sets each phone's name and door. A Staff phone can leave the team on its own at any time; to take every phone off the team, the organizer ends the event and deletes it from the relay.</p>
 
     <h3>Where it runs</h3>
     <p>The relay runs on <strong>Google Cloud</strong> (Cloud Run and Firestore) in the <strong>us-central1</strong> region in the United States. Like any web service, Google Cloud logs each request the relay receives — the IP address, User-Agent, requested path (which contains the event's random ID), time, status, and size. These logs are kept for <strong>30 days</strong> and then deleted. The relay's own log lines record only which operation ran and its result, never IDs or content. Access to the relay's database and logs is limited to the developer's Google Cloud account.</p>
@@ -224,7 +224,7 @@
     <h3>Leaving, ending, and what stays on the phones</h3>
     <ul>
       <li>A Staff phone can leave a team event at any time with <em>Settings → Team → Leave team event</em>. Leaving works offline: the guest records it received from the team are removed from that phone (on a phone without Premium, its own scans from the event too), and records it has not sent yet never reach the team.</li>
-      <li>Once the event is deleted from the relay — by the organizer's Delete from relay or by the relay's routine clean-up described above — Staff phones remove the guest records they received from the team. A Staff phone without Premium also removes its own scans from that event; a Staff phone with Premium keeps its own scans. Between End and that point, Staff phones keep the event's records only to finish sending late ones.</li>
+      <li>Staff phones remove the guest records they received from the team the next time they connect after the event is deleted from the relay (by the organizer's Delete from relay or by the relay's routine clean-up described above) or after its 72-hour window for late records closes, whichever comes first. A Staff phone without Premium also removes its own scans from that event; a Staff phone with Premium keeps its own scans. Between End and that point, Staff phones keep the event's records only to finish sending late ones.</li>
       <li>The organizer keeps the event's records and report on their phone, like any other local data.</li>
       <li>Data that has already reached another phone stays on that phone under its owner's control until removed as described above; neither we nor the organizer can erase it remotely.</li>
     </ul>
