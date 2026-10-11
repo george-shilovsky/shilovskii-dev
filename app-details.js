@@ -282,7 +282,7 @@ window.APP_DETAILS = {
           "Scans and Admit/Deny decisions reach every door. Staff can flag a guest at the door; only the organizer can lift a ban.",
           "End the event to get one report with every door's scans and decisions, as CSV or PDF.",
           "End-to-end encrypted: the relay stores and forwards records it can't read. An event leaves the relay with Delete, within 14 days after End, or after 30 days if it is never ended.",
-          "Staff can leave an event at any time; a borrowed phone without Premium goes home clean when the event ends.",
+          "Staff can leave an event at any time; a borrowed phone without Premium goes home clean once the event is deleted from the relay.",
         ],
       },
       {
