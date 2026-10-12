@@ -52,6 +52,7 @@
               ? `<a href="${detail.appStore}" class="btn btn-primary" target="_blank" rel="noopener">${appStoreIcon()} ${esc(detail.appStoreLabel || 'Download on the Mac App Store')}</a>`
               : `<button class="btn btn-primary" disabled>${appStoreIcon()} ${esc(detail.appStoreLabel || 'Download on the Mac App Store')}</button>`}
             <a href="#how" class="btn btn-ghost">See how it works <span aria-hidden="true">↓</span></a>
+            ${(detail.heroLinks || []).map(l => `<a href="${esc(l.href)}" class="btn btn-ghost">${esc(l.label)} <span aria-hidden="true">→</span></a>`).join('')}
           </div>
           ${detail.price ? `<div style="margin-top: 18px; font-size: 12px; color: var(--fg-3); font-family: 'JetBrains Mono', ui-monospace, monospace;">${esc(detail.price)}${detail.priceDetail ? ` · ${esc(detail.priceDetail)}` : ''}</div>` : ''}
         </div>
@@ -81,6 +82,26 @@
       </div>
     </section>
     ` : ''}
+
+    <!-- Spotlight: one new feature with a link to its guide (optional) -->
+    ${detail.spotlight ? (() => {
+      const sp = detail.spotlight;
+      return `
+    <section style="padding: 24px 0 16px;">
+      <div class="container-wide">
+        <div class="spotlight-card" style="display: grid; grid-template-columns: ${sp.image ? '1.4fr 1fr' : '1fr'}; gap: 48px; align-items: center; padding: 40px 44px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);">
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="tag-mono" style="color: var(--accent); align-self: flex-start;">${esc(sp.kicker)}</div>
+            <h2 class="section-title" style="font-size: 34px; margin: 0;">${esc(sp.title)}</h2>
+            <p style="font-size: 17px; line-height: 1.6; color: var(--fg-2); margin: 0; text-wrap: pretty; max-width: 560px;">${esc(sp.body)}</p>
+            <div style="margin-top: 8px;"><a href="${esc(sp.href)}" class="btn btn-primary">${esc(sp.linkLabel)} <span aria-hidden="true">→</span></a></div>
+          </div>
+          ${sp.image ? `<img src="${esc(sp.image)}" alt="${esc(sp.imageAlt || '')}" loading="lazy" style="width: 100%; max-width: 260px; height: auto; display: block; justify-self: center; border-radius: 14px; box-shadow: 0 1px 0 var(--line), 0 24px 48px -16px rgba(0,0,0,0.18), 0 8px 16px -8px rgba(0,0,0,0.10);">` : ''}
+        </div>
+      </div>
+    </section>
+    `;
+    })() : ''}
 
     <!-- Pitch -->
     <section style="padding: 48px 0 32px;">

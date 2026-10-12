@@ -476,6 +476,7 @@ html.dark .kbd { background: var(--bg-3); }
 /* Hero grid — stack on narrow screens */
 @media (max-width: 880px) {
   .app-hero { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .spotlight-card { grid-template-columns: 1fr !important; gap: 32px !important; padding: 28px 24px !important; }
 }
 
 /* Stat strip — wrap to 2 cols on small screens */

@@ -201,6 +201,20 @@ window.APP_DETAILS = {
     termsDoc: "verigate/terms.html",
     heroImage: "verigate-5-fake.png",
     heroPortrait: true,
+    heroLinks: [
+      { label: "How team events work", href: "verigate/team.html" },
+    ],
+
+    // ── Spotlight: team events, new in 2.0, with the guide one click away ──
+    spotlight: {
+      kicker: "New in 2.0 · Team events",
+      title: "Run every door as one event.",
+      body: "Up to 10 Staff phones join free by scanning the organizer's code. Every door sees the same guests, Ban list, and VIP list, decisions reach every phone, and the night ends with one report for every door. Records are end-to-end encrypted — the relay passes them along without being able to read them.",
+      linkLabel: "Read how team events work",
+      href: "verigate/team.html",
+      image: "verigate-200-team-organizer.png",
+      imageAlt: "The organizer's Team event screen: the Staff phones Anna at Patio and Ben at Bar, each with its last sync, and the event's doors.",
+    },
 
     tagline: "Scan IDs in two seconds.\nStore no photos.",
     subhead: "The fast, honest ID scanner and admission log for bars, clubs, shops, and events. Use Quick Scan for an age check, record Admit/Deny with Event, Location, Door, and Staff context, or run several doors as one team event. No stored ID photos; records stay on your phone unless you share them with your team, end-to-end encrypted.",
@@ -230,10 +244,20 @@ window.APP_DETAILS = {
       { step: "03", title: "Read, then decide", body: "The result shows the current ID's name, age/expiry result, and Ban/VIP status. In the admission workflow, the operator then records Admit or Deny as a separate decision." },
     ],
 
-    // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
+    // ── Screenshot gallery (team events first, then the scanning tour; portrait iPhone shots) ──
     screenshotsHeading: "A look inside.",
     screenshotCols: 4,
+    screenshotLabels: {
+      team: "Team events — new in 2.0",
+      tour: "Scanning and records",
+    },
     screenshots: {
+      team: [
+        { src: "verigate-200-team-organizer.png", caption: "The organizer's Team screen — each Staff phone with its name, door, and last sync. Doors can be added and renamed while the event runs." },
+        { src: "verigate-200-team-scanner.jpg", caption: "A door during a team event — Admit/Deny is fixed for the team, \"Team · Live\" shows the phone is syncing, and the card names the event, location, door, and staff member." },
+        { src: "verigate-200-event-report.png", caption: "Event report — one report for every door: its status, the event and its doors, and whether each Staff phone caught up after End." },
+        { src: "verigate-200-report-by-phone.png", caption: "The same report by operator and by phone, exported as CSV or PDF. License numbers and lookup keys are never exported." },
+      ],
       tour: [
         { src: "verigate-120-01-quick-scan.png", caption: "Quick Scan — check the ID without recording an entry decision, with optional Event, Location, Door, and Staff attribution." },
         { src: "verigate-120-02-admission-result.png", caption: "Admission result — the ID result, Ban/VIP status, and the operator's separate Admit/Deny decision remain distinct facts." },
