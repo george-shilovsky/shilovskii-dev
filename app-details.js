@@ -193,7 +193,7 @@ window.APP_DETAILS = {
 
   // Source of truth: Verigate PRODUCT_DOC.md (verified 2026-09-14, codebase commit 42da54f).
   verigate: {
-    version: "2.0.0",
+    version: "2.1.0",
     appStore: "https://apps.apple.com/us/app/verigate-id-scanner-age/id6775568994",
     appStoreLabel: "Download on the App Store",
     price: "Free · Premium: subscription with a trial for eligible users, or one-time Lifetime",
