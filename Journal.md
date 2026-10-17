@@ -21,6 +21,14 @@ Plain HTML, CSS, and JavaScript keep this portfolio fast, portable, and easy to 
 
 # The Journey
 
+## 2026-10-16 — Filmeter 1.1: one purchase, and the fine print catches up
+
+Filmeter dropped its subscriptions. Pro is now a single one-time purchase, incident metering became free (and honestly labelled approximate), and 1.1 adds exposure compensation, a Bulb timer and a depth-of-field calculator. The site had been telling the July story: a Terms page about auto-renewal and a free trial, an app page selling "incident (beta)" as Pro.
+
+The Terms page now has a "Purchase and pricing" section for a one-time purchase, with one honest paragraph for people who still hold an old subscription: it keeps Pro until it ends, and here is where to cancel it. No price appears anywhere on the site; the App Store shows it. The app page got the 1.1 features, a new FAQ answer ("Is Pro a subscription? No."), and ten fresh screenshots taken from the 1.1 build, including depth of field.
+
+**Lesson:** legal pages drift silently. A pricing change in the app is also a Terms change, and the Terms page is the one Apple's reviewer can open from the description.
+
 ## 2026-10-10 — Verigate opens a second door, and the fine print follows it
 
 Verigate 2.0 adds team events: an organizer's iPhone and up to ten staff phones scan for one event, share guests and Ban/VIP lists, and end the night with one report. For the first time the app talks to a server of its own, so the website had to stop saying it never does. The old page wore "0 bytes to a cloud" as a badge and answered "Does Verigate sync a team live?" with a flat "No". Both were true for 1.2.0 and would have been false the day 2.0 shipped — the same page is the App Store's Support and Marketing URL, so App Review would read the contradiction too.
