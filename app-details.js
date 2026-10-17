@@ -484,12 +484,12 @@ window.APP_DETAILS = {
     ],
   },
 
-  // Source of truth: Filmeter PRODUCT_DOC.md (2026-07-05, codebase commit e946508).
+  // Source of truth: Filmeter PRODUCT_DOC.md in Obsidian (2026-10-16, version 1.1.0).
   filmeter: {
-    version: "1.0.1",
+    version: "1.1.0",
     appStore: "https://apps.apple.com/us/app/filmeter-film-light-meter/id6785722973",
     appStoreLabel: "Download on the App Store",
-    price: "Free · Pro: subscription with free trial, or one-time Lifetime",
+    price: "Free · Pro: one-time purchase, no subscription",
     privacyDoc: "filmeter/privacy.html",
     termsDoc: "filmeter/terms.html",
     heroImage: "filmeter-1-meter.png",
@@ -497,7 +497,7 @@ window.APP_DETAILS = {
 
     tagline: "A light meter,\nmade for film.",
     subhead: "Turn your iPhone into a reflected/incident exposure meter — read EV and a full ladder of shutter/aperture pairs at your ISO, then work the Zone System, reciprocity, and filter/bellows factors, and log every frame by roll. On-device. No account. An estimate, not a lab.",
-    blurb: "Filmeter is a native iPhone light meter for film photography. Point the camera at a scene and it reads the live exposure and returns EV plus a ladder of shutter/aperture pairs at your chosen ISO — the analog metering workflow, in your pocket. Beyond the basic reading it carries the film-specific tools a lux app never bothers with: the Zone System, reciprocity correction for long exposures, filter & bellows compensation, per-stock film profiles, a one-time calibration, and a per-frame roll logbook.",
+    blurb: "Filmeter is a native iPhone light meter for film photography. Point the camera at a scene and it reads the live exposure and returns EV plus a ladder of shutter/aperture pairs at your chosen ISO — the analog metering workflow, in your pocket. Beyond the basic reading it carries the film-specific tools a lux app never bothers with: the Zone System, reciprocity correction for long exposures, filter & bellows compensation, per-stock film profiles, a one-time calibration, and a per-frame roll logbook. Version 1.1 adds exposure compensation, a Bulb timer for long exposures, and a depth-of-field calculator.",
     pitch: "Point the camera and get EV plus the whole shutter/aperture ladder — then work the zones, correct reciprocity, and log the frame. All on-device, no account, no photo ever captured.",
 
     // ── Hero stats ──
@@ -520,23 +520,24 @@ window.APP_DETAILS = {
     flow: [
       { step: "01", title: "Meter the light", body: "Reflected off your subject with the back camera, incident toward the light, or camera-free with Sunny-16 — pick a mode and Filmeter reads the live exposure into a calibrated EV." },
       { step: "02", title: "Read EV and every pair", body: "One clean readout: EV to a tenth of a stop, the exposure triplet, a deviation dial versus your locked reading, and a scrollable wheel of equivalent shutter/aperture pairs at your ISO." },
-      { step: "03", title: "Work the film tools, log the roll", body: "Place tones on the Zone System, correct a long exposure with reciprocity, add filter and bellows stops — then log the frame into a named roll you can export to CSV." },
+      { step: "03", title: "Work the film tools, log the roll", body: "Place tones on the Zone System, correct a long exposure with reciprocity and time it with the Bulb timer, check depth of field, add filter and bellows stops — then log the frame into a named roll you can export to CSV." },
     ],
 
     // ── Screenshot gallery (single tour group, portrait iPhone shots) ──
-    screenshotsHeading: "Nine screens, the whole meter.",
+    screenshotsHeading: "Ten screens, the whole meter.",
     screenshotCols: 4,
     screenshots: {
       tour: [
         { src: "filmeter-1-meter.png", caption: "The Meter — reflected off your subject. EV to a tenth of a stop, a scene-vs-lock deviation dial, the ISO / shutter / aperture triplet, and a center-snapped wheel of equivalent pairs. LOCK holds the reading; MEASURE and LOG sit below." },
         { src: "filmeter-2-pairs.png", caption: "Exposure Pairs — the full aperture- or shutter-priority ladder at the live EV and ISO, with a full / ½ / ⅓-stop toggle. The locked pair is highlighted; edge-of-range pairs fade out." },
-        { src: "filmeter-3-zone.png", caption: "The Zone System as a live spot meter — tap tones onto zones 0–X. PLACED ON and SCENE RANGE cards read the anchor and the scene’s contrast (here V–VIII, low contrast · N+)." },
-        { src: "filmeter-4-reciprocity.png", caption: "Reciprocity — Schwarzschild long-exposure correction per film profile. A METERED → CORRECTED card shows the added stops; generic exponents only, no branded film tables." },
+        { src: "filmeter-3-zone.png", caption: "The Zone System as a live spot meter — tap tones onto zones 0–X. PLACED ON and SCENE RANGE cards read the anchor and the scene’s contrast (here V–IX, normal contrast · N)." },
+        { src: "filmeter-4-reciprocity.png", caption: "Reciprocity and the Bulb timer — Schwarzschild long-exposure correction per film profile, then a countdown for the corrected time. A METERED → CORRECTED card shows the added stops; generic exponents only, no branded film tables." },
         { src: "filmeter-5-filter-bellows.png", caption: "Filter & Bellows — add the stops for an ND or polarizer (as a factor or directly in stops) and for macro bellows extension at a magnification, summed into a TOTAL you apply to the exposure." },
-        { src: "filmeter-6-incident.png", caption: "Incident (beta) — a falling-light reading from the front camera, with a Dome or Flat receptor and illuminance in lux alongside EV. It ships as an honest, experimental extra." },
-        { src: "filmeter-7-sunny16.png", caption: "Sunny-16 — no camera needed. Pick a condition, from Bright sun (EV 15) down to Low light (EV 3), and the meter uses that reference EV to drive the full pairs pipeline." },
+        { src: "filmeter-6-incident.png", caption: "Incident — a falling-light reading from the front camera, free and labelled approximate: cover the camera with a sheet of white paper, pick a Flat or Dome receptor, and calibrate once. Illuminance in lux alongside EV." },
+        { src: "filmeter-7-sunny16.png", caption: "Sunny-16 — no camera needed. Pick a condition, from Bright sun (EV 15) down to Low light (EV 3), and the meter uses that reference EV to drive the full pairs pipeline. The EC pill dials in ±3 EV of compensation (here +1)." },
         { src: "filmeter-8-profile.png", caption: "Film profiles — save a stock’s name, ISO, reciprocity exponent and threshold, and an auto-apply toggle. One profile is free; Pro unlocks unlimited. No branded data — only what you type." },
-        { src: "filmeter-9-history.png", caption: "History — a per-frame roll logbook. Each frame stores EV, shutter, aperture and mode; a completed roll archives to Past Rolls, and any roll exports to CSV (Pro)." },
+        { src: "filmeter-9-history.png", caption: "History — a per-frame roll logbook. Each frame stores EV, shutter, aperture, mode and compensation; a completed roll archives to Past Rolls, and any roll exports to CSV (Pro)." },
+        { src: "filmeter-10-depth-of-field.png", caption: "Depth of field — near and far limits, total depth and the hyperfocal distance for your focal length, aperture and film format, from half-frame to 8×10, in metres or feet (Pro)." },
       ],
     },
 
@@ -545,11 +546,12 @@ window.APP_DETAILS = {
       {
         kicker: "Meter — the hub (free)",
         items: [
-          "Three metering modes: Reflected (back camera, free), Incident (front camera, Pro, beta), and Sunny-16 — a camera-free reference by condition, free.",
+          "Three metering modes, all free: Reflected (back camera), Incident (front camera, approximate — cover it with a sheet of white paper and calibrate once), and Sunny-16 — a camera-free reference by condition.",
+          "Exposure compensation: ±3 EV in ⅓-stop steps from the EC pill; the pairs, Zone and the logbook follow it, and each frame records it.",
           "Calibrated EV to a tenth of a stop, with a semicircular needle showing scene-versus-lock deviation in stops.",
           "Exposure triplet cards — ISO, shutter, aperture — with a marker on shutter when reciprocity correction is applied.",
           "A horizontally scrollable, center-snapped wheel of aperture/shutter pairs; drag to pick the priority aperture.",
-          "LOCK holds a reading while AE keeps running; MEASURE takes a fresh hardware read; LOG appends the frame to the current roll.",
+          "LOCK holds a reading while AE keeps running; MEASURE takes a fresh hardware read; LOG appends the frame to the current roll. The buttons stay pinned above the tab bar, even on the smallest iPhones.",
           "A graceful no-camera state that offers Sunny-16 instead — the app never dead-ends.",
         ],
       },
@@ -557,9 +559,9 @@ window.APP_DETAILS = {
         kicker: "The analog toolkit (Pro)",
         items: [
           "The Zone System as a live spot meter — place tones on zones 0–X, read the scene range and an N− / N / N+ contrast descriptor.",
-          "Reciprocity: Schwarzschild long-exposure correction with generic presets or a custom exponent; correction only ever lengthens the time.",
+          "Reciprocity: Schwarzschild long-exposure correction with generic presets or a custom exponent; a Bulb timer counts the corrected time down and keeps the screen awake only while it runs.",
           "Filter & bellows compensation — filter factor (F× or stops) and bellows extension at a magnification, summed and pushed back into the meter.",
-          "Incident metering (beta) — a falling-light reading from the front camera; ships as an honest, experimental extra with no accuracy claim.",
+          "Depth of field: near and far limits, total depth and the hyperfocal distance for your lens, aperture and film format, from half-frame to 8×10.",
         ],
       },
       {
@@ -574,9 +576,9 @@ window.APP_DETAILS = {
       {
         kicker: "Roll logbook & export",
         items: [
-          "A per-frame roll logbook — the active roll collects frames, each storing EV, aperture, shutter, mode, reciprocity flag and timestamp.",
+          "A per-frame roll logbook — the active roll collects frames, each storing EV, aperture, shutter, mode, reciprocity flag, exposure compensation and timestamp.",
           "Start a new roll with a film-stock name and ISO; completed rolls archive to a read-only Past Rolls list.",
-          "Export any roll to CSV (Pro) via the system file exporter — Frame, EV, Aperture, Shutter, Mode, Reciprocity, Timestamp.",
+          "Export any roll to CSV (Pro) via the system file exporter — Frame, EV, Aperture, Shutter, Mode, Reciprocity, Timestamp, Compensation.",
           "Persistence is a local JSON file on the device. No cloud, no CloudKit, no account.",
         ],
       },
@@ -629,8 +631,8 @@ window.APP_DETAILS = {
           <p>Filmeter meters three ways, chosen with the segmented control at the top of the Meter tab:</p>
           <ul>
             <li><strong>Reflected</strong> (free) — the back camera reads the light bouncing off your subject. This is the default mode.</li>
-            <li><strong>Incident (beta)</strong> (Pro) — the front camera stands in for a diffuser aimed toward the light, showing illuminance in lux alongside EV. It ships as an honest approximation with no accuracy claim — a falling-light reading, experimental.</li>
-            <li><strong>Sunny-16</strong> (free) — no camera at all: pick a labelled condition (Bright sun, Open shade, Bright interior, Dim tungsten, Low light) and the meter uses that reference EV. This drives the full pairs / zone / history pipeline even with the camera denied.</li>
+            <li><strong>Incident</strong> (free) — the front camera reads the light falling on your subject, showing illuminance in lux alongside EV. It is an approximation: a bare front camera can’t integrate light like a real diffuser dome, so cover it with a sheet of plain white paper, choose Flat or Dome, and calibrate incident once.</li>
+            <li><strong>Sunny-16</strong> (free) — no camera at all: pick a labelled condition (Bright sun, Open shade, Bright interior, Dim tungsten, Low light) and the meter uses that reference EV. This drives the pairs and the logbook even with the camera denied.</li>
           </ul>
         `,
       },
@@ -639,7 +641,8 @@ window.APP_DETAILS = {
         title: "The analog toolkit",
         body: `
           <p><strong>The Zone System</strong> turns the app into a live spot meter: tap the preview to capture a tone, and the first capture becomes the anchor (Zone V, 18% mid-gray). An 11-swatch strip shows where each captured tone lands; <em>Place −1 / +1</em> shifts the anchor, and two cards summarise where you’ve placed and the scene’s contrast (N− / N / N+).</p>
-          <p><strong>Reciprocity</strong> applies the Schwarzschild law — <code>t_corrected = t^p</code> — to long exposures, with generic presets or a custom exponent from 1.00 to 2.00. If your active film profile has auto-reciprocity on, the correction is already baked into the meter and marked. <strong>Filter &amp; bellows</strong> adds the stops for an ND or polarizer (from an F× factor or direct stops) and for macro bellows extension at a given magnification, then pushes the total back into the exposure.</p>
+          <p><strong>Reciprocity</strong> applies the Schwarzschild law — <code>t_corrected = t^p</code> — to long exposures, with generic presets or a custom exponent from 1.00 to 2.00. If your active film profile has auto-reciprocity on, the correction is already baked into the meter and marked. <strong>Filter &amp; bellows</strong> adds the stops for an ND or polarizer (from an F× factor or direct stops) and for macro bellows extension at a given magnification, then pushes the total back into the exposure. The <strong>Bulb timer</strong>, inside Reciprocity, counts the corrected time down once you open the shutter.</p>
+          <p><strong>Depth of field</strong> gives near and far limits, total depth and the hyperfocal distance for a focal length, an aperture (or the Meter’s current one) and a film format from half-frame to 8×10, with a per-format circle of confusion, in metres or feet.</p>
         `,
       },
       {
@@ -660,10 +663,10 @@ window.APP_DETAILS = {
       },
       {
         id: "free-pro",
-        title: "Free, Pro, and Lifetime",
+        title: "Free and Pro",
         body: `
-          <p>The core is free: reflected and Sunny-16 metering, EV and exposure pairs, calibration, one film profile, and the roll logbook. <strong>Pro</strong> adds incident metering, the Zone System, reciprocity, filter &amp; bellows factors, CSV export, and unlimited film profiles.</p>
-          <p>Pro is one clear choice: a <strong>Monthly</strong> or <strong>Yearly</strong> subscription with a free trial, or a one-time <strong>Lifetime</strong> purchase that never renews. Prices are shown in the App Store for your region. Entitlement is verified against StoreKit — an unverified transaction never grants Pro — and <em>Restore purchases</em>, available in Settings and on the paywall, always reports a visible result. Manage or cancel any time via Apple’s native sheet; cancelling keeps access until the period ends.</p>
+          <p>The core is free: reflected, incident (approximate) and Sunny-16 metering, EV and exposure pairs, exposure compensation, calibration, one film profile, and the roll logbook. <strong>Pro</strong> adds the Zone System, reciprocity with the Bulb timer, depth of field, filter &amp; bellows factors, CSV export, and unlimited film profiles.</p>
+          <p>Pro is a single <strong>one-time purchase</strong> — no subscription, nothing renews. The price is shown in the App Store for your region. Entitlement is verified against StoreKit — an unverified transaction never grants Pro — and <em>Restore purchases</em>, available in Settings and on the paywall, always reports a visible result. Earlier versions also offered Monthly and Yearly subscriptions; they are no longer sold, and an existing one keeps Pro until it ends (manage it in Settings → Manage subscription).</p>
         `,
       },
     ],
@@ -674,11 +677,11 @@ window.APP_DETAILS = {
       { q: "How accurate is it?", a: "After a one-time calibration it tracks a reference within about a third of a stop across normal light — enough for colour and B&W negative latitude. It’s an estimate, not a lab instrument; always cross-check important shots against a trusted meter." },
       { q: "Do I need internet?", a: "No. Metering and logging are fully offline. The only network use is Apple’s App Store for a purchase or restore." },
       { q: "Which films are supported?", a: "Any — you enter the ISO and, optionally, a reciprocity exponent as a film profile. Filmeter ships no branded film tables; a profile holds only what you type." },
-      { q: "What’s free versus Pro?", a: "Free: reflected and Sunny-16 metering, EV, exposure pairs, calibration, one film profile, and the roll logbook. Pro: incident metering, the Zone System, reciprocity, filter & bellows, CSV export, and unlimited film profiles." },
-      { q: "Is incident metering accurate?", a: "Incident ships as a beta — a falling-light reading from the front camera without a real diffuser dome. It’s an honest, experimental extra with no accuracy claim; reflected metering is the calibrated core." },
-      { q: "Does it work in the iOS Simulator?", a: "The non-camera math and UI run in the Simulator, and Sunny-16 drives the full pipeline there. But the camera meter needs a physical device — the Simulator has no real exposure data." },
+      { q: "What’s free versus Pro?", a: "Free: reflected, incident (approximate) and Sunny-16 metering, EV, exposure pairs, exposure compensation, calibration, one film profile, and the roll logbook. Pro: the Zone System, reciprocity with the Bulb timer, depth of field, filter & bellows, CSV export, and unlimited film profiles." },
+      { q: "Is incident metering accurate?", a: "It’s an approximation — a falling-light reading from the bare front camera, which can’t integrate light like a real diffuser dome. Covering it with white paper and calibrating once makes it consistent; reflected metering is the calibrated core. Incident is free." },
+      { q: "Does it work in the iOS Simulator?", a: "The non-camera math and UI run in the Simulator, and Sunny-16 drives the pairs and the logbook there. But the camera meter needs a physical device — the Simulator has no real exposure data." },
       { q: "Does Filmeter need any permission besides the camera?", a: "No. The camera is the only permission it ever requests, used solely to read the scene’s live exposure. Sunny-16 works with no camera access at all. No Photos, Location, Microphone, Contacts, or Local Network." },
-      { q: "How do I cancel?", a: "Manage or cancel any time via Apple’s native subscription sheet in Settings; cancelling stops auto-renewal and keeps access until the period ends. Or buy Lifetime once and never think about it again." },
+      { q: "Is Pro a subscription?", a: "No. Pro is a single purchase that stays yours. Earlier versions offered subscriptions; an existing one keeps Pro until it ends and can be managed in Settings → Manage subscription." },
     ],
   },
 
