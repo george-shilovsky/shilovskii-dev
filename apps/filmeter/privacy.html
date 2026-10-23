@@ -66,7 +66,7 @@
 
 <section style="padding: 32px 0 24px;">
   <div class="container-prose">
-    <div class="tag-mono" style="margin-bottom: 16px;">Filmeter · effective July 5, 2026 · last updated July 5, 2026</div>
+    <div class="tag-mono" style="margin-bottom: 16px;">Filmeter · effective July 5, 2026 · last updated October 23, 2026</div>
     <h1 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin-bottom: 20px;">Privacy policy</h1>
     <p style="font-size: 18px; line-height: 1.55; color: var(--fg-2); text-wrap: pretty;">
       This Privacy Policy explains how the Filmeter application ("Filmeter", "we", "us", "our") handles information when you use it on your iPhone or iPad. We are <strong>Georgii Shilovskii</strong>, an individual developer registered in Mexico, contactable at <a href="mailto:support@shilovskii.dev" style="color: var(--accent);">support@shilovskii.dev</a>.
@@ -111,8 +111,8 @@
       </thead>
       <tbody>
         <tr>
-          <td>Roll history — per-frame EV, aperture, shutter, mode, reciprocity flag and timestamp; film-stock name; ISO</td>
-          <td>A local JSON file inside the app sandbox</td>
+          <td>Roll history — for each roll, its number, film-stock name, ISO and start time; for each frame, its number, EV, aperture, shutter, mode, exposure compensation, reciprocity flag and timestamp</td>
+          <td>A local JSON file inside the app sandbox (plus one backup copy, kept only if that file is ever found damaged)</td>
           <td>Your logbook.</td>
         </tr>
         <tr>
@@ -126,9 +126,14 @@
           <td>To keep your meter accurate to your device.</td>
         </tr>
         <tr>
-          <td>Settings (theme, default ISO, stop step, onboarding flag)</td>
+          <td>Settings (theme, default ISO, stop step, onboarding flag) and the number for your next roll</td>
           <td>iOS <code>UserDefaults</code></td>
           <td>To remember your preferences.</td>
+        </tr>
+        <tr>
+          <td>Rating-prompt counters — the total number of frames you have logged, the number of days you have opened the app and the last such day, and whether the rating prompt has been shown</td>
+          <td>iOS <code>UserDefaults</code></td>
+          <td>To ask for an App Store rating at most once.</td>
         </tr>
       </tbody>
     </table>
@@ -139,7 +144,8 @@
 
     <h2 id="s3" style="scroll-margin-top: 80px;">3. Network behaviour</h2>
     <p>Filmeter opens a network connection in <strong>exactly one situation</strong>: Apple's <strong>StoreKit</strong> framework communicates with the App Store when you start, restore, or refresh a purchase. That traffic is handled by iOS and governed by <a href="https://www.apple.com/legal/privacy/" style="color: var(--accent);">Apple's Privacy Policy</a>; we receive only the resulting entitlement signal ("you have Pro"), never payment details.</p>
-    <p>Filmeter makes <strong>no other outbound connection</strong> — it does not phone home, sync, or report anything. The website, support, privacy, and terms links in Settings open in your browser only when you tap them.</p>
+    <p>Filmeter may also ask once whether you would like to rate it, using Apple's own rating prompt. That prompt is shown and handled by iOS; if you leave a rating, it is sent to Apple, not to us, and appears on the App Store like any other rating.</p>
+    <p>Filmeter makes <strong>no other outbound connection</strong> — it does not phone home, sync, or report anything. The website, support, privacy, and terms links in Settings open in your browser, and Rate Filmeter opens the App Store, only when you tap them.</p>
 
     <h2 id="s4" style="scroll-margin-top: 80px;">4. The camera</h2>
     <p>Filmeter uses the camera solely to measure the live exposure of the scene — the aperture, shutter, and ISO that the camera's automatic exposure selects. <strong>No photo is captured or stored</strong>, and the app's data model has no image field. The reflected mode uses the rear camera and the incident mode uses the front camera; the <strong>Sunny-16</strong> mode works with no camera access at all.</p>

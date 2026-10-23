@@ -21,6 +21,14 @@ Plain HTML, CSS, and JavaScript keep this portfolio fast, portable, and easy to 
 
 # The Journey
 
+## 2026-10-23 — Filmeter's privacy table, read against the code
+
+Filmeter got its own site, filmeter.app, and its Privacy Policy was copied there word for word. Before copying, every row of the "What Filmeter stores" table was checked against the app's code, and the table turned out to be a July photograph of an October app. It listed nothing that 1.1 added: the exposure compensation each logged frame now keeps, the roll's number and start time, the number for the next roll, and the small counters that decide when to ask for a rating (frames logged, days the app was opened, whether the prompt was shown). It also didn't mention that the logbook keeps one backup copy if its file is ever found damaged, or that Apple's rating prompt is shown and sent by iOS, not by the app.
+
+None of it leaves the phone, so the headline stayed true: Filmeter collects nothing. The owner approved the additions, and the same text went to this page, to filmeter.app/privacy and to the draft in PRODUCT_DOC, with "last updated" moved to October 23.
+
+**Lesson:** a privacy table is an inventory, and inventories go stale one small feature at a time. Read it against the storage keys, not against last quarter's memory of the app.
+
 ## 2026-10-16 — Filmeter 1.1: one purchase, and the fine print catches up
 
 Filmeter dropped its subscriptions. Pro is now a single one-time purchase, incident metering became free (and honestly labelled approximate), and 1.1 adds exposure compensation, a Bulb timer and a depth-of-field calculator. The site had been telling the July story: a Terms page about auto-renewal and a free trial, an app page selling "incident (beta)" as Pro.
